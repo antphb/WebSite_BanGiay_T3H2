@@ -1,0 +1,192 @@
+
+@media only screen and (max-width: 600px) {
+    .header{
+        width: 100%;
+        
+    }
+    .header__user-menu{
+        width: 100%;
+        font-size: 15px;
+    }
+    .header__user-menu__country{
+        margin: 0;
+        align-items: center;
+        padding: 0 15px;
+
+    }
+    .header__user-menu__country__item{
+        border: none;
+        padding: 14px 8px; 
+    }
+    .header__user-menu__country__item:first-child{
+        padding-left: 0px;
+    }
+    .header__user-menu__country__item:last-child{
+        border: none;
+    }
+    .header__user-menu__user{
+        margin-right: 0px;
+        align-items: center;
+        padding: 0 15px;
+    }
+    .header__user-menu__user__item{
+        border: none;
+        padding: 14px 8px;
+        margin-left: 4px;
+    }
+    .header__user-menu__user__item:last-child{
+        border: none;
+        padding-right: 0px;
+
+    }
+    .header__user-menu__user__account__icon{
+        display: block;
+        margin-right: 4px;
+        font-size: 18px;
+    }
+    .header__user-menu__user__item--content{
+        display: none;
+    }
+    .header__navbar{
+        width: 100%;
+    }
+    .header__navbar__show-more{
+        display: block;
+    }
+    .header__navbar__box{
+        overflow: hidden;
+        overflow-y: scroll;
+        display: none;
+    }
+    .header__navbar__box--child{
+        flex-direction: column;
+        width: 65%;
+        background-color: #fff;
+        
+    }
+    .header__navbar__box.modal__navbar__box{
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: block;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal__navbar__box > .header__navbar__box--child{
+        animation: traiQuaPhai ease 0.5s;
+    }
+    @keyframes traiQuaPhai {
+        from{
+            transform: translateX(-50%);
+            opacity: 0.5;
+        }
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    .header__navbar__list{
+        flex-direction: column;
+        margin: 0;
+       
+    }
+    .header__navbar__item{
+        margin: 0;
+        background-color: #2A61D2;
+        padding: 0;
+        border-top: 1px solid #fff;
+       
+    }
+    .header__navbar__item__name{
+        text-transform: none;
+        color: #FFF;
+        font-weight: 500;
+        padding: 20px 0;
+        margin-left: 12px;
+    }
+    .header__navbar__item__name--note{
+        right: -40px;
+        font-size: 12px;
+        top: 17px;
+        border-radius: 2px;
+    }
+    .header__navbar__item__name--note::after{
+        display: none;
+    }
+    .header__navbar__icon__arrow-down{
+        display: none;
+    }
+    .header__navbar__icon__open-close{
+        position: absolute;
+        right: 5px;
+        color: #fff;
+        display: inline;
+        top: 20px;
+        right: 5px;
+    }
+    .header__navbar__icon--plus{
+        color: #fff;
+        display: inline;
+        padding: 18px 24px;
+    }
+    .header__navbar__icon--minus{
+        color: #fff;
+        display: inline;
+        display: none;
+        padding: 18px 24px;
+    }
+    
+    .header__navbar__men{
+       
+    }
+    .header__navbar__list > .header__navbar__item >.header__navbar__about{
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #fff;
+        padding-left: 10px;
+        display: none;
+        animation: unset;
+    }
+   
+    .header__navbar__item> .header__navbar__about.show{
+        display: flex;
+       
+    }
+
+    .header__navbar__about-men__item{
+    }
+    .header__navbar__about-men__object-item__detail{
+        padding-left: 8px;
+    }
+    .header__navbar__about-men__about-us__box{
+        flex-direction: column;
+    }
+    .header__navbar__about-men__about-us__box{
+        margin: 0 ;
+    }
+    .header__navbar__about-women__option{
+        padding-left: 8px;
+    }
+    .header__navbar__about-women__box__another-product{
+        flex-direction: column;
+    }
+    .navbar__item__about-product__options--show-more{
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        box-shadow: unset;
+    }
+    .header__navbar__close-modal{
+        background-color: var(--red-color);
+        
+    }
+    .header__navbar__close-modal:hover{
+        background-color: #fc1616;
+      }
+}
