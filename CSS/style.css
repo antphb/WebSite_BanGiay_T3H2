@@ -1,0 +1,9 @@
+.app {
+    overflow: hidden;
+    width: 100%;
+    transition: 0.25s;
+}
+
+section {
+    height: 1000px;
+}

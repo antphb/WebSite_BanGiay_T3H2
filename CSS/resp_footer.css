@@ -1,0 +1,46 @@
+/* Resp */
+
+@media (min-width: 992px) {
+}
+
+/* Large */
+@media (max-width: 1199px) {
+}
+
+/* Medium */
+@media (max-width: 991px) {
+    .footer__navbar__logo {
+        margin: 0 auto 2.7em;
+    }
+
+    .footer__navbar__title {
+        display: flex;
+    }
+}
+
+/* Small */
+@media (max-width: 768px) {
+    .show-small {
+        display: block;
+    }
+
+    .footer__navbar__list {
+        height: 0;
+        overflow: hidden;
+    }
+
+    .footer__end__list {
+        flex-direction: column;
+        padding-block: 3em;
+        height: unset;
+    }
+
+    .footer__end__item {
+        margin-bottom: 0.7857em;
+        text-align: center;
+    }
+}
+
+/* Extra small */
+@media (max-width: 575px) {
+}

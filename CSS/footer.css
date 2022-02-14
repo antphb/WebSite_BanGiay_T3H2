@@ -1,0 +1,71 @@
+/* Start Footer Navbar */
+
+.footer__navbar {
+    background-color: var(--primary-bg-color);
+    padding-block: 7.5rem;
+}
+
+.footer__navbar__logo {
+    display: block;
+    width: 128px;
+}
+
+.footer__navbar__title {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--white-color);
+    text-transform: uppercase;
+    margin-top: 1.4444em;
+    margin-bottom: 0.7222em;
+    display: none;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.footer__navbar_container i.minus,
+.footer__navbar_container.open i.plus {
+    display: none;
+}
+
+.footer__navbar_container.open i.minus,
+.footer__navbar_container i.plus {
+    display: block;
+}
+
+.footer__navbar__list {
+    list-style: none;
+}
+
+.footer__navbar__link {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #aaa;
+    transition: 0.25s;
+    display: inline-block;
+}
+
+.footer__navbar__item:not(:last-child) .footer__navbar__link {
+    margin-bottom: 1.33333em;
+}
+
+.footer__navbar__link:hover {
+    color: var(--blue-color);
+    text-decoration: none;
+}
+
+.footer__end__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    height: 83px;
+}
+
+.footer__end__item {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--text-footer-end-color);
+}
+
+/* End Footer Navbar */
