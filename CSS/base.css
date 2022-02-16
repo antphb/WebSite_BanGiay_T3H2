@@ -12,14 +12,24 @@
     --back-to-top-hover-bg-color: #777;
     --navbar-mobile-bg-color: #2a61d2;
     --close-navbar-mobile-bg-color: #ad393b;
-
+    --input-form-bg-color: #ebebeb;
+    --border-input-form-bg-color: #eaeaea;
+    --primary-btn-hover-bg-color: #0053ff;
+    --facebook-bg-color: #3b5998;
+    --google-bg-color: #e74c3c;
+    --twitter-bg-color: #1da1f2;
+    --facebook-hover-bg-color: #314a92;
+    --google-hover-bg-color: #ea362f;
+    --twitter-hover-bg-color: #3ca6e8;
+    
     --text-footer-end-color: #777;
-
+    
     --red-color: #f83a3a;
     --yellow-color: #ffd302;
     --blue-color: #3387f2;
     --white-color: #fff;
     --black-color: #000;
+    --border-footer-form-color: #e5e5e5;
 }
 
 @font-face {
@@ -151,3 +161,13 @@ body {
     visibility: visible;
 }
 
+.hover-text:hover {
+    text-decoration: none;
+    color: var(--blue-color);
+}
+
+.app {
+    overflow: hidden;
+    width: 100%;
+    transition: 0.25s;
+}

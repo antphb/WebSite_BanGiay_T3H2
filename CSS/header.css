@@ -280,14 +280,6 @@
     z-index: 10;
 }
 
-.header__navbar__list--left .header__navbar__item__submenu {
-    left: 0;
-}
-
-.header__navbar__list--right .header__navbar__item__submenu {
-    left: 3.8em;
-}
-
 .header__navbar__item__submenu--full-width {
     top: 113px;
     width: 100%;

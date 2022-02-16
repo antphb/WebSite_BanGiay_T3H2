@@ -1,0 +1,32 @@
+/* Resp */
+
+@media (min-width: 992px) {
+}
+
+/* Large */
+@media (max-width: 1199px) {
+}
+
+/* Medium */
+@media (max-width: 991px) {
+}
+
+/* Small */
+@media (max-width: 768px) {
+    .form-group__item--label {
+        justify-content: flex-start;
+        margin-bottom: 0.8em;
+    }
+
+    .form-group__item--input {
+        margin: 0;
+    }
+
+    .form-group label {
+        font-size: 1.4em;
+    }
+}
+
+/* Extra small */
+@media (max-width: 575px) {
+}
