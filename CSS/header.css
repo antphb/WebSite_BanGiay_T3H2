@@ -31,6 +31,7 @@
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding-inline: 1.33333em;
     color: #aaa;
+    position: relative;
 }
 
 .header__user-menu__item:first-child {
@@ -40,6 +41,55 @@
 .header__user-menu__item i {
     margin-left: 0.4em;
     font-size: 1rem;
+}
+.header__user-menu__item__option{
+    position: absolute;
+    transform-origin: top;
+    transform: scaleY(0);
+    top: 100%;
+    left: 0;
+    width: 150px;
+    background-color: #fff;
+    z-index: 2;
+   transition: 0.3s;
+}
+.active.header__user-menu__item__option{
+    transform: scaleY(1);
+}
+.header__user-menu__item__option__list{
+    list-style-type: none;
+    font-size: 1.4rem;
+    text-transform: none;
+}
+.header__user-menu__item__options__item{
+    border: 1px solid;
+    padding: 8px;
+    cursor: pointer;
+    border-color: transparent rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1 ) rgba(0, 0, 0, 0.1 ) ;
+}
+.header__user-menu__item__options__item > .header__user-menu__item__options__item__link{
+    color: #666;
+    text-decoration: none;
+}
+
+.header__user-menu__item__options__item:hover{
+    background-color: rgba(0, 0, 0, 0.1 );
+    transition: 0.3s;
+    cursor: pointer;
+}
+.header__user-menu__item__options__item:hover > .header__user-menu__item__options__item__link{
+    color: var(--blue-color);
+    transition: 0.3s;
+   
+}
+.header__user-menu__item__options__item__name > .fas{
+    font-size: 1.6rem;
+    margin-right: 0.4rem;
+    display: inline-block;
+    
+}
+ul.header__user-menu__item__option__list{
+    margin-bottom: 0;
 }
 
 .header__user-menu__item--account i.user,

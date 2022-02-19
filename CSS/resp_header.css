@@ -214,7 +214,7 @@
         padding-right: 0;
     }
 
-    .header__user-menu__item--account span {
+    .header__user-menu__item--account > span {
         display: none;
     }
 

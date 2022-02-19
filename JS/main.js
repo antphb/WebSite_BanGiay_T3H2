@@ -9,7 +9,7 @@ const submenuBtn = $('.header__navbar__link__icon-mobile');
 const headerNavbarItems = $('.header__navbar__item');
 const headerNavbarContainer = $('.header__navbar__container');
 const submenuFooterBtn = $('.footer__navbar__title');
-
+const listMenuHeader =  Array.from(document.querySelectorAll('.header__user-menu__item'));
 // * Start Handler Show/Hidden Back to to btn
 
 (() => {
@@ -142,3 +142,15 @@ const submenuFooterBtn = $('.footer__navbar__title');
 headerNavbarContainer.click(e => e.stopPropagation());
 
 // * End Handler Click Header Navbar
+
+// * Start handle Click to show more option in Header
+(()=>{
+    listMenuHeader.forEach((value, index)=>{
+        value.addEventListener("click", ()=>{
+            let childElement = value.querySelector(".header__user-menu__item__option");
+            childElement.classList.toggle("active");
+
+        })
+    })
+})();
+// * End handle Click to show more option in Header
