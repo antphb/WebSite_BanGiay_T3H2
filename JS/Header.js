@@ -80,7 +80,7 @@ header.innerHTML = `
                                     <div class="header__user-menu__item__option">
                                         <ul class="header__user-menu__item__option__list">
                                             <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name"><i class="fas fa-unlock"></i>
+                                                <a href="../Login.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name"><i class="fas fa-unlock"></i>
                                                 Sign In</a>
                                             </li>
                                             <li class="header__user-menu__item__options__item">
@@ -109,7 +109,19 @@ header.innerHTML = `
                                     </div>
                                 </div>
                                 <div class="header__user-menu__item header__user-menu__item--search">
-                                    <i class="fas fa-search"></i>
+                                    <div class="header__user-menu__item__option">
+                                        <div class="header__user-menu__item__options__item header__user-menu__item--search__box">
+                                            <input class="header__user-menu__item__options__item__input" type="text" placeholder="Search our catalog">
+                                            <i class="header__user-menu__item--search__icon fas fa-search"></i>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="header__user-menu__item--search__box-icon">
+                                        <i class="header__user-menu__item__box-search__icon fas fa-search"></i>
+                                        <i class="header__user-menu__item__box-close__icon fas fa-times"></i>
+                                    </div>
+                                    
+                                    
                                 </div>
             
                                 <div class="col-line"></div>
@@ -141,7 +153,7 @@ header.innerHTML = `
             
                                     <ul class="header__navbar__list full-width header__navbar__list--left">
                                         <li class="header__navbar__item full-width">
-                                            <a href="" class="header__navbar__link">Home</a>
+                                            <a href="index.html" class="header__navbar__link">Home</a>
                                         </li>
                                         <li class="header__navbar__item full-width header__navbar__item--no-position">
                                             <a href="" class="header__navbar__link">

@@ -10,6 +10,7 @@ const headerNavbarItems = $('.header__navbar__item');
 const headerNavbarContainer = $('.header__navbar__container');
 const submenuFooterBtn = $('.footer__navbar__title');
 const listMenuHeader =  Array.from(document.querySelectorAll('.header__user-menu__item'));
+const elementsUserMenuOptionsList = Array.from($(".header__user-menu__item__options__item"));
 // * Start Handler Show/Hidden Back to to btn
 
 (() => {
@@ -145,11 +146,17 @@ headerNavbarContainer.click(e => e.stopPropagation());
 
 // * Start handle Click to show more option in Header
 (()=>{
-    listMenuHeader.forEach((value, index)=>{
+    listMenuHeader.forEach((value)=>{
         value.addEventListener("click", ()=>{
             let childElement = value.querySelector(".header__user-menu__item__option");
             childElement.classList.toggle("active");
-
+        })
+     
+    });
+    console.log(elementsUserMenuOptionsList);
+    elementsUserMenuOptionsList.forEach((e) =>{
+        e.addEventListener("click", function(event){
+            event.stopPropagation();
         })
     })
 })();

@@ -18,6 +18,7 @@
 }
 
 .header__user-menu__item {
+    cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -48,7 +49,7 @@
     transform: scaleY(0);
     top: 100%;
     left: 0;
-    width: 150px;
+    min-width: 150px;
     background-color: #fff;
     z-index: 2;
    transition: 0.3s;
@@ -107,7 +108,62 @@ ul.header__user-menu__item__option__list{
     -o-transition: 0.4s;
     transition: 0.4s;
 }
+.header__user-menu__item--search > .header__user-menu__item__option{
+    right: 0;
+    left: unset;
 
+}
+.header__user-menu__item--search__box{
+    display: flex;
+    align-items: center;
+}
+.header__user-menu__item--search__box.header__user-menu__item__options__item{
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px 0 rgb(102 102 102 / 35%);
+}
+.header__user-menu__item__box-close__icon {
+    transform: translateY(200%);
+    transition: 0.5s;
+}
+.header__user-menu__item__box-search__icon{
+    transform: translateY(0);
+    transition: 0.5s;
+}
+.active.header__user-menu__item__option ~ .header__user-menu__item--search__box-icon > .header__user-menu__item__box-search__icon{
+    transform: translateY(-250%);
+    transition: 0.5ss;
+}
+.active.header__user-menu__item__option ~ .header__user-menu__item--search__box-icon > .header__user-menu__item__box-close__icon{
+    transform: translateY(0);
+    transition: 0.5ss;
+}
+.header__user-menu__item--search__box-icon{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5em;
+}
+.header__user-menu__item__box-close__icon:hover{
+    color: var(--blue-color);
+}
+.header__user-menu__item__box-search__icon, .header__user-menu__item__box-close__icon{
+    position: absolute;
+    margin: 0 8px;
+    color: #fff;
+    text-align: center;
+}
+.header__user-menu__item--search__icon{
+    color: #000;
+    padding: 0 4px;
+}
+.header__user-menu__item__options__item__input{
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    width: 20rem;
+}
 .header__user-menu__item--cart {
     color: #fff;
     cursor: default;
