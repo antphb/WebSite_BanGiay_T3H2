@@ -14,6 +14,10 @@
     .header__navbar__item--no-position {
         position: unset;
     }
+
+    .header__navbar__item__submenu--full-width {
+        left: 0;
+    }
 }
 
 /* Large */
