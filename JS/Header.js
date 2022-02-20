@@ -80,7 +80,7 @@ header.innerHTML = `
                                     <div class="header__user-menu__item__option">
                                         <ul class="header__user-menu__item__option__list">
                                             <li class="header__user-menu__item__options__item">
-                                                <a href="../Login.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name"><i class="fas fa-unlock"></i>
+                                                <a href="./Login.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name"><i class="fas fa-unlock"></i>
                                                 Sign In</a>
                                             </li>
                                             <li class="header__user-menu__item__options__item">
