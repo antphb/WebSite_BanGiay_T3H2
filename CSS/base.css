@@ -161,14 +161,21 @@ body {
     visibility: visible;
 }
 
+.hover-text {
+    transition: 0.25s;
+}
+
 .hover-text:hover {
     text-decoration: none !important;
     color: var(--blue-color) !important;
-    transition: 0.25s;
 }
 
 .app {
     overflow: hidden;
     width: 100%;
     transition: 0.25s;
+}
+
+.btn {
+    padding-block: 0.42857em;
 }

@@ -164,3 +164,32 @@ headerNavbarContainer.click(e => e.stopPropagation());
     })
 })();
 // * End handle Click to show more option in Header
+
+// * Start Handler Login/Logout
+// ? login-request: chức năng khi đăng nhập sẽ hiển thị
+// ? login-link: khi chưa đăng nhập add class sẽ chuyển link sang trang login
+
+(() => {
+    const infoUser = JSON.parse(localStorage.getItem('user-ttthh-info'))
+        ?? {};
+    const isLogin = infoUser.email;
+    const requestLoginElement = $('.login-request');
+    const logoutBtn = $('.sign-out-btn');
+    const loginLinkElement = $('.login-link');
+
+    if (isLogin) {
+        requestLoginElement.addClass('login');
+        $('.header__user-menu__item__options__item__link--name').html(`
+            <i class="fas fa-user-circle"></i>
+            Hello ${infoUser['first-name']} ${infoUser['last-name']}
+        `);
+    } else {
+        loginLinkElement.attr('href', './Login.html');
+    }
+
+    logoutBtn.click(e => {
+        localStorage.setItem('user-ttthh-info', JSON.stringify({}));
+    })
+})();
+
+// * End Handler Login/Logout

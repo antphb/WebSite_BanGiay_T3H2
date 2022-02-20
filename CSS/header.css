@@ -62,12 +62,23 @@
     font-size: 1.4rem;
     text-transform: none;
 }
+
 .header__user-menu__item__options__item{
     border: 1px solid;
     padding: 8px;
     cursor: pointer;
     border-color: transparent rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1 ) rgba(0, 0, 0, 0.1 ) ;
 }
+
+.header__user-menu__item__option__list.login .header__user-menu__item__options__item.logout,
+.header__user-menu__item__options__item.login {
+    display: none
+}
+
+.header__user-menu__item__option__list.login .header__user-menu__item__options__item.login {
+    display: block;
+}
+
 .header__user-menu__item__options__item > .header__user-menu__item__options__item__link{
     color: #666;
     text-decoration: none;
