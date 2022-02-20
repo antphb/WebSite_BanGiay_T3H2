@@ -88,7 +88,7 @@
                                             <label for="">Email</label>
                                         </div>
                                         <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <input rule="required|email" name="email" type="email">
+                                            <input rule="required|email|uniqueEmail" name="email" type="email">
                                         </div>
                                         <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
                                         </div>
@@ -157,8 +157,13 @@
         <script src="./JS/AuthenticatorForm.js"></script>
         <script>    
             const registerForm = new Validator('#register');
+            const USERS_TTTHH_KEY = 'user-ttthh-key';
+            const userList = JSON.parse(localStorage.getItem(USERS_TTTHH_KEY)) ?? [];
             
-            registerForm.onSubmit = data => console.log(data);
+            registerForm.onSubmit = data => {
+                localStorage.setItem(USERS_TTTHH_KEY, JSON.stringify([...userList, data]));
+                window.location = '/';
+            };
         </script>
     </body>
 </html>

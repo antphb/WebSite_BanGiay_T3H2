@@ -20,6 +20,13 @@ function Validator(selector) {
             if (value.length === 0)
                 return undefined;
             return /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/.test(value) ? undefined : 'Vui lòng nhập theo dạng DD/MM/YYYY';
+        },
+        uniqueEmail(value) {
+            const emailList = JSON.parse(localStorage.getItem('user-ttthh-key'))
+                ?.map(item => item.email) 
+                ?? []; 
+
+            return emailList.includes(value) ? 'Email đã được sử dụng' : undefined;
         }
     }
 

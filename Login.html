@@ -25,14 +25,27 @@
                     <div class="row no-gutters">
                         <div class="form">
                             <h3>Log in to your account</h3>
-                            <form action="">
+                            <form action="" id="login">
+                                <div class="form-group login-msg">
+                                    <div class="row no-gutters">
+                                        <div class="form-group__item col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <div class="form-messenger">Test</div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <div class="row no-gutters">
                                         <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
                                             <label for="">Email</label>
                                         </div>
                                         <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <input type="email" required>
+                                            <input type="email" name="email" rule="required|email">
+                                        </div>
+                                        <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
+                                        <div class="form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="form-messenger"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -42,8 +55,14 @@
                                             <label for="">Password</label>
                                         </div>
                                         <div class="form-group__item form-group__item--input form-group__item--text--right col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <input type="password" required>
+                                            <input name="password" type="password" rule="required">
                                             <span class="form-group__item__text">Show</span>
+                                        </div>
+                                        <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
+                                        <div class="form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="form-messenger"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -100,6 +119,27 @@
         <script src="./UTIL/jQuery/jQuery.js"></script>
         <script src="./UTIL/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
         <script src="./JS/main.js"></script>
+        <script src="./JS/Validator.js"></script>
         <script src="./JS/AuthenticatorForm.js"></script>
+        <script>
+            const loginForm = new Validator('#login');
+            const msgLogin = document.querySelector('#login .login-msg');
+
+            loginForm.onSubmit = data => {
+                const userList = JSON.parse(localStorage.getItem('user-ttthh-key'))
+                    ?? []; 
+                const getUser = userList.find(user => user.email === data.email 
+                    && user.password === data.password);
+
+                if (getUser) {
+                    localStorage.setItem('user-ttthh-info', JSON.stringify(getUser))
+                    window.location = '/';
+                } else {
+                    msgLogin.classList.add('invalid');
+                    msgLogin.querySelector('.form-messenger').innerHTML = 
+                        '<span><i class="fas fa-times"></i></span>Email hoặc mật khẩu không đúng.';  
+                } 
+            };
+        </script>
     </body>
 </html>
