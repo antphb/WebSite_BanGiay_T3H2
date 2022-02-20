@@ -145,15 +145,21 @@ headerNavbarContainer.click(e => e.stopPropagation());
 // * End Handler Click Header Navbar
 
 // * Start handle Click to show more option in Header
+
 (()=>{
+
+    console.log($(listMenuHeader));
+
     listMenuHeader.forEach((value)=>{
         value.addEventListener("click", ()=>{
             let childElement = value.querySelector(".header__user-menu__item__option");
+            
+            childElement.classList.contains('active')
+                || $('.header__user-menu__item__option').removeClass('active');
+
             childElement.classList.toggle("active");
         })
-     
     });
-    console.log(elementsUserMenuOptionsList);
     elementsUserMenuOptionsList.forEach((e) =>{
         e.addEventListener("click", function(event){
             event.stopPropagation();
