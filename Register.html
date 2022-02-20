@@ -155,5 +155,10 @@
         <script src="./JS/main.js"></script>
         <script src="./JS/Validator.js"></script>
         <script src="./JS/AuthenticatorForm.js"></script>
+        <script>    
+            const registerForm = new Validator('#register');
+            
+            registerForm.onSubmit = data => console.log(data);
+        </script>
     </body>
 </html>

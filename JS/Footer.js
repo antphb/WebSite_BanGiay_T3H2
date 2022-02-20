@@ -6,7 +6,7 @@ footer.innerHTML = `
         <div class="container">
             <div class="row no-gutters">
                 <div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                    <a href="" class="footer__navbar__logo">
+                    <a href="/" class="footer__navbar__logo">
                         <img src="./IMG/logo.jpg" alt="" class="img-cover">
                     </a>
                 </div>

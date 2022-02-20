@@ -1,5 +1,6 @@
 section {
     text-align: center;
+    margin-bottom: 5.2em;
 }
 
 .form {
@@ -7,7 +8,7 @@ section {
     width: 100%;
     text-align: center;
     margin: auto;
-    padding-block: 5.4em;
+    padding-top: 5.4em;
 }
 
 .form h3 {
@@ -21,6 +22,17 @@ form {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
     padding: 3em 1.6em;
     margin-top: 2.4rem;
+}
+
+form > p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: left;
+    color: #888;
+}
+
+form > p > a {
+    color: #000;
 }
 
 .form-group {
@@ -132,6 +144,8 @@ form {
     color: var(--black-color);
     padding: 5px 15px;
     transition: 0.25s;
+    text-align: center;
+    width: 100%;
 }
 
 form .submit {
@@ -218,10 +232,19 @@ form .submit:hover {
     white-space: nowrap;
 }
 
-form .register {
+.form__footer__link {
     font-size: 1.4rem;
     font-weight: 300;
     color: var(--black-color);
-    transition: 0.25s;
-    padding-block: 0.35714em;
+}
+
+.back-btn {
+    margin-top: 2.6em;
+    text-align: left;
+}
+
+.back-btn a {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #000;
 }

@@ -138,7 +138,7 @@ header.innerHTML = `
                     <a href="/" class="header__logo">
                         <img class="img-cover" src="./IMG/logo.jpg" alt="">
                     </a>
-            
+                
                     <div class="container">
                         <div class="row no-gutters">
                             <div class="header__navbar__menu-btn show-medium">
