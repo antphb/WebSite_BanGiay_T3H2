@@ -3,139 +3,139 @@ const header = document.querySelector('header');
 header.classList.add('header');
 header.innerHTML = `
      <div class="header__user-menu-box">
-                    <div class="container">
-                        <div class="row no-gutters">
-                            <div class="header__user-menu__list header__user-menu__list--left">
-                                <div class="header__user-menu__item">
-                                    <span>En
-                                        <i class="fas fa-chevron-down"></i>
-                                    </span>
-                                    <div class="header__user-menu__item__option">
-                                        <ul class="header__user-menu__item__option__list">
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link">
-                                                    <img src="IMG/quoc_co_hoa_ky.jpg" alt="quốc kỳ hoa kỳ">
-                                                    <span class="header__user-menu__item__options__item__name">English</span>
-                                                </a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link">
-                                                    <img src="IMG/quoc_ky_nuoc_phap.jpg" alt="quốc kỳ pháp">
-                                                    <span class="header__user-menu__item__options__item__name">France</span>
-                                                </a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link">
-                                                    <img src="IMG/quoc_ky_nuoc_duc.jpg" alt="quốc kỳ nước đức">
-                                                    <span class="header__user-menu__item__options__item__name">Germany</span>
-                                                </a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link">
-                                                    <img src="IMG/quoc_ky_nuoc_y.jpg" alt="quốc kỳ nước ý">
-                                                    <span class="header__user-menu__item__options__item__name">Italia</span>
-                                                </a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item"> 
-                                                <a href="#" class="header__user-menu__item__options__item__link">
-                                                    <img src="IMG/quoc_ky_nuoc_tbn.jpg" alt="quốc kỳ tây ban nha">
-                                                    <span class="header__user-menu__item__options__item__name">Spain</span>
-                                                </a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                               <a href="#" class="header__user-menu__item__options__item__link">
-                                                    <img src="IMG/quoc_ky_arap.jpg" alt="quốc kỳ nước ả rập">
-                                                    <span class="header__user-menu__item__options__item__name">Arabic</span>
-                                               </a>
-                                            
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="header__user-menu__item">
-                                    <span>&#36; Usd
-                                    <i class="fas fa-chevron-down"></i>
-                                    </span>
-                                    <div class="header__user-menu__item__option">
-                                        <ul class="header__user-menu__item__option__list">
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
-                                                    &#8364; Euro
-                                                </a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
-                                                    &#36; USD
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="header__user-menu__list header__user-menu__list--right ml-auto">
-                                <div class="header__user-menu__item header__user-menu__item--account">
-                                    <i class="user far fa-user-circle"></i>
-                                    <span>Account</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                    <div class="header__user-menu__item__option">
-                                        <ul class="header__user-menu__item__option__list">
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="./Login.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name"><i class="fas fa-unlock"></i>
-                                                Sign In</a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name"><i class="fas fa-user"></i>
-                                                My Account</a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
-                                                    <i class="fas fa-heart"></i>
-                                                Wishlist (0)
-                                                </a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                                <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
-                                                    <i class="aaaa fas fa-redo"></i>
-                                                Compare (0)
-                                                </a>
-                                            </li>
-                                            <li class="header__user-menu__item__options__item">
-                                               <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
-                                                <i class="fas fa-shopping-cart"></i>
-                                                Checkout
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="header__user-menu__item header__user-menu__item--search">
-                                    <div class="header__user-menu__item__option">
-                                        <div class="header__user-menu__item__options__item header__user-menu__item--search__box">
-                                            <input class="header__user-menu__item__options__item__input" type="text" placeholder="Search our catalog">
-                                            <i class="header__user-menu__item--search__icon fas fa-search"></i>
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="header__user-menu__item--search__box-icon">
-                                        <i class="header__user-menu__item__box-search__icon fas fa-search"></i>
-                                        <i class="header__user-menu__item__box-close__icon fas fa-times"></i>
-                                    </div>
-                                    
-                                    
-                                </div>
-            
-                                <div class="col-line"></div>
-            
-                                <div class="header__user-menu__item header__user-menu__item--cart">
-                                    <i class="fas fa-shopping-cart"></i>
-                                    <span class="header__user-menu__item__number">0</span>    
-                                </div>
-                            </div>
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="header__user-menu__list header__user-menu__list--left">
+                    <div class="header__user-menu__item">
+                        <span>En
+                            <i class="fas fa-chevron-down"></i>
+                        </span>
+                        <div class="header__user-menu__item__option">
+                            <ul class="header__user-menu__item__option__list">
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link">
+                                        <img src="IMG/quoc_co_hoa_ky.jpg" alt="quốc kỳ hoa kỳ">
+                                        <span class="header__user-menu__item__options__item__name">English</span>
+                                    </a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link">
+                                        <img src="IMG/quoc_ky_nuoc_phap.jpg" alt="quốc kỳ pháp">
+                                        <span class="header__user-menu__item__options__item__name">France</span>
+                                    </a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link">
+                                        <img src="IMG/quoc_ky_nuoc_duc.jpg" alt="quốc kỳ nước đức">
+                                        <span class="header__user-menu__item__options__item__name">Germany</span>
+                                    </a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link">
+                                        <img src="IMG/quoc_ky_nuoc_y.jpg" alt="quốc kỳ nước ý">
+                                        <span class="header__user-menu__item__options__item__name">Italia</span>
+                                    </a>
+                                </li>
+                                <li class="header__user-menu__item__options__item"> 
+                                    <a href="#" class="header__user-menu__item__options__item__link">
+                                        <img src="IMG/quoc_ky_nuoc_tbn.jpg" alt="quốc kỳ tây ban nha">
+                                        <span class="header__user-menu__item__options__item__name">Spain</span>
+                                    </a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link">
+                                        <img src="IMG/quoc_ky_arap.jpg" alt="quốc kỳ nước ả rập">
+                                        <span class="header__user-menu__item__options__item__name">Arabic</span>
+                                    </a>
+                                
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__user-menu__item">
+                        <span>&#36; Usd
+                        <i class="fas fa-chevron-down"></i>
+                        </span>
+                        <div class="header__user-menu__item__option">
+                            <ul class="header__user-menu__item__option__list">
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                        &#8364; Euro
+                                    </a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                        &#36; USD
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+                <div class="header__user-menu__list header__user-menu__list--right ml-auto">
+                    <div class="header__user-menu__item header__user-menu__item--account">
+                        <i class="user far fa-user-circle"></i>
+                        <span>Account</span>
+                        <i class="fas fa-chevron-down"></i>
+                        <div class="header__user-menu__item__option">
+                            <ul class="header__user-menu__item__option__list">
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="./Login.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name"><i class="fas fa-unlock"></i>
+                                    Sign In</a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name"><i class="fas fa-user"></i>
+                                    My Account</a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                        <i class="fas fa-heart"></i>
+                                    Wishlist (0)
+                                    </a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                        <i class="aaaa fas fa-redo"></i>
+                                    Compare (0)
+                                    </a>
+                                </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Checkout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__user-menu__item header__user-menu__item--search">
+                        <div class="header__user-menu__item__option">
+                            <div class="header__user-menu__item__options__item header__user-menu__item--search__box">
+                                <input class="header__user-menu__item__options__item__input" type="text" placeholder="Search our catalog">
+                                <i class="header__user-menu__item--search__icon fas fa-search"></i>
+                            
+                            </div>
+                        </div>
+                        <div class="header__user-menu__item--search__box-icon">
+                            <i class="header__user-menu__item__box-search__icon fas fa-search"></i>
+                            <i class="header__user-menu__item__box-close__icon fas fa-times"></i>
+                        </div>
+                        
+                        
+                    </div>
+
+                    <div class="col-line"></div>
+
+                    <div class="header__user-menu__item header__user-menu__item--cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="header__user-menu__item__number">0</span>    
+                    </div>
+                </div>
+            </div>
+        </div>
+                </div>
                 <nav class="header__navbar">
-                    <a href="" class="header__logo">
+                    <a href="/" class="header__logo">
                         <img class="img-cover" src="./IMG/logo.jpg" alt="">
                     </a>
             

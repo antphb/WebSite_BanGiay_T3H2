@@ -107,7 +107,7 @@ footer.innerHTML = `
                     </div>
                     <div class="footer__end__item">
                         <a href="" class="footer__end__img">
-                            <img src="../IMG/footer-payment.png" alt="Image Payment Footer" class="img-contain">
+                            <img src="./IMG/footer-payment.png" alt="Image Payment Footer" class="img-contain">
                         </a>
                     </div>
                 </div>

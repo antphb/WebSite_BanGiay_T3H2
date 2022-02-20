@@ -13,6 +13,11 @@
 
 /* Small */
 @media (max-width: 768px) {
+
+    .hidden-small {
+        display: none;
+    }
+
     .form-group__item--label {
         justify-content: flex-start;
         margin-bottom: 0.8em;
@@ -24,6 +29,11 @@
 
     .form-group label {
         font-size: 1.4em;
+    }
+
+    .form-group__item--msg span {
+        margin-left: 0;
+        margin-top: 0.7143em;
     }
 }
 

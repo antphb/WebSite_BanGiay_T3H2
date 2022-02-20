@@ -29,7 +29,6 @@ form {
 
 .form-group__item {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -43,13 +42,22 @@ form {
     display: block;
     color: #414141;
     margin-bottom: 0;
+    margin-right: 2.4615em;
 }
 
 .form-group__item--input {
     border-radius: 4px;
     overflow: hidden;
     padding: 0;
-    margin: 0 15px;
+}
+
+.form-group__item--msg span {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #888;
+    text-align: left;
+    justify-content: flex-start;
+    margin-left: 2.4615em;
 }
 
 .form-group input {
@@ -64,10 +72,39 @@ form {
     padding: 0.42857em 1.07142em;
 }
 
+.form-group.invalid input {
+    border: 2px solid #ff4c4c;
+}
+
 .form-group__item--text--right input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right-color: transparent !important;
+}
+
+.form-group.invalid .form-group__item .form-messenger {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #a94442;
+    border: 1px solid #ebcccc;
+    background: #f2dede;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    text-align: left;
+    padding: 0.46153em 1.53846em;
+    margin-top: 0.92307em;
+}
+
+.form-group .form-group__item .form-messenger {
+    display: none;
+}
+
+.form-group__item .form-messenger span {
+    font-size: 2rem;
+    padding-right: 0.8em;
 }
 
 .form-group input:focus {

@@ -1,0 +1,24 @@
+#register > p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: left;
+    color: #888;
+}
+
+#register > p > a {
+    color: #000;
+}
+
+.form-group__item input[type="radio"]+label {
+    font-size: 1.4em;
+    margin-inline: 0.28571em 1.42857em;
+    color: #424242;
+}
+
+.form-group__item--radio {
+    justify-content: flex-start;
+}
+
+.form-group__item--radio input {
+    width: auto;
+}

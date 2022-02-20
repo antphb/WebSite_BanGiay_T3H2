@@ -14,3 +14,12 @@ showPasswordBtn.click(function() {
 })
 
 // * End Handler Show/Hidden Password Form
+
+
+// * Start Handler Validator
+
+const registerForm = new Validator('#register');
+
+registerForm.onSubmit = data => console.log(data);
+
+// * End Handler Validator

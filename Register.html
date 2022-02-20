@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link rel="stylesheet" href="./FONT/fontawesome-free-5.15.4-web/css/all.min.css">
+        <link rel="stylesheet" href="./UTIL/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./CSS/base.css">
+        <link rel="stylesheet" href="./CSS/header.css">
+        <link rel="stylesheet" href="./CSS/resp_header.css">
+        <link rel="stylesheet" href="./CSS/footer.css">
+        <link rel="stylesheet" href="./CSS/resp_footer.css">
+        <link rel="stylesheet" href="./CSS/login.css">
+        <link rel="stylesheet" href="./CSS/resp_login.css">
+        <link rel="stylesheet" href="./CSS/Register.css">
+        <link rel="stylesheet" href="./CSS/style.css">
+    </head>
+    <body>
+        <main class="app">
+            <header></header>
+
+            <section>
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="form">
+                            <h3>Create an account</h3>
+                            <form action="" id="register">
+                                <p>
+                                    Already have an account?
+                                    <a href="./Login.html" class="hover-text">Log in instead!</a>
+                                </p>
+                                <div class="form-group">
+                                    <div class="row no-gutters">
+                                        <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                            <label for="">Social title</label>
+                                        </div>
+                                        <div class="form-group__item form-group__item--input form-group__item--radio col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <input id="social-title-mr" value="mr" name="social-title" type="radio">
+                                            <label for="social-title-mr">Mr.</label>
+                                            <input id="social-title-mrs" value="mrs" name="social-title" type="radio">
+                                            <label for="social-title-mrs">Mrs.</label>
+                                        </div>
+                                        <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
+                                        <div class="form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="form-messenger"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row no-gutters">
+                                        <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                            <label for="">First name</label>
+                                        </div>
+                                        <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <input rule="required" name="first-name" type="text">
+                                        </div>
+                                        <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
+                                        <div class="form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="form-messenger"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row no-gutters">
+                                        <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                            <label for="">Last name</label>
+                                        </div>
+                                        <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <input rule="required" name="last-name" type="text">
+                                        </div>
+                                        <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
+                                        <div class="form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="form-messenger"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row no-gutters">
+                                        <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                            <label for="">Email</label>
+                                        </div>
+                                        <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <input rule="required|email" name="email" type="email">
+                                        </div>
+                                        <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
+                                        <div class="form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="form-messenger"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row no-gutters">
+                                        <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                            <label for="">Password</label>
+                                        </div>
+                                        <div class="form-group__item form-group__item--input form-group__item--text--right col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <input rule="required|min:6" name="password" type="password">
+                                            <span class="form-group__item__text">Show</span>
+                                        </div>
+                                        <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        </div>
+                                        <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
+                                        <div class="form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="form-messenger"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row no-gutters">
+                                        <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                            <label for="">Birthdate</label>
+                                        </div>
+                                        <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <input type="text" rule="formatDate" name="birthdate" placeholder="MM/DD/YYYY">
+                                        </div>
+                                        <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                            <span>Optional</span>
+                                        </div>
+                                        <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
+                                        <div class="form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                            <div class="form-messenger"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="submit">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer></footer>
+
+            <div class="back-to-top">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+
+            <div class="modal__overlay"></div>
+        </main>
+
+        <script src="./JS/Header.js"></script>
+        <script src="./JS/Footer.js"></script>
+        <script src="./UTIL/jQuery/jQuery.js"></script>
+        <script src="./UTIL/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+        <script src="./JS/main.js"></script>
+        <script src="./JS/Validator.js"></script>
+        <script src="./JS/AuthenticatorForm.js"></script>
+    </body>
+</html>

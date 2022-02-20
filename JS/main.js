@@ -147,9 +147,6 @@ headerNavbarContainer.click(e => e.stopPropagation());
 // * Start handle Click to show more option in Header
 
 (()=>{
-
-    console.log($(listMenuHeader));
-
     listMenuHeader.forEach((value)=>{
         value.addEventListener("click", ()=>{
             let childElement = value.querySelector(".header__user-menu__item__option");
