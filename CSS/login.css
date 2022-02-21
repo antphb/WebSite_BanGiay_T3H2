@@ -97,9 +97,9 @@ form > p > a {
 .form-group.invalid .form-group__item .form-messenger {
     font-size: 1.3rem;
     font-weight: 300;
-    color: #a94442;
-    border: 1px solid #ebcccc;
-    background: #f2dede;
+    color: var(--error-color);
+    border: 1px solid var(--border-error-color);
+    background: var(--error-bg-color);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
     width: 100%;
     display: flex;

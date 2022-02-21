@@ -14,6 +14,10 @@
     --close-navbar-mobile-bg-color: #ad393b;
     --input-form-bg-color: #ebebeb;
     --border-input-form-bg-color: #eaeaea;
+    --border-error-color: #ebcccc;
+    --border-warn-color: #FF9A52;
+    --error-bg-color: #f2dede;
+    --warn-bg-color: rgba(255,154,82,.3);
     --primary-btn-hover-bg-color: #0053ff;
     --facebook-bg-color: #3b5998;
     --google-bg-color: #e74c3c;
@@ -21,6 +25,7 @@
     --facebook-hover-bg-color: #314a92;
     --google-hover-bg-color: #ea362f;
     --twitter-hover-bg-color: #3ca6e8;
+    --sitemap-bg-color: #3754b2;
     
     --text-footer-end-color: #777;
     
@@ -29,6 +34,8 @@
     --blue-color: #3387f2;
     --white-color: #fff;
     --black-color: #000;
+    --error-color: #a94442;
+    --warn-color: #acaaa6;
     --border-footer-form-color: #e5e5e5;
 }
 

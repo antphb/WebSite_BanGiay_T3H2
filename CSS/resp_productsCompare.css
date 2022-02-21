@@ -1,0 +1,35 @@
+/* Resp */
+
+@media (min-width: 992px) {
+}
+
+/* Large */
+@media (max-width: 1199px) {
+}
+
+/* Medium */
+@media (max-width: 991px) {
+}
+
+/* Small */
+@media (max-width: 768px) {
+    .sitemap__list {
+        padding-block: 1.5em;
+    }
+
+    .sitemap {
+        background: transparent;
+    }
+
+    .sitemap__link {
+        color: var(--black-color) !important;
+    }
+
+    .sitemap__icon {
+        color: #6b6b6b;
+    }
+}
+
+/* Extra small */
+@media (max-width: 575px) {
+}
