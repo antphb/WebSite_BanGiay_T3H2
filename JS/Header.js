@@ -106,7 +106,7 @@ header.innerHTML = `
                                     </a>
                                 </li>
                                 <li class="header__user-menu__item__options__item">
-                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                    <a href="../ProductsCompare.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
                                         <i class="aaaa fas fa-redo"></i>
                                     Compare (0)
                                     </a>

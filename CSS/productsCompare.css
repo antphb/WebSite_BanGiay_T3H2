@@ -44,7 +44,7 @@ section {
     border: 1px solid var(--border-warn-color);
     background: var(--warn-bg-color);
     border-radius: 3px;
-    padding: 0.69230em 1.53846em 0.69230em 3.84615em;
+    padding: 0.92307em 1.53846em 0.92307em 3.84615em;
     position: relative;
 }
 
@@ -66,6 +66,11 @@ section {
     font-size: 1.5rem;
     font-weight: 400;
     padding: 0.46667em 0.8em;
+    transition: 0.25s;
+}
+
+.btn.content__link:hover {
+    background: var(--navbar-mobile-bg-color);
 }
 
 .btn.content__link i {
