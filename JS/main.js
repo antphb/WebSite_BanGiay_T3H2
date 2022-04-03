@@ -14,9 +14,7 @@ const elementsUserMenuOptionsList = Array.from($(".header__user-menu__item__opti
 // * Start Handler Show/Hidden Back to to btn
 
 (() => {
-    backToTopBtn.fadeOut(400, "linear");
-
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', () => { 
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
         scrollTop >= 150 

@@ -139,9 +139,7 @@ body {
     width: var(--back-to-top-height);
     height: var(--back-to-top-height);
     background-color: var(--blue-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
     color: var(--white-color);
     border-radius: 50%;
     font-size: 1.5rem;
@@ -161,6 +159,13 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: 0.25s;
+}
+
+.back-to-top i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .modal__overlay.open {
