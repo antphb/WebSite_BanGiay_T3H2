@@ -60,7 +60,7 @@ const sitemap = document.querySelector('.sitemap');
 (() => {
     let temp;
 
-    jQuery.fn.animateAuto = function(prop, speed, callback, parentEle, isShow){
+    jQuery.fn.animateAuto = function(prop, speed, transitionTimingFunction = 'linear'){
         var elem, height, width;
         this.each(function(i, el){
 
@@ -72,7 +72,7 @@ const sitemap = document.querySelector('.sitemap');
             width = elem.css("width"),
             elem.remove();
 
-            el.animate({"height":height}, speed, "linear", callback);
+            el.animate({"height":height}, speed);
         });
         return height;
     }    
@@ -199,8 +199,12 @@ headerNavbarContainer.click(e => e.stopPropagation());
 (() => {
     if (sitemap) {
         const list = sitemap.getAttribute('data-sitemap-item').split(', ');
+        const title = sitemap.getAttribute('data-sitemap-title');
         let sitemapHTML = `
-            <div class="container">
+            <div class="container sitemap__container">
+                <h1 class="sitemap__title hidden-sm ${title ?? 'hidden'}">
+                    ${title}
+                </h1>
                 <div class="sitemap__list">
                     ${
                         list.map(item => `
