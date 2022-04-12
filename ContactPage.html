@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./FONT/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="./FONT/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./UTIL/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/base.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/resp_header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link rel="stylesheet" href="./CSS/resp_footer.css">
+    <link rel="stylesheet" href="./CSS/contactPage.css">
+    <link rel="stylesheet" href="./CSS/respContactPage.css">
+    <title>TTTHH</title>
+    <script>
+        function getPathName(){
+            var inputFile = document.querySelector("#choose-file");
+            var valueInput = inputFile.value;
+            var startIndex  = valueInput.lastIndexOf("\\") + 1;
+            var name = valueInput.substring(startIndex, valueInput.length);
+            document.querySelector("#output-file-path").value = name;
+        }
+    </script>
+</head>
+<body>
+    
+    <main class="app">
+        <header></header>
+
+
+        <section>
+            <div class="site__map">
+                <p><a href="index.html" class="site__map-home">HOME</a> <span> > </span>
+                    <a class="site-map-product-details" href="#">LUNAR FORCE SHOES</a>
+                </p>
+            </div>
+            <div class="row no-gutters contact__box">
+                <div class="col col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12 contact__box__left">
+                    <h1 class="contact__box__content">STORE INFOMATION</h1>
+                    <ul class="contact__box__left__list-info">
+                        <li class="contact__box__left__item-info">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>
+                                Leo Buxinh <br>
+                                United States
+                            </p>
+                        </li>
+                        <li class="contact__box__left__item-info">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>
+                                Email us: <br>
+                                demo@demo.com
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col col-xl-9 col-lg-9 col-md-8 col-sm-12 col-12 contact__box__right">
+                    <div>
+                        <h1 class="contact__box__content">CONTACT US</h1>
+                        <form action="#" class="">
+                            <div class="form-group row no-gutters">
+                                <label for="select-service" class="col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 group__form__label">Subject</label>
+                                <select name="" id="" class="form-control form-control-select form-control col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 group__form__input">
+                                    <option value="Customer service">Customer service</option>
+                                    <option value="Webmaster">Webmaster</option>
+                                </select>
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="email-address-id" class="col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 group__form__label">Email address</label>
+                                <input type="email" name="" id="email-address-id" class="form-control col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 group__form__input" placeholder="your@email.com">
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="" class="col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 group__form__label">Attachment</label>
+                                <div class="col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 row no-gutters">
+                                    <input type="text" name="" id="output-file-path" class="col col-xl-9 col-lg-9 col-md-6 col-sm-8 col-8 group__form__input form-control" placeholder="" disabled>
+                                    <input type="file" onchange="getPathName()" name="" id="choose-file" class="col col-xl-9 col-lg-9 col-md-6 col-sm-8 col-8 group__form__input form-control" placeholder="">
+                                    <label  for="choose-file" class="col col-xl-3 col-lg-3 col-md-6 col-sm-4 col-4 btn-choose-file">CHOOSE FILE</label>
+                                </div>
+                                <label class="col col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1 optinal-btn group__form__label">optional</label>
+                            </div>
+                            <div class="form-group row no-gutters">
+                                <label for="message-input" class="col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 group__form__label">Message</label>
+                                <textarea name="" id="message-input" cols="30" rows="3" class="col col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 form-control group__form__input" placeholder="How can we help?"></textarea>
+                            </div>
+                            <div class="form-btn">
+                                <input type="submit" value="SEND">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer></footer>
+    </main>
+
+
+    <script src="JS/Header.js"></script>
+    <script src="JS/Footer.js"></script>
+    <script src="UTIL/jQuery/jQuery.js"></script>
+    <script src="JS/main.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
