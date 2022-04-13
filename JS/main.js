@@ -229,3 +229,9 @@ headerNavbarContainer.click(e => e.stopPropagation());
 })();
 
 // * End Add Sitemap
+
+// * Scroll To Element
+
+const scrollToElement = (element, block) => element.scrollIntoView({behavior: 'smooth', block})
+
+// * End To Element

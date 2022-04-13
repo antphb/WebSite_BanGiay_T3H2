@@ -205,7 +205,7 @@
                                                     </span>
                                                 </div>
                                                 <div class="content-product__filter__number">
-                                                    There are 12 products.
+                                                    There are <span>12</span> products.
                                                 </div>
                                             </div>
                                             <div class="col col-xl-6 col-lg-6">
@@ -224,11 +224,11 @@
                                                                 </div>
                                                                 <div class="content-product__filter__sort__by__list">
                                                                     <ul>
-                                                                        <li>Relevance</li>
-                                                                        <li>Name, A to Z</li>
-                                                                        <li>Name, Z to A</li>
-                                                                        <li>Price, low to high</li>
-                                                                        <li>Price, high to low</li>
+                                                                        <li data-filter="">Relevance</li>
+                                                                        <li data-filter="name|1">Name, A to Z</li>
+                                                                        <li data-filter="name|-1">Name, Z to A</li>
+                                                                        <li data-filter="price|1">Price, low to high</li>
+                                                                        <li data-filter="price|-1">Price, high to low</li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -238,27 +238,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="content-product__list">
-                                        <div class="row no-gutters">
-                                            <div class="col col-xl-4 col-lg-4">
-                                                <div class="content-product__item">
-                                                    <div class="content-product__item__img">
-                                                        <a href="">
-                                                            <img class="img-cover" src="./IMG/MenSportsShoes-ContentProduct-1.jpg" alt="">
-                                                            <img class="img-cover hover" src="./IMG/MenSportsShoes-ContentProduct-1-hover.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="content-product__item__info">
-                                                        <div class="content-product__item__info__rating">
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                            <i class="fas fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div data-filter="" data-page="1" class="content-product__list content-product__list--grid">
+                                    </div>
+                                    <div class="content-product__pagination d-flex justify-content-between">
+                                        <div class="content-product__pagination__title ">
+                                            Showing <span class="from">1</span>-<span class="to">9</span> of <span class="count">12</span> item(s)
+                                        </div>
+                                        <div class="content-product__pagination__btn-nav d-flex">
                                         </div>
                                     </div>
                                 </div>
