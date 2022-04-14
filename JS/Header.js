@@ -420,8 +420,8 @@ header.innerHTML = `
 
                         <ul class="header__navbar__list full-width header__navbar__list--right">
                             <li class="header__navbar__item full-width">
-                                <a href="" class="header__navbar__link">
-                                    Blog
+                                <a href="./MemberPage.html" class="header__navbar__link">
+                                    Thành Viên
                                 </a>
                             </li>
                             <li class="header__navbar__item full-width">
@@ -467,7 +467,7 @@ header.innerHTML = `
                                 </ul>
                             </li>
                             <li class="header__navbar__item full-width">
-                                <a href="" class="header__navbar__link">
+                                <a href="./ContactPage.html" class="header__navbar__link">
                                     Contact
                                 </a>
                             </li>

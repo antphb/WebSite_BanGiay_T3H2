@@ -1,0 +1,34 @@
+/* Resp */
+
+@media (min-width: 992px) {
+
+}
+
+/* Large */
+@media (max-width: 1199px) {
+}
+
+/* Medium */
+@media (max-width: 991px) {
+    .card > .details{
+        padding: 0.8em;
+    }
+    .social__item{
+
+    }
+    .col-for-tablet{
+        display: block;
+    }
+}
+
+/* Small */
+@media (max-width: 768px) {
+
+}
+
+/* Extra small */
+@media (max-width: 575px) {
+    .social__item{
+        margin: 0.2rem;
+    }
+}
