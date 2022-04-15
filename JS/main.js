@@ -199,6 +199,7 @@ headerNavbarContainer.click(e => e.stopPropagation());
 (() => {
     if (sitemap) {
         const list = sitemap.getAttribute('data-sitemap-item').split(', ');
+        const linkList = sitemap.getAttribute('data-sitemap-link').split(', ');
         const title = sitemap.getAttribute('data-sitemap-title');
         let sitemapHTML = `
             <div class="container sitemap__container">
@@ -207,9 +208,9 @@ headerNavbarContainer.click(e => e.stopPropagation());
                 </h1>
                 <div class="sitemap__list">
                     ${
-                        list.map(item => `
+                        list.map((item, index) => `
                             <div class="sitemap__item">
-                                <a href="" class="sitemap__link">
+                                <a href="${linkList[index] === '?' ? '' : linkList[index]}" class="sitemap__link">
                                     ${item}
                                 </a>
                             </div>
@@ -232,6 +233,6 @@ headerNavbarContainer.click(e => e.stopPropagation());
 
 // * Scroll To Element
 
-const scrollToElement = (element, block) => element.scrollIntoView({behavior: 'smooth', block})
+const scrollToElement = (element, block) => element.scrollIntoView({behavior: 'smooth', block});
 
 // * End To Element

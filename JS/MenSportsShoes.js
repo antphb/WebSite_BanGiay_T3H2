@@ -9,6 +9,119 @@ const contentProductFilterIconItem = $('.content-product__filter__icon__item');
 
 const getPriceProduct = product => product.discount ? product.price * (100 - product.discount) / 100 : product.price;
 
+const showModalProduct = productItem => {
+    let product = productItem;
+    product.name = product.name.replace('$$', '\'');
+    const modal = $('#modal-product');
+    const htmlModal = `
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="modal__product__content">
+                        <div class="modal__product__content__header text-right">
+                            <button class="close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="modal__product__content__body">
+                            <div class="row">
+                                <div class="col col-xl-6 col-lg-6">
+                                    <div class="modal__product__content__body__item modal__product__content__body__item--left d-flex">
+                                        <div class="modal__product__content__body__item__img position-relative flex-grow-1 flex-shrink-1">
+                                            <img class="img-contain" src="./IMG/${product.listImage[0]}" alt="">
+                                            <ul class="product-flags d-flex list-unstyled">
+                                                <li class="product-flag reduced-price">Reduced Price</li>
+                                                <li class="product-flag new">New</li>
+                                            </ul>
+                                        </div>
+                                        <div data-length="${product.listImage.length}" class="modal__product__content__body__item__list">
+                                            <button class="modal__product__content__body__item__list__btn ${product.listImage.length <= 4 && 'hidden'} d-flex align-items-center justify-content-center up">
+                                                <i class="fas fa-chevron-up"></i>
+                                            </button>
+                                            <ul class="list-unstyled mb-0">
+                                                ${product.listImage.map((itemImage, index) => {
+                                                    return `<li class="${index === 0 && 'active'}"><img class="img-contain" src="./IMG/${itemImage}" alt=""></li>`;
+                                                }).join('')}
+                                            </ul>
+                                            <button class="modal__product__content__body__item__list__btn ${product.listImage.length <= 4 && 'hidden'} d-flex align-items-center justify-content-center down">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-xl-6 col-lg-6">
+                                    <div class="modal__product__content__body__item modal__product__content__body__item--right">
+                                        <h3 class="name">${product.name}</h3>
+                                        <p class="price">
+                                            <span class="price">$${getPriceProduct(product)}</span>
+                                            <span class="old-price ${product.discount || 'hidden'}">$${product.price}</span>
+                                            <span class="discount ${product.discount || 'hidden'}">(Save ${product.discount}%)</span>
+                                        </p>
+                                        <p class="detail">
+                                            Tax excluded Delivery: 1 to 3 weeks
+                                        </p>
+                                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <div class="d-flex align-items-center size-list">
+                                            <label class="mb-0" for="">Size</label>
+                                            <ul class="mb-0 list-unstyled d-flex">
+                                                ${product.size.map((size, index) => {
+                                                    return `<li class="${index === 0 && 'active'}">${size}</li>`;
+                                                }).join('')}
+                                            </ul>
+                                        </div>
+                                        <div class="d-flex align-items-center color-list">
+                                            <label class="mb-0" for="">Color</label>
+                                            <ul class="mb-0 list-unstyled d-flex">
+                                                ${product.color.map((color, index) => {
+                                                    return `<li class="${index === 0 && 'active'}" style="--color: ${color};"></li>`;
+                                                }).join('')}
+                                            </ul>
+                                        </div>
+                                        <div class="d-flex align-items-center quantity">
+                                            <label class="mb-0" for="">Quantity</label>
+                                            <div class="d-flex">
+                                                <button class="d-flex align-items-center justify-content-center inc"><i class="fas fa-chevron-up"></i></button>
+                                                <input type="number" class="text-center" value="1" min="0" name="" id="">
+                                                <button class="d-flex align-items-center justify-content-center dec"><i class="fas fa-chevron-down"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="group-btns">
+                                            <button class="btn btn-primary">Add to cart</button>
+                                            <button title="Add to Wishlist" class="btn p-0">
+                                                <i class="fas fa-heart"></i>
+                                                Add to Wishlist
+                                            </button>
+                                            <button title="Add to Compare" class="btn p-0 is-added">
+                                                <i class="fas fa-redo"></i>
+                                                Add to Compare
+                                            </button>
+                                        </div>
+                                        <p class="in-stock">
+                                            <span class="in-stock__icon in-stock__icon--success">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                            <span class="in-stock--text">In stock</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal__product__content__footer">
+                            <a title="Share" href="" class="btn btn--facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a title="Tweet" href="" class="btn btn--twitter"><i class="fab fa-twitter"></i></a>
+                            <a title="Google+" href="" class="btn btn--google"><i class="fab fa-google-plus-g"></i></a>
+                            <a title="Pinterest" href="" class="btn btn--pinterest"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    modal.html(htmlModal);
+    handlerProductModal();
+    modal.modal();
+}
+
 categoryIcons.click(function() {
     $(this).toggleClass('active');
 
@@ -28,8 +141,8 @@ const getHTMLCheckbox = (title, products) => {
             ${products.map(product => {
                 return `
                     <li class="category__item">
-                        <input type="checkbox" name="categories">
-                        <label for="">${product.name} <span>(${product.number})</span></label>
+                        <input id="${product.name}" value="${product.name}" type="checkbox" name="${title.toLowerCase()}">
+                        <label for="${product.name}">${product.name} <span>(${product.number})</span></label>
                     </li>
                 `;
             }).join('')}
@@ -170,7 +283,7 @@ const getHTMLListProduct = listProduct => {
                         </div>
                     </div>
                 </li>
-            `)}
+            `).join('')}
         </ul>
     `;
 }
@@ -185,7 +298,7 @@ const listProductOnSale = [{
     image: 'MenSportsShoes-OnSale-2.jpg',
     imageHover: 'MenSportsShoes-OnSale-2-hover.jpg',
     name: 'Zeven Thrust Shoes',
-    price: 290,
+    price: 290, 
     discount: 10
 },{
     image: 'MenSportsShoes-OnSale-3.jpg',
@@ -256,92 +369,215 @@ const contentProductList = [
         imageHover: 'MenSportsShoes-ContentProduct-1-hover.jpg',
         name: 'Lunar Force Shoes',
         price: 98.5,
-        discount: 10
+        discount: 10,
+        color: ['Orange', 'Blue'],
+        categories: ['Women', 'Men', ],
+        size: ['S', 'M', 'L'],
+        compositions: ['Cotton', ],
+        styles: ['Casual', ],
+        properties: ['Short Sleeve'],
+        listImage: ['MenSportsShoes-ContentProduct-1.jpg', 'MenSportsShoes-ContentProduct-1-hover.jpg', 'MenSportsShoes-ContentProduct-1-1.jpg', 'MenSportsShoes-ContentProduct-1-2.jpg', 'MenSportsShoes-ContentProduct-1-3.jpg', 'MenSportsShoes-ContentProduct-1-4.jpg'],
     },{
         productFlags: ['On Sale', 'New'],
         image: 'MenSportsShoes-ContentProduct-2.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-2-hover.jpg',
-        name: 'Asics Women\'s Shoes',
-        price: 56.99
+        name: "Asics Women$$s Shoes",
+        price: 56.99,
+        color: ['White', 'Black'],
+        categories: ['Women', ],
+        size: ['S', 'M', 'L'],
+        compositions: ['Cotton', ],
+        styles: ['Casual', ],
+        properties: ['Short Sleeve'],
+        listImage: ['MenSportsShoes-ContentProduct-2.jpg', 'MenSportsShoes-ContentProduct-2-hover.jpg'],
     },{
         productFlags: ['New'],
         image: 'MenSportsShoes-ContentProduct-3.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-3-hover.jpg',
         name: 'Nivia Tennis Shoes',
-        price: 105.99
+        price: 105.99,
+        color: ['Orange'],
+        categories: ['Men', ],
+        size: ['S', 'M', 'L'],
+        compositions: ['Cotton', ],
+        styles: ['Girly', ],
+        properties: ['Colorful Dress'],
+        listImage: ['MenSportsShoes-ContentProduct-3.jpg', 'MenSportsShoes-ContentProduct-3-hover.jpg'],
     },{
         productFlags: ['Online Only', 'New'],
         image: 'MenSportsShoes-ContentProduct-4.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-4-hover.jpg',
         name: 'Plasma Running Shoe',
-        price: 70.99
+        price: 70.99,
+        color: ['Beige', 'Pink'],
+        categories: ['Men', ],
+        size: ['S', 'M', 'L'],
+        compositions: ['Viscose', ],
+        styles: ['Dressy', ],
+        properties: ['Short Dress'],
+        listImage: ['MenSportsShoes-ContentProduct-4.jpg', 'MenSportsShoes-ContentProduct-4-hover.jpg'],
     },{
         productFlags: ['Reduced Price', 'New'],
         image: 'MenSportsShoes-ContentProduct-5.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-5-hover.jpg',
         name: 'Saucony Ride Shoes',
         price: 64.50,
-        discount: 5
+        discount: 5,
+        color: ['Black', 'Orange', 'Blue', 'Yellow'],
+        categories: ['Men', ],
+        size: ['S', 'M', 'L'],
+        compositions: ['Viscose', ],
+        styles: ['Casual', ],
+        properties: ['Maxi Dress'],
+        listImage: ['MenSportsShoes-ContentProduct-5.jpg', 'MenSportsShoes-ContentProduct-5-hover.jpg'],
     },{
         productFlags: ['New'],
         image: 'MenSportsShoes-ContentProduct-6.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-6-hover.jpg',
         name: 'Aero Power Shoes',
-        price: 67.49
+        price: 67.49,
+        color: ['White', 'Yellow'],
+        categories: ['Women', 'Men', 'Couple', ],
+        size: ['S', 'M', 'L'],
+        compositions: ['Polyester', ],
+        styles: ['Girly', ],
+        properties: ['Short Dress'],
+        listImage: ['MenSportsShoes-ContentProduct-6.jpg', 'MenSportsShoes-ContentProduct-6-hover.jpg'],
     },{
         productFlags: ['Reduced Price', 'New'],
         image: 'MenSportsShoes-ContentProduct-7.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-7-hover.jpg',
         name: 'Aero Power Shoes',
         price: 220.5,
-        discount: 20
+        discount: 20,
+        color: ['Green', 'Yellow'],
+        categories: ['Women', 'Men', 'Couple', ],
+        size: ['S', 'M', 'L'],
+        compositions: ['Polyester', ],
+        styles: ['Girly', ],
+        properties: ['Midi Dress'],
+        listImage: ['MenSportsShoes-ContentProduct-7.jpg', 'MenSportsShoes-ContentProduct-7-hover.jpg'],
     },{
         productFlags: ['On Sale', 'New'],
         image: 'MenSportsShoes-ContentProduct-8.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-8-hover.jpg',
         name: 'Slip On Shoes',
         price: 390.89,
-        discount: 10
+        discount: 10,
+        color: ['Gray', 'Red', 'Black'],
+        categories: ['Women', 'Men', 'Couple', ],
+        size: ['M', 'L'],
+        compositions: ['Cotton', ],
+        styles: [],
+        properties: [],
+        listImage: ['MenSportsShoes-ContentProduct-8.jpg', 'MenSportsShoes-ContentProduct-8-hover.jpg'],
     },{
         productFlags: ['Online Only', 'Reduced Price', 'New'],
         image: 'MenSportsShoes-ContentProduct-9.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-9-hover.jpg',
         name: 'Saucony Running Shoes',
         price: 54.99,
-        discount: 10
+        discount: 10,
+        color: ['Gray', 'Red', 'Black', 'Blue'],
+        categories: ['Men', ],
+        size: ['M', 'L'],
+        compositions: [],
+        styles: [],
+        properties: [],
+        listImage: ['MenSportsShoes-ContentProduct-9.jpg', 'MenSportsShoes-ContentProduct-9-hover.jpg'],
     },{
         productFlags: ['New'],
         image: 'MenSportsShoes-ContentProduct-10.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-10-hover.jpg',
-        name: 'Swerve Women\'s Shoes',
-        price: 44.99
+        name: "Swerve Women$$s Shoes",
+        price: 44.99,
+        color: ['Black', 'Brown', 'Pink'],
+        categories: ['Women', ],
+        size: ['M', 'L'],
+        compositions: ['Cotton', ],
+        styles: ['Basic', ],
+        properties: [],
+        listImage: ['MenSportsShoes-ContentProduct-10.jpg', 'MenSportsShoes-ContentProduct-10-hover.jpg', 'MenSportsShoes-ContentProduct-10-1.jpg'],
     },{
         productFlags: ['New'],
         image: 'MenSportsShoes-ContentProduct-11.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-11-hover.jpg',
         name: 'Indoor Court Shoes',
-        price: 45.99
+        price: 45.99,
+        color: ['Beige', 'Orange', 'Blue'],
+        categories: ['Women', 'Men', 'Couple', ],
+        size: ['M', 'L'],
+        compositions: ['Elastane', ],
+        styles: ['Classic', ],
+        properties: [],
+        listImage: ['MenSportsShoes-ContentProduct-11.jpg', 'MenSportsShoes-ContentProduct-11-hover.jpg'],
     },{
         productFlags: ['Reduced Price', 'New'],
         image: 'MenSportsShoes-ContentProduct-12.jpg',
         imageHover: 'MenSportsShoes-ContentProduct-12-hover.jpg',
         name: 'Zeven Thrust Shoes',
         price: 290,
-        discount: 10
+        discount: 10,
+        color: ['Black', 'Blue', 'Green'],
+        categories: ['Women', 'Men', 'Couple', ],
+        size: ['S', 'M', 'L'],
+        compositions: ['Silk', ],
+        styles: ['Classic', ],
+        properties: [],
+        listImage: ['MenSportsShoes-ContentProduct-12.jpg', 'MenSportsShoes-ContentProduct-12-hover.jpg'],
     },
 ];
 
-const getHTMLContentProductList = (products) => {
+let filtersProductList = {};
+
+const updateNumberContentProduct = products => {
+    const length = products.length;
+    const indexPage = 1;
+    $('.content-product__filter__number span').html(length);
+    $('.content-product__pagination__title .count').html(length);
+    $('.content-product__pagination__title .from').html(length === 0 ? length : (indexPage-1)*9 + 1);
+    $('.content-product__pagination__title .to').html(Math.min(length, indexPage*9));
+    scrollToElement($('.content-product')[0], 'start');
+}
+
+const getHTMLContentProductList = (productList, filters) => {
+    let products = [...productList];
     const i = +contentProductListElement[0].getAttribute('data-page');
     const dataFilter = contentProductListElement.attr('data-filter').split('|');
 
     if (dataFilter[0]) {
         products.sort((a,b) => {
-            if (dataFilter[0] === 'price') 
+            if (dataFilter[0] === 'price')
+                if (getPriceProduct(a) !== getPriceProduct(b))
+                    return getPriceProduct(a) > getPriceProduct(b) ? dataFilter[1] : -1 * dataFilter[1];
+            if (a[dataFilter[0]] === b[dataFilter[0]])
                 return getPriceProduct(a) > getPriceProduct(b) ? dataFilter[1] : -1 * dataFilter[1];
             return a[dataFilter[0]] > b[dataFilter[0]] ? dataFilter[1] : -1 * dataFilter[1];
         });
+    } else
+        products = [...productList];
+
+    if (filters) {
+        Object.keys(filters).forEach(filter => {
+            if (filters[filter]?.length !== 0) {
+                if (filter === 'price') {
+                    products = products.filter(product => {
+                        const price = getPriceProduct(product);
+                        return filters[filter].some(priceFilter => {
+                            const minPrice = priceFilter.split(' - ')[0].split('$')[1];
+                            const maxPrice = priceFilter.split(' - ')[1].split('$')[1];
+                            return price >= minPrice && price <= maxPrice;
+                        })
+                    })
+                } else {
+                    products = products.filter(product => product[filter].length + filters[filter].length !== [...new Set([...filters[filter], ...product[filter]])].length)
+                }
+            }
+        })
     }
+
+    updateNumberContentProduct(products);
+    $('.content-product__pagination__btn-nav')[products.length <= 9 ? 'addClass' : 'removeClass']('hidden');
 
     return `
         <div class="row no-gutters">
@@ -362,10 +598,9 @@ const getHTMLContentProductList = (products) => {
                                 </ul>
                             </a>
                             <ul class="function-buttons list-unstyled">
-                                <li style="--i: 0;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-expand-arrows-alt"></i></a></li>
-                                <li style="--i: 1;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-redo"></i></a></li>
-                                <li style="--i: 2;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-heart"></i></a></li>
-                                <li style="--i: 3;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-shopping-cart"></i></a></li>
+                                <li onclick='showModalProduct(${JSON.stringify(product)})' style="--i: 0;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-expand-arrows-alt"></i></a></li>
+                                <li onclick="" style="--i: 1;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-redo"></i></a></li>
+                                <li onclick="" style="--i: 2;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="content-product__item__info">
@@ -377,7 +612,7 @@ const getHTMLContentProductList = (products) => {
                                 <i class="fas fa-star"></i>
                             </div>
                             <h4 class="content-product__item__info__name">
-                                <a href="">${product.name}</a>
+                                <a href="">${product.name.replace('$$', '\'')}</a>
                             </h4>
                             <p class="content-product__item__info__price">
                                 <span class="old-price ${product.discount || 'hidden'}">$${product.price.toFixed(2)}</span>
@@ -432,7 +667,6 @@ $('.content-product__pagination__title .to').html(Math.min(9, contentProductList
 // * End Add Content Product List
 
 // * Start Handler Content Product Pagination
-
 const contentProductPaginationBtn = $('.content-product__pagination__btn');
 
 contentProductPaginationBtn.click(function() {
@@ -517,3 +751,147 @@ const filterProductList = $('.content-product__filter__sort__by__list ul li');
 });
 
 // * End Handler Sort Content Product List
+
+// * Start Handler Modal
+
+function handlerProductModal() {
+    const modalImgMenu = $('#modal-product .modal__product__content__body__item__list ul li');
+    const imgModal = $('#modal-product .modal__product__content__body__item__img img');
+    const sizeList = $('#modal-product .modal__product__content__body__item .size-list ul li');
+    const colorList = $('#modal-product .modal__product__content__body__item .color-list ul li');
+    const quantityButtonList = $('#modal-product .modal__product__content__body__item .quantity button');
+    const inputQuantity = $('#modal-product .modal__product__content__body__item .quantity input');
+    const upModalButton = $('.modal__product__content__body__item__list button.up');
+    const downModalButton = $('.modal__product__content__body__item__list button.down');
+    const firstItemListImage = $('.modal__product__content__body__item__list > ul > li:first-child')[0];
+
+    const activeItemList = (list, item) => {
+        list.removeClass('active');
+        item.addClass('active');
+    }
+    
+    // * Start Handler Event Click Img List Menu
+    
+    modalImgMenu.click(function() {
+        activeItemList(modalImgMenu, $(this));
+        imgModal[0].src = $(this).children()[0].src;
+    });
+    
+    // * End Handler Event Click Img List Menu
+    
+    // * Start Handler Click Size List
+    
+    sizeList.click(function() {
+        activeItemList(sizeList, $(this));
+    });
+    
+    // * End Handler Click Size List
+    
+    // * Start Handler Click Color List
+    
+    colorList.click(function() {
+        activeItemList(colorList, $(this));
+    })
+    
+    // * End Handler Click Color List
+    
+    // * Start Handler Inc/Dec Quantity List
+    
+    $(quantityButtonList[0]).click(() => {
+        inputQuantity[0].value = +inputQuantity[0].value + 1;
+    })
+    
+    $(quantityButtonList[1]).click(() => {
+        inputQuantity[0].value = +inputQuantity[0].value === 1 ? 1 : inputQuantity[0].value-1;
+    })
+    
+    // * End Handler Inc/Dec Quantity List
+
+    // * Start Handler Up/Down List Image
+
+    upModalButton.click(() => {
+        const length = upModalButton.parent().attr('data-length');
+        const maxMarginTop = (length - 4) * 80;
+        const currMarginTop = +firstItemListImage.style.marginTop.split('px')[0];
+        if (!upModalButton.hasClass('disabled')) {
+            downModalButton.removeClass('disabled');
+            firstItemListImage.style.marginTop = `${currMarginTop - 80}px`;
+            if (-1*currMarginTop === maxMarginTop - 80) {
+                upModalButton.addClass('disabled');
+            }
+        }
+    })
+
+    downModalButton.click(() => {
+        const currMarginTop = +firstItemListImage.style.marginTop.split('px')[0];
+        if (!downModalButton.hasClass('disabled')) {
+            upModalButton.removeClass('disabled');
+            firstItemListImage.style.marginTop = `${currMarginTop + 80}px`;
+            if (currMarginTop === -80) {
+                downModalButton.addClass('disabled');
+            }
+        }
+    })
+
+    // * End Handler Up/Down List Image
+
+    $('#modal-product .close').click(() => $('#modal-product').modal('hide'));
+}
+
+// * End Handler Modal
+
+// * Start Handler Modal Tost
+
+// $('#modal-tost').modal();
+
+$('#modal-tost .btn.close').click(() => $('#modal-tost').modal('hide'));
+
+// * End Handler Modal Tost
+
+// * Start Handler Filter Category
+
+$('.category__primary__body .category__item input').change(function() {
+    const name = this.name;
+    const value = this.value;
+    if (this.checked) {
+        if (filtersProductList[name]) {
+            filtersProductList[name].push(value);
+        } else {
+            filtersProductList[name] = [value];
+        }
+    } else {
+        filtersProductList[name] = filtersProductList[name].filter(item => item !== value);
+    }
+    contentProductListElement[0].setAttribute('data-page', 1);
+    contentProductListElement.html(getHTMLContentProductList(contentProductList, filtersProductList));
+});
+
+$('.category__primary__body .category__item__color').click(function() {
+    const value = this.getAttribute('data-bg-color');
+    $(this).toggleClass('active');
+    if ($(this).hasClass('active')) {
+        if (filtersProductList['color']) {
+            filtersProductList['color'].push(value);
+        } else {
+            filtersProductList['color'] = [value];
+        }
+    } else 
+        filtersProductList['color'] = filtersProductList['color']?.filter(item => item !== value);
+    contentProductListElement[0].setAttribute('data-page', 1);
+    contentProductListElement.html(getHTMLContentProductList(contentProductList, filtersProductList));
+});
+
+$('.category__primary__body .clear-all span').click(()=> {
+    [...$('.category__primary__body .category__item input:checked')].forEach(item => item.checked = false);
+    $('.category__primary__body .category__item__color').removeClass('active');
+    filtersProductList = {}; 
+    contentProductListElement.html(getHTMLContentProductList(contentProductList));   
+})
+
+// * End Handler Filter Category
+
+// * Start Content Product Function Button
+
+// * End Content Product Function Button
+
+scrollToElement($('main')[0], 'start');
