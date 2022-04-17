@@ -174,7 +174,7 @@ header.innerHTML = `
                                 <a href="index.html" class="header__navbar__link">Home</a>
                             </li>
                             <li class="header__navbar__item header__navbar__item--men full-width header__navbar__item--no-position">
-                                <a href="MenSportsShoes.html" class="header__navbar__link">
+                                <a href="SportsShoes.html" class="header__navbar__link">
                                     Men
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--hot">Hot</span>

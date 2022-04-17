@@ -304,11 +304,8 @@
     cursor: pointer;
     margin: 2.2rem 0;
 }
-.form-register-product-right__option__color-list__box > span.color-1{
-    background-color: orange;   
-}
-.form-register-product-right__option__color-list__box > span.color-2{
-    background-color: var(--blue-color);
+.form-register-product-right__option__color-list__box > span {
+    background-color: var(--color);   
 }
 .form-register-product-right__option__color-list__box>input:checked~span{
     border: 2px solid #3754b2;
@@ -569,3 +566,25 @@
 .fancybox-overlay-fixed{
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+
+*.reduced-price {
+    color: var(--product-flag-reduced-price-color);
+    border-color: var(--product-flag-reduced-price-color);
+  }
+  
+  *.new {
+    color: var(--product-flag-new-color);
+    border-color: var(--product-flag-new-color);
+  }
+  
+  *.on-sale {
+    color: var(--product-flag-on-sale-color);
+    border-color: var(--product-flag-on-sale-color);
+  }
+  
+  *.online-only {
+    color: var(--product-flag-online-only-color);
+    border-color: var(--product-flag-online-only-color);
+  }

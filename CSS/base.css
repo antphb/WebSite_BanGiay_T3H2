@@ -39,6 +39,11 @@
     --error-color: #a94442;
     --warn-color: #acaaa6;
     --border-footer-form-color: #e5e5e5;
+    
+    --product-flag-reduced-price-color: #f2434a;
+    --product-flag-new-color: #3387f2;
+    --product-flag-on-sale-color: #ffd302;
+    --product-flag-online-only-color: #ff9a52;
 }
 
 @font-face {
@@ -292,4 +297,118 @@ body {
     .hidden-es {
         display: none;
     }
+}
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 999;
+}
+
+.loading .boxLoading {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.loading .boxLoading::before {
+  content: '';
+  width: 50px;
+  height: 5px;
+  background: #000;
+  opacity: 0.1;
+  position: absolute;
+  top: 59px;
+  left: 0;
+  border-radius: 50%;
+  -webkit-animation: shadow 0.5s linear infinite;
+          animation: shadow 0.5s linear infinite;
+}
+
+.loading .boxLoading::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  background: #B28FCE;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  -webkit-animation: animate 0.5s linear infinite;
+          animation: animate 0.5s linear infinite;
+}
+
+@-webkit-keyframes animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    -webkit-transform: translateY(9px) rotate(22.5deg);
+            transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    -webkit-transform: translateY(18px) rotate(45deg);
+            transform: translateY(18px) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    -webkit-transform: translateY(9px) rotate(67.5deg);
+            transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(90deg);
+            transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    -webkit-transform: translateY(9px) rotate(22.5deg);
+            transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    -webkit-transform: translateY(18px) rotate(45deg);
+            transform: translateY(18px) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    -webkit-transform: translateY(9px) rotate(67.5deg);
+            transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    -webkit-transform: translateY(0) rotate(90deg);
+            transform: translateY(0) rotate(90deg);
+  }
+}
+
+@-webkit-keyframes shadow {
+  0%, 100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1.2, 1);
+            transform: scale(1.2, 1);
+  }
+}
+
+@keyframes shadow {
+  0%, 100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  50% {
+    -webkit-transform: scale(1.2, 1);
+            transform: scale(1.2, 1);
+  }
 }
