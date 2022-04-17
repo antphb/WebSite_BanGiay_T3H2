@@ -43,7 +43,7 @@ const showModalProduct = productItem => {
                                                     return `<li class="${index === 0 && 'active'}"><img class="img-contain" src="./IMG/${itemImage}" alt=""></li>`;
                                                 }).join('')}
                                             </ul>
-                                            <button class="modal__product__content__body__item__list__btn ${product.listImage.length <= 4 && 'hidden'} d-flex align-items-center justify-content-center down">
+                                            <button class="modal__product__content__body__item__list__btn ${product.listImage.length <= 4 && 'hidden'} d-flex align-items-center justify-content-center down disabled">
                                                 <i class="fas fa-chevron-down"></i>
                                             </button>
                                         </div>
@@ -632,7 +632,7 @@ const getHTMLContentProductList = (productList, filters) => {
         <div class="row no-gutters">
             ${products.map((product, index) => index < 9*(i-1) || index >= 9*i ? '' : `
                 <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <div class="content-product__item pb-md-3 position-relative d-flex flex-column">
+                    <div class="content-product__item pb-md-3 position-relative d-flex flex-column no-gutters">
                         <div class="content-product__item__img order-1">
                             <a href="">
                                 <img class="img-cover" src="./IMG/${product.image}" alt="">
@@ -769,7 +769,6 @@ contentProductFilterIconItem.click(function(e) {
             }
             else {
                 $(element).removeClass('order-2');
-                $(element).addClass('col-12');
             }
         });
     } else {
@@ -788,7 +787,6 @@ contentProductFilterIconItem.click(function(e) {
             }
             else {
                 $(element).addClass('order-2');
-                $(element).removeClass('col-12');
             }
         });
     }

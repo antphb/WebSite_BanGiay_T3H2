@@ -211,7 +211,7 @@ input[type=number] {
 }
 
 .category__primary {
-  margin-block: 3em;
+  margin-bottom: 3em;
   padding-bottom: 3em;
   border: 1px solid #eaeaea;
   border-top: 2px solid var(--navbar-mobile-bg-color);
