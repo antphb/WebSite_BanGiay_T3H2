@@ -122,49 +122,6 @@ const showModalProduct = productItem => {
     modal.modal();
 }
 
-const showModalTost = (selector, mess) => {
-    mess.replace('$$', '\'');
-    $(`${selector} .modal-body h3`).html(`${mess}`);
-    $(selector).modal();
-}
-
-const handlerClickCompareCart = (element, selectModal, mess) => {
-    $(element).toggleClass('active');
-    if (!$(element).hasClass('active')) {
-        mess = mess.replace('has been added to', 'was successfully removed from');
-    }
-    showModalTost(selectModal, mess);
-}
-
-const handlerClickCompare = (element, product, selectModal, mess) => {
-    handlerClickCompareCart(element, selectModal, mess);
-    let compareProductList = JSON.parse(localStorage.getItem('TTTHH-COMPARE-KEY')) ?? [];
-    if ($(element).hasClass('active')) {
-        compareProductList.push(product);
-    } else {
-        compareProductList = compareProductList.filter(item => !(item.name === product.name && item.price === product.price));
-    }
-    $('.header__user-menu__item__options__item--compare').html(compareProductList.length);
-    localStorage.setItem('TTTHH-COMPARE-KEY', JSON.stringify(compareProductList));
-}
-
-const handlerClickCart = (element, product, selectModal, mess) => {
-    handlerClickCompareCart(element, selectModal, mess);
-    let compareProductList = JSON.parse(localStorage.getItem('TTTHH-CART-KEY')) ?? [];
-    if (compareProductList.hasProduct(product)) {
-        compareProductList = compareProductList.map(item => {
-            if (item.name === product.name && item.price === product.price)
-                return {...item, number: item.number+1};
-            return item;
-        });
-    } else {
-        compareProductList.push({...product, number: 1});
-    }
-    const numberProduct = compareProductList.reduce((prev, element) => prev + element.number, 0);
-    $('.header__user-menu__item__number').html(numberProduct);
-    localStorage.setItem('TTTHH-CART-KEY', JSON.stringify(compareProductList));
-}
-
 categoryIcons.click(function() {
     $(this).toggleClass('active');
 
@@ -622,32 +579,31 @@ const getHTMLContentProductList = (productList, filters) => {
     updateNumberContentProduct(products);
     $('.content-product__pagination__btn-nav')[products.length <= 9 ? 'addClass' : 'removeClass']('hidden');
 
-    const compareProductList = JSON.parse(localStorage.getItem('TTTHH-COMPARE-KEY')) ?? [];
-    
-    Array.prototype.hasProduct = function(product) {
-        return this.find(item => item.name === product.name && item.price === product.price);
-    }
-
     return `
         <div class="row no-gutters">
             ${products.map((product, index) => index < 9*(i-1) || index >= 9*i ? '' : `
-                <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
-                    <div class="content-product__item pb-md-3 position-relative d-flex flex-column">
-                        <div class="content-product__item__img order-1">
+                <div class="col col-xl-4 col-lg-4">
+                    <div class="content-product__item">
+                        <div class="content-product__item__img">
                             <a href="">
                                 <img class="img-cover" src="./IMG/${product.image}" alt="">
                                 <img class="img-cover hover" src="./IMG/${product.imageHover}" alt="">
-                                <ul class="product-flags d-flex flex-wrap list-unstyled">
+                                <ul class="product-flags d-flex list-unstyled">
                                     ${product.productFlags.map(productFlag => {
                                         let res = productFlag.toLowerCase().split(' ').join('-');
                                         return `
-                                            <li class="product-flag mb-1 ${res}">${productFlag}</li>
+                                            <li class="product-flag ${res}">${productFlag}</li>
                                         `;
                                     }).join('')}
                                 </ul>
                             </a>
+                            <ul class="function-buttons list-unstyled">
+                                <li onclick='showModalProduct(${JSON.stringify(product)})' style="--i: 0;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-expand-arrows-alt"></i></a></li>
+                                <li onclick="" style="--i: 1;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-redo"></i></a></li>
+                                <li onclick="" style="--i: 2;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-shopping-cart"></i></a></li>
+                            </ul>
                         </div>
-                        <div class="content-product__item__info order-3">
+                        <div class="content-product__item__info">
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -659,16 +615,11 @@ const getHTMLContentProductList = (productList, filters) => {
                                 <a href="">${product.name.replace('$$', '\'')}</a>
                             </h4>
                             <p class="content-product__item__info__price">
-                                <span class="mx-0 old-price ${product.discount || 'hidden'}">$${product.price.toFixed(2)}</span>
+                                <span class="old-price ${product.discount || 'hidden'}">$${product.price.toFixed(2)}</span>
                                 <span class="discount ${product.discount || 'hidden'}">(-${product.discount}%)</span>
                                 <span class="price">$${getPriceProduct(product).toFixed(2)}</span>
                             </p>
                         </div>
-                        <ul class="function-buttons list-unstyled order-2 mt-3-md mb-0-md">
-                            <li class="hidden-sm" onclick='showModalProduct(${JSON.stringify(product)})' style="--i: 0;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-expand-arrows-alt"></i></a></li>
-                            <li class="${compareProductList.hasProduct(product) && 'active'}" onclick='handlerClickCompare(this, ${JSON.stringify(product)}, "#modal-tost", "The product has been added to list compare. <a href=${`/ProductsCompare.html`}>View list compare.</a>")' style="--i: 1;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-redo"></i></a></li>
-                            <li onclick='handlerClickCart(this, ${JSON.stringify(product)}, "#modal-tost", "${product.name} Product successfully added to your shopping cart. <a href=${`/Cart.html`}>View cart.</a>")' style="--i: 2;"><a class="d-flex align-items-center justify-content-center"><i class="fas fa-shopping-cart"></i></a></li>
-                        </ul>
                     </div>
                 </div>
             `).join('')}
@@ -755,41 +706,23 @@ contentProductFilterIconItem.click(function(e) {
 
     if ($('.content-product__filter__icon__item--list').hasClass('active')) {
         $('.content-product__list > .row > div').removeClass();
-        $('.content-product__list > .row > div').addClass('col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12');
+        $('.content-product__list > .row > div').addClass('col col-xl-12 col-lg-12');
         containerItem.addClass('row');  
-        containerItem.removeClass('flex-column');  
         [...childrenElement].forEach((element, index) => {
-            if (index % 3 === 0) {
-                $(element).removeClass('order-1');
-                $(element).addClass(' col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-0');
-            }
-            else if (index % 3 === 1) {
-                $(element).removeClass('order-3');
-                $(element).addClass(' col col-xl-8 col-lg-8 col-md-6 col-sm-6 col-6');
-            }
-            else {
-                $(element).removeClass('order-2');
-                $(element).addClass('col-12');
-            }
+            if (index % 2 === 0)
+                $(element).addClass('col col-xl-4 col-lg-4 mb-0');
+            else
+                $(element).addClass('col col-xl-8 col-lg-8');
         });
     } else {
         $('.content-product__list > .row > div').removeClass();
-        $('.content-product__list > .row > div').addClass('col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6');
+        $('.content-product__list > .row > div').addClass('col col-xl-4 col-lg-4');
         containerItem.removeClass('row');  
-        containerItem.addClass('flex-column'); 
         [...childrenElement].forEach((element, index) => {
-            if (index % 3 === 0) {
-                $(element).addClass('order-1');
-                $(element).removeClass('col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 mb-0');
-            }
-            else if (index % 3 === 1) {
-                $(element).addClass('order-3');
-                $(element).removeClass('col col-xl-8 col-lg-8 col-md-6 col-sm-6 col-6');
-            }
-            else {
-                $(element).addClass('order-2');
-                $(element).removeClass('col-12');
-            }
+            if (index % 2 === 0)
+                $(element).removeClass('col col-xl-4 col-lg-4 mb-0');
+            else
+                $(element).removeClass('col col-xl-8 col-lg-8');
         });
     }
 })
@@ -960,23 +893,5 @@ $('.category__primary__body .clear-all span').click(()=> {
 // * Start Content Product Function Button
 
 // * End Content Product Function Button
-
-// * Start Show/Hidden Filter Product Small
-
-$('.btn--filter').click(() => {
-    $('.col--filter').removeClass('hidden-sm');
-    $('.col--product').addClass('hidden-sm');
-    scrollToElement($('.col--filter')[0], 'start');
-});
-
-$('.btn-close--filter').click(() => {
-    $('.col--filter').addClass('hidden-sm');
-    $('.col--product').removeClass('hidden-sm');
-    scrollToElement($('.content-product__filter')[0], 'start');
-})
-
-// $('.category__list').animateAuto('height', 200);
-
-// * End Show/Hidden Filter Product Small
 
 scrollToElement($('main')[0], 'start');

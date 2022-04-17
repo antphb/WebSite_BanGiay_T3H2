@@ -250,12 +250,19 @@ body {
 
 /* Medium */
 @media (max-width: 991px) {
+    .container {
+        max-width: calc(100% - 30px);
+    }
 }
 
 /* Small */
 @media (max-width: 768px) {
     .hidden-sm {
-        display: none;
+        display: none !important;
+    }
+
+    .show-sm {
+        display: block !important;
     }
 
     .sitemap__container {
@@ -282,5 +289,7 @@ body {
 
 /* Extra small */
 @media (max-width: 575px) {
-    
+    .hidden-es {
+        display: none;
+    }
 }

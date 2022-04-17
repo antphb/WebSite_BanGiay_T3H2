@@ -476,7 +476,7 @@ ul.header__user-menu__item__option__list{
 
 .header__navbar__item__submenu__item__women-product__title h5:hover,
 .header__navbar__item__submenu__item__product__info :is(a:hover, a:hover h6),
-.header__navbar__item:hover .header__navbar__link,
+.header__navbar__item:is(:hover, .active) .header__navbar__link,
 .header__navbar__item__submenu__item__category :is(a:hover, a:hover h5, ul li a:hover) {
     text-decoration: none;
     color: var(--blue-color);

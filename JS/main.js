@@ -184,11 +184,12 @@ headerNavbarContainer.click(e => e.stopPropagation());
             Hello ${infoUser['first-name']} ${infoUser['last-name']}
         `);
     } else {
-        loginLinkElement.attr('href', './Login.html');
+        loginLinkElement.attr('href', './Login.html?href=MyAccount');
     }
 
     logoutBtn.click(e => {
         localStorage.setItem('user-ttthh-info', JSON.stringify({}));
+        window.location = '/Login.html';
     })
 })();
 

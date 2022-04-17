@@ -133,7 +133,14 @@
 
                 if (getUser) {
                     localStorage.setItem('user-ttthh-info', JSON.stringify(getUser))
-                    window.location = '/';
+                    var url_string = window.location.href;
+                    var url = new URL(url_string);
+                    var href = url.searchParams.get("href");
+                    if (href) {
+                        window.location = `/${href}.html`;
+                    } else {
+                        history.back();
+                    }
                 } else {
                     msgLogin.classList.add('invalid');
                     msgLogin.querySelector('.form-messenger').innerHTML = 

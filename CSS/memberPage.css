@@ -6,7 +6,6 @@ section{
     padding: 3.2em;
 }
 .card{
-   
     position: relative;
     margin: 0 auto;
     transform: translateX(0);
@@ -16,7 +15,10 @@ section{
     transform-style: preserve-3d;
     transform: perspective(1000px);
     box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
-    
+    transition: 0.5s;
+}
+.card:hover{
+    transform: translateX(50%);
 }
 .imgBox{
     position: relative;
@@ -28,24 +30,18 @@ section{
     z-index: 1;
     transition: 0.5s;
 }
-.card:hover{
-   
-    transition: 0.5s;
-    transform: translateX(50%);
-
-}
 .card:hover > .imgBox{
     transform: rotateY(-180deg);
 }
 .imgBox> img{
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
-   transform-style: preserve-3d;
-   backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
 
 }
 .imgBox> img:nth-child(2){

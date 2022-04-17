@@ -1,5 +1,11 @@
 const header = document.querySelector('header');
 
+const cartProductList = JSON.parse(localStorage.getItem('TTTHH-CART-KEY')) ?? [];
+const numberProduct = cartProductList.reduce((prev, element) => prev + element.number, 0);
+
+const compareProductList = JSON.parse(localStorage.getItem('TTTHH-COMPARE-KEY')) ?? [];
+const numberOfComponents = compareProductList.length;
+
 header.classList.add('header');
 header.innerHTML = `
     <div class="header__user-menu-box">
@@ -108,7 +114,7 @@ header.innerHTML = `
                                 <li class="header__user-menu__item__options__item">
                                     <a href="../ProductsCompare.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
                                         <i class="aaaa fas fa-redo"></i>
-                                    Compare (0)
+                                    Compare (<span class="header__user-menu__item__options__item--compare">${numberOfComponents}</span>)
                                     </a>
                                 </li>
                                 <li class="header__user-menu__item__options__item">
@@ -140,7 +146,7 @@ header.innerHTML = `
 
                     <div class="header__user-menu__item header__user-menu__item--cart">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="header__user-menu__item__number">0</span>    
+                        <span class="header__user-menu__item__number">${numberProduct}</span>    
                     </div>
                 </div>
             </div>
@@ -164,11 +170,11 @@ header.innerHTML = `
                         </div>
 
                         <ul class="header__navbar__list full-width header__navbar__list--left">
-                            <li class="header__navbar__item full-width">
+                            <li class="header__navbar__item header__navbar__item--home full-width">
                                 <a href="index.html" class="header__navbar__link">Home</a>
                             </li>
-                            <li class="header__navbar__item full-width header__navbar__item--no-position">
-                                <a href="" class="header__navbar__link">
+                            <li class="header__navbar__item header__navbar__item--men full-width header__navbar__item--no-position">
+                                <a href="MenSportsShoes.html" class="header__navbar__link">
                                     Men
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--hot">Hot</span>
