@@ -153,7 +153,7 @@ header.innerHTML = `
         </div>
         </div>
         <nav class="header__navbar">
-        <a href="/" class="header__logo">
+        <a href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? 'https://antphb.github.io/WebSite_BanGiay_T3H2/' : '/'}" class="header__logo">
             <img class="img-cover" src="./IMG/logo.jpg" alt="">
         </a>
 
