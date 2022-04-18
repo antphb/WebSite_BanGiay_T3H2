@@ -212,7 +212,7 @@ headerNavbarContainer.click(e => e.stopPropagation());
                     ${
                         list.map((item, index) => `
                             <div class="sitemap__item">
-                                <a href="${linkList[index] === '?' ? '' : linkList[index]}" class="sitemap__link">
+                                <a href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : ''}${linkList[index] === '?' ? '' : linkList[index]}" class="sitemap__link">
                                     ${item}
                                 </a>
                             </div>

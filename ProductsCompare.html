@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TTTHH</title>
+        <title>Product Comparison</title>
         <link rel="stylesheet" href="./FONT/fontawesome-free-5.15.4-web/css/all.min.css">
         <link rel="stylesheet" href="./UTIL/bootstrap-4.6.1-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="./CSS/base.css">
@@ -17,26 +17,22 @@
         <link rel="stylesheet" href="./CSS/resp_productsCompare.css">
     </head>
     <body>
-        <main class="app">
+        <div class="loading">
+            <div class="boxLoading"></div>
+        </div>
+
+        <main class="app hidden">
             <header></header>
 
             <section>
-                <nav class="sitemap" data-sitemap-item="Home, Products Comparison">
+                <nav class="sitemap" data-sitemap-item="Home, Products Comparison" data-sitemap-link="/, ?">
                 </nav>
                 <div class="content">
                     <div class="container">
                         <h1 class="content__title">
                             Products Comparison
                         </h1>
-                        <!-- content__no-item -->
                         <div class="content__list">
-                            <div class="content__no-item">
-                                <span class="content__no-item__icon">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </span>
-                                There are no products selected for comparison.
-                            </div>
-                            
                         </div>
                         <a href="" class="content__link btn">
                             <i class="fas fa-arrow-left"></i>
@@ -54,11 +50,26 @@
 
             <div class="modal__overlay"></div>
         </main>
+        
+        <div class="modal fade" id="modal-tost" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <h3 class="mb-0 text-center"></h3>
+                        <button class="btn close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <script src="./JS/Header.js"></script>
         <script src="./JS/Footer.js"></script>
         <script src="./UTIL/jQuery/jQuery.js"></script>
         <script src="./UTIL/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
         <script src="./JS/main.js"></script>
+        <script src="./JS/Modal.js"></script>
+        <script src="./JS/ProductsCompare.js"></script>
     </body>
 </html>

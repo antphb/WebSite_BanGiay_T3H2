@@ -438,7 +438,7 @@ function handleSportsShoes(contentProductList) {
                     <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
                         <div class="content-product__item pb-md-3 position-relative d-flex flex-column no-gutters">
                             <div class="content-product__item__img order-1">
-                                <a href="/ProductDetaildPage.html?product=${product.slug}">
+                                <a href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : ''}/ProductDetaildPage.html?product=${product.slug}">
                                     <img class="img-cover" src="./IMG/${product.image}" alt="">
                                     <img class="img-cover hover" src="./IMG/${product.imageHover}" alt="">
                                     <ul class="product-flags d-flex flex-wrap list-unstyled">
@@ -460,7 +460,7 @@ function handleSportsShoes(contentProductList) {
                                     <i class="fas fa-star"></i>
                                 </div>
                                 <h4 class="content-product__item__info__name">
-                                    <a href="/ProductDetaildPage.html?product=${product.slug}">${product.name.replace('$$', '\'')}</a>
+                                    <a href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : ''}/ProductDetaildPage.html?product=${product.slug}">${product.name.replace('$$', '\'')}</a>
                                 </h4>
                                 <p class="content-product__item__info__price">
                                     <span class="mx-0 old-price ${product.discount || 'hidden'}">$${product.price.toFixed(2)}</span>
