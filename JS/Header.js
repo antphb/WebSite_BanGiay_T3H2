@@ -145,8 +145,9 @@ header.innerHTML = `
                     <div class="col-line"></div>
 
                     <div class="header__user-menu__item header__user-menu__item--cart">
-                        <i class="fas fa-shopping-cart"></i>
+                        <a href="cartPage.html"> <i class="fas fa-shopping-cart"></i>
                         <span class="header__user-menu__item__number">${numberProduct}</span>    
+                        </a>
                     </div>
                 </div>
             </div>

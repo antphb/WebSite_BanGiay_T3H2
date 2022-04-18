@@ -1,0 +1,200 @@
+
+section > .container{
+    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
+}
+.container > .content__box{
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+.row.no-gutters > .shopping__cart,
+.row.no-gutters > .infomation__detail{
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+.shopping__cart__child, .infomation__detail__box{
+    border: 1px solid #ccc;
+    
+}
+.shopping__cart__content{
+    font-size: 2.2rem;
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0.8em;
+}
+.shopping__cart__child > .row{
+   
+}
+.shopping__cart__child > .row > div{
+   padding: 3em 1.5em;
+
+}
+.shopping__cart__product-img{
+    object-fit: cover;
+    width: 100%;
+}
+.shopping__cart__product-name{
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #414141;
+}
+.shopping__cart__old-price {
+    text-decoration: line-through;
+    color: #acaaa6;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+}
+.shopping__cart__old-price > .shopping__cart__percent-sales{
+    text-decoration: unset;
+}
+.shopping__cart__percent-sales{
+    font-size: 1.2rem;
+    color: #acaaa6;
+}
+.shopping__cart__new-price{
+    color: #2a61d2;
+    font-size: 2rem;
+}
+.shopping__cart__old{
+    margin-bottom: 0rem;
+}
+.shopping__cart__option{
+    color: #000;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.shopping__cart__size-type, .shopping__cart__color-type{
+    color: #555;
+    font-weight: 333;
+}
+.box__input-quantity{
+    display: flex;
+
+}
+#shopping__cart__quantity-product{
+    font-size: 1.4rem;
+    width: 45px;
+    outline: none;
+    height: 40px;
+    border: none;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0.6em;
+}
+.group__control__quantity{
+    display: flex;
+    flex-direction: column;
+}
+.group__control__quantity > button{
+    flex: 1;
+    width: 25px;
+    border: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.group__control__quantity > button>i{
+    color: #000;
+}
+.group__control__quantity > button:hover {
+   
+    background-color: #f4f4f4;
+
+}
+.group__control__quantity > button:hover> i{
+    color: #2a61d2;
+}
+.shopping__cart__product__price-total{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+.shopping__cart__remove__product{
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shopping__cart__remove__product > i{
+    font-size: 1.8rem;
+    
+}
+.shopping__cart__remove__product:hover > i{
+    color: var(--red-color);
+    transition: 0.3s;
+}
+.goto__shopping-btn{
+    background-color: #2a61d2;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 1.2rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 0.4em 1.2em;
+    border-radius: 2px;
+}
+.goto__shopping-btn:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #306de9;
+    transition: .3s;
+}
+.group__need__border-bottom{
+    padding: 1.5em;
+    border-bottom: 1px solid #ccc;
+
+}
+.group__need_padding{
+    padding: 1.5em;
+}
+.group__need_border-bottom__flex > span{
+    font-size: 1.4rem;
+
+}
+.group__need_border-bottom__flex{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+.goto__checkout__box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.goto__checkout{
+    display: inline-block;
+    color: #fff;
+    background-color: #2a61d2;
+    font-size: 1.4rem;
+    padding: 0.4em 1.2em;
+    border-radius: 2px;
+
+
+}
+.goto__checkout:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #306de9;
+    transition: .3s;
+    
+}
+.infomation__detail__box__policy{
+    margin-top: 3rem;
+
+}
+.infomation__detail__list__policy{
+    list-style: none;
+
+}
+.infomation__detail__item__policy{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    display: flex;
+    
+}
+.infomation__detail__item__policy > i{
+    font-size: 2.8rem;
+    margin-right: 1.8rem;
+}

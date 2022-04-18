@@ -587,7 +587,9 @@ ul.header__user-menu__item__option__list{
     -o-transition: 0.25s;
     transition: 0.25s;
 }
-
+.header__user-menu__item--cart > a{
+    color: #fff;
+}
 /* End Submenu Women */
 
 /* End navbar */
