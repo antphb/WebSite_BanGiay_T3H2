@@ -12,6 +12,7 @@ const submenuFooterBtn = $('.footer__navbar__title');
 const listMenuHeader =  Array.from(document.querySelectorAll('.header__user-menu__item'));
 const elementsUserMenuOptionsList = Array.from($(".header__user-menu__item__options__item"));
 const sitemap = document.querySelector('.sitemap');
+let isGitHub = window.location.href.includes('WebSite_BanGiay_T3H2');
 
 // * Start Handler Show/Hidden Back to to btn
 
