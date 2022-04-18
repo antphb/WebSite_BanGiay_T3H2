@@ -137,6 +137,7 @@
 .form-register-product__list-item{
     cursor: pointer;
 }
+.form-register-product__list__item__link.active .form-register-product__list-img,
 .form-register-product__list-img:hover{
     opacity: 1;
     transition: .3s;

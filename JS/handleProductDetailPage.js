@@ -1,4 +1,4 @@
-var url_string = window.location.href; //window.location.href
+var url_string = window.location.href;
 var url = new URL(url_string);
 var productSlug = url.searchParams.get("product");
 
@@ -8,7 +8,7 @@ fetch('https://json-server-web-giay-btl.herokuapp.com/list-products')
     .then(data => data.json())
     .then(products => {
         const product = products.find(product => product.slug === productSlug);
-        console.log(product);
+
         $('section').html(`
             <div class="site__map">
                 <p><a href="index.html" class="site__map-home">HOME</a> <span> > </span>
@@ -24,16 +24,15 @@ fetch('https://json-server-web-giay-btl.herokuapp.com/list-products')
                             `).join('')}
                         </div>
                         <div class="form-register-product__image__product-main">
-                            <img id="zoom-id" src="IMG/${product.listImage[0]}" data-zoom-image="IMG/${product.listImage[0]}" alt="anh 1" class="form-register-product__image__product__item">
-                            
+                            <img id="zoom-id" src="IMG/${product.imageZoom[0]}" data-zoom-image="IMG/${product.imageZoom[0]}" alt="anh 1" class="form-register-product__image__product__item">
                         </div>
                         <div class="form-register-product-left__tool-zoom"> <i class="fas fa-search-plus"></i></div>
                     </div>
                     
                     <div class="form-register-product__list" id="thumb-image">
-                        ${product.listImage.map((itemImage, index) => `
+                        ${product.imageZoom.map((itemImage, index) => `
                             <div class="form-register-product__list-item">
-                                <a class="form-register-product__list__item__link" href="#" data-image="IMG/${itemImage}" data-zoom-image="IMG/${itemImage}">
+                                <a class="form-register-product__list__item__link ${index === 0 && 'active'}" href="#" data-image="IMG/${itemImage}" data-zoom-image="IMG/${itemImage}">
                                     <img src="IMG/${itemImage}" alt="anh ${index+1}" class="form-register-product__list-img">
                                 </a>
                             </div>
@@ -76,7 +75,7 @@ fetch('https://json-server-web-giay-btl.herokuapp.com/list-products')
                             ${product.color.map((color, index) => `
                                 <label for="choose-color-${index+1}" class="form-register-product-right__option__color-list__box">
                                     <input type="radio" value="${color}" name="product-color" id="choose-color-${index+1}" class="form-register-product-right__option__choose-color" ${index === 0 && 'checked'}>
-                                    <span class="color-1" style="--color: ${color};"></span>
+                                    <span class="color-${index+1}" style="--color: ${color};"></span>
                                 </label>
                             `).join('')}
                         </div>
@@ -92,9 +91,8 @@ fetch('https://json-server-web-giay-btl.herokuapp.com/list-products')
                     </div>
                     <div class="row form-register-product-right__group-btn">
                         <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 form-register-product-right__add-cart btn">ADD TO CART</div>
-                        <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 form-register-product-right__add-wist-list btn"><i class="fas fa-heart"></i>Add to Wishlist</div>
-                        <div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 form-register-product-right__add-compare btn"><i class="fas fa-redo-alt"></i>Add to Compare</div>
-                        <div class="col col-xl-3 col-lg-3 col-md-5 col-sm-5 col-5 form-register-product-right__in-stock btn"><i class="fa-solid fa-check"></i>In stock</div>
+                        <div onclick='handlerClickCompare(this, ${JSON.stringify(product)}, "#modal-tost", "The product has been added to list compare. <a href=${`/ProductsCompare.html`}>View list compare.</a>")' class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 form-register-product-right__add-compare btn ${compareProductList.hasProduct(product) && 'is-added'}"><i class="fas fa-redo-alt"></i>Add to Compare</div>
+                        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-register-product-right__in-stock btn"><i class="fa-solid fa-check"></i>In stock</div>
                     </div>  
                     <div class="form-register-product-right__service">
                         <ul class="form-register-product-right__service__list">

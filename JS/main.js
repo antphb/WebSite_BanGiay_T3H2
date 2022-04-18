@@ -237,3 +237,7 @@ headerNavbarContainer.click(e => e.stopPropagation());
 const scrollToElement = (element, block) => element.scrollIntoView({behavior: 'smooth', block});
 
 // * End To Element
+
+Array.prototype.hasProduct = function (product) {
+    return this.some(item => item.slug === product.slug);
+}
