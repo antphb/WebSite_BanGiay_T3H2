@@ -18,7 +18,11 @@
         <link rel="stylesheet" href="./CSS/resp_style.css">
     </head>
     <body>
-        <main class="app">
+        <div class="loading">
+            <div class="boxLoading"></div>
+        </div>
+
+        <main class="app hidden">
             <header></header>
 
             <section>
@@ -177,6 +181,11 @@
         <script src="./JS/main.js"></script>
         <script>
             $('.header__navbar__item--home').addClass('active');
+
+            setTimeout(() => {
+                $('.app').removeClass('hidden');
+                $('.loading').addClass('hidden');
+            }, 2000)
         </script>
     </body>
 </html>

@@ -162,7 +162,7 @@
             
             registerForm.onSubmit = data => {
                 localStorage.setItem(USERS_TTTHH_KEY, JSON.stringify([...userList, data]));
-                window.location = '/Login.html';
+                window.location = `${window.location.href.includes('WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : ''}/Login.html`;
             };
         </script>
     </body>
