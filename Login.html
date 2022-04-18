@@ -140,6 +140,7 @@
                         window.location = `/${href}.html`;
                     } else {
                         history.back();
+                        window.reload();
                     }
                 } else {
                     msgLogin.classList.add('invalid');
