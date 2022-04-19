@@ -10,7 +10,6 @@ input[type=number] {
 }
 
 .sitemap {
-  background: url(../IMG/BreadcrumbBackground.jpg);
   background-position: center center;
   background-size: cover;
 }

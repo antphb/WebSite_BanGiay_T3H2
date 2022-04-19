@@ -106,19 +106,13 @@ header.innerHTML = `
                                     My Account</a>
                                 </li>
                                 <li class="header__user-menu__item__options__item">
-                                    <a href="#" class="login-link header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
-                                        <i class="fas fa-heart"></i>
-                                    Wishlist (0)
-                                    </a>
-                                </li>
-                                <li class="header__user-menu__item__options__item">
                                     <a href="./ProductsCompare.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
                                         <i class="aaaa fas fa-redo"></i>
                                     Compare (<span class="header__user-menu__item__options__item--compare">${numberOfComponents}</span>)
                                     </a>
                                 </li>
                                 <li class="header__user-menu__item__options__item">
-                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                    <a href="/cartPage.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
                                     <i class="fas fa-shopping-cart"></i>
                                     Checkout
                                     </a>
@@ -175,7 +169,7 @@ header.innerHTML = `
                                 <a href="index.html" class="header__navbar__link">Home</a>
                             </li>
                             <li class="header__navbar__item header__navbar__item--men full-width header__navbar__item--no-position">
-                                <a href="SportsShoes.html" class="header__navbar__link">
+                                <a href="SportsShoes.html?page=men" class="header__navbar__link">
                                     Men
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--hot">Hot</span>
@@ -317,8 +311,8 @@ header.innerHTML = `
                                     </div>
                                 </div>
                             </li>
-                            <li class="header__navbar__item full-width header__navbar__item--no-position">
-                                <a href="" class="header__navbar__link">
+                            <li class="header__navbar__item header__navbar__item--women full-width header__navbar__item--no-position">
+                                <a href="/SportsShoes.html?page=women" class="header__navbar__link">
                                     Women
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--sale">Sale</span>
@@ -426,13 +420,13 @@ header.innerHTML = `
                         </ul>
 
                         <ul class="header__navbar__list full-width header__navbar__list--right">
-                            <li class="header__navbar__item full-width">
+                            <li class="header__navbar__item header__navbar__item--member full-width">
                                 <a href="./MemberPage.html" class="header__navbar__link">
-                                    Thành Viên
+                                    Member
                                 </a>
                             </li>
-                            <li class="header__navbar__item full-width">
-                                <a href="" class="header__navbar__link">
+                            <li class="header__navbar__item header__navbar__item--product full-width">
+                                <a href="/SportsShoes.html" class="header__navbar__link">
                                     Product
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__link__icon-mobile show-medium">
@@ -473,7 +467,7 @@ header.innerHTML = `
                                     </li>
                                 </ul>
                             </li>
-                            <li class="header__navbar__item full-width">
+                            <li class="header__navbar__item header__navbar__item--contact full-width">
                                 <a href="./ContactPage.html" class="header__navbar__link">
                                     Contact
                                 </a>

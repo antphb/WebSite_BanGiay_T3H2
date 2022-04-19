@@ -1,14 +1,108 @@
-fetch('https://json-server-web-giay-btl.herokuapp.com/list-products')
-    .then(data => data.json())
-    .then(data => {
-        handleSportsShoes(data);
+(() => {
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var page = url.searchParams.get("page");
+
+    const jsUcfirst = string => string.charAt(0).toUpperCase() + string.slice(1);
+
+    let listProduct = 'list-products';
+    let sitemap = 'sitemap';
+    let introduce = 'introduce';
+    let category = 'category';
+    let filter = 'filter';
+    let active = '.header__navbar__item--';
+
+    if (page) {
+        document.title = jsUcfirst(page);
+        listProduct += `-${page}`;
+        sitemap += `-${page}`;
+        introduce += `-${page}`;
+        category += `-${page}`;
+        filter += `-${page}`;
+        active += page;
+    } else {
+        active += 'product';
+    }
+
+    const urls = [listProduct, sitemap, introduce, category, filter];
+
+    const getHTMLIntroduce = products => `
+        <div class="row">
+            ${products.map(product => `
+                <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <li class="product-introduction__item">
+                        <div title="Women" class="product-introduction__img">
+                            <a href="">
+                                <img class="img-cover" src="./IMG/${product.image}" alt="${product.title}">
+                            </a>
+                        </div>
+                        <h4 class="product-introduction__name">
+                            <a href="">${product.title}</a>
+                        </h4>
+                        <p class="product-introduction__description">${product.description}</p>
+                    </li>
+                </div>
+            `).join("")}
+        </div>
+    `;
+
+    const getHTMLCategoryDanger = category => `
+        <div class="category__title">
+            <a href="">${category.title.toUpperCase()}</a>
+        </div>
+        <ul class="category__list">
+            ${category['category-list'].map(categoryItem => `
+                <li class="category__item">
+                    <a href="${categoryItem.link || ''}" class="category__link">${categoryItem.title} (<span>${categoryItem.number}</span>)</a>
+                    <div class="category__icon ${categoryItem.submenu || 'hidden'}">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <ul class="category__submenu">
+                        ${categoryItem.submenu ? categoryItem.submenu.map(subItem => `
+                            <li class="category__subitem">
+                                <span class="category__subicon">
+                                    <i class="fas fa-chevron-right"></i>
+                                </span>
+                                <a href="" class="category__sublink">${subItem.title} (<span>${subItem.number}</span>)</a>
+                            </li>
+                        `).join('') : ''}
+                    </ul>
+                </li>
+            `).join('')}
+        </ul>
+    `;
+
+    Promise.all(urls.map(u=>fetch(`https://json-server-web-giay-btl.herokuapp.com/${u}`))).then(responses =>
+        Promise.all(responses.map(res => res.text()))
+    ).then(texts => {
+        texts[1] = JSON.parse(texts[1]);
+        $('section').prepend(`
+            <nav class="sitemap" style="background: url(${texts[1].background});" data-sitemap-item="${texts[1].item.join(', ')}" data-sitemap-link="${texts[1].link.join(', ')}" data-sitemap-title="${texts[1].title}"></nav>
+        `)
+        Sitemap();
+
+        const introduction = JSON.parse(texts[2]);
+        $('.content .introduce').html(introduction.description);
+        if (introduction['list-products'])
+            $('.product-introduction').html(getHTMLIntroduce(introduction['list-products']));
+
+        const categoryDanger = JSON.parse(texts[3]);
+        if (categoryDanger.title)
+            $('.category__danger').html(getHTMLCategoryDanger(categoryDanger));
+
+        const {Categories, Sizes, Color, Compositions, Styles, Properties, Prices} = JSON.parse(texts[4]);
+
+        handleSportsShoes(JSON.parse(texts[0]), Categories, Sizes, Color, Compositions, Styles, Properties, Prices);
+        $(active)?.addClass('active');
         $('.loading').addClass('hidden');
         $('.app').removeClass('hidden');
     });
 
+})();
+
 const getPriceProduct = product => product.discount ? product.price * (100 - product.discount) / 100 : product.price;
 
-function handleSportsShoes(contentProductList) {
+function handleSportsShoes(contentProductList, Categories, Sizes, Color, Compositions, Styles, Properties, Prices) {
     const categoryIcons = $('.category__icon');
     const categoryPrimaryBody = $('.category__primary__body');
     const categoryProductOnSale = $('.category__product__body--on-sale');
@@ -66,195 +160,15 @@ function handleSportsShoes(contentProductList) {
         `;
     }
 
-    const Categories = [{
-            name: 'Women',
-            number: 8
-        },
-        {
-            name: 'Men',
-            number: 10
-        },
-        {
-            name: 'Couple',
-            number: 5
-        },
-    ];
-
-    const Sizes = [{
-            name: 'S',
-            number: 8
-        },
-        {
-            name: 'M',
-            number: 12
-        },
-        {
-            name: 'L',
-            number: 12
-        },
-    ];
-
-    const Color = [{
-            name: 'Grey',
-            number: 2
-        },
-        {
-            name: 'Beige',
-            number: 2
-        },
-        {
-            name: 'White',
-            number: 2
-        },
-        {
-            name: 'Red',
-            number: 2
-        },
-        {
-            name: 'Black',
-            number: 6
-        },
-        {
-            name: 'Orange',
-            number: 4
-        },
-        {
-            name: 'Blue',
-            number: 5
-        },
-        {
-            name: 'Green',
-            number: 2
-        },
-        {
-            name: 'Yellow',
-            number: 3
-        },
-        {
-            name: 'Brown',
-            number: 1
-        },
-        {
-            name: 'Pink',
-            number: 2
-        },
-    ];
-
-    const Compositions = [{
-            name: 'Cotton',
-            number: 5
-        },
-        {
-            name: 'Elastane',
-            number: 1
-        },
-        {
-            name: 'Polyester',
-            number: 2
-        },
-        {
-            name: 'Silk',
-            number: 1
-        },
-        {
-            name: 'Viscose',
-            number: 2
-        },
-    ];
-
-    const Styles = [{
-            name: 'Cottons',
-            number: 5
-        },
-        {
-            name: 'Elastanes',
-            number: 1
-        },
-        {
-            name: 'Polyesters',
-            number: 2
-        },
-        {
-            name: 'Silks',
-            number: 1
-        },
-        {
-            name: 'Viscoses',
-            number: 2
-        },
-    ];
-
-    const Properties = [{
-            name: 'Colorful Dress',
-            number: 1
-        },
-        {
-            name: 'Maxi Dress',
-            number: 1
-        },
-        {
-            name: 'Midi Dress',
-            number: 1
-        },
-        {
-            name: 'Short Dress',
-            number: 2
-        },
-        {
-            name: 'Short Sleeve',
-            number: 2
-        },
-    ];
-
-    const Prices = [{
-            name: '$44.00 - $48.00',
-            number: 2
-        },
-        {
-            name: '$49.00 - $51.00',
-            number: 1
-        },
-        {
-            name: '$56.00 - $59.00',
-            number: 1
-        },
-        {
-            name: '$61.00 - $64.00',
-            number: 1
-        },
-        {
-            name: '$67.00 - $74.00',
-            number: 2
-        },
-        {
-            name: '$88.00 - $92.00',
-            number: 1
-        },
-        {
-            name: '$105.00 - $110.00',
-            number: 1
-        },
-        {
-            name: '$176.00 - $183.00',
-            number: 1
-        },
-        {
-            name: '$261.00 - $271.00',
-            number: 1
-        },
-        {
-            name: '$351.00 - $366.00',
-            number: 1
-        },
-    ];
-
-    categoryPrimaryBody.append(getHTMLCheckbox('Categories', Categories));
-    categoryPrimaryBody.append(getHTMLCheckbox('Size', Sizes));
-    categoryPrimaryBody.append(getHTMLColor('Color', Color));
-    categoryPrimaryBody.append(getHTMLCheckbox('Compositions', Compositions));
-    categoryPrimaryBody.append(getHTMLCheckbox('Styles', Styles));
-    categoryPrimaryBody.append(getHTMLCheckbox('Properties', Properties));
-    categoryPrimaryBody.append(getHTMLCheckbox('Price', Prices));
+    if (Categories) {
+        categoryPrimaryBody.append(getHTMLCheckbox('Categories', Categories));
+        categoryPrimaryBody.append(getHTMLCheckbox('Size', Sizes));
+        categoryPrimaryBody.append(getHTMLColor('Color', Color));
+        categoryPrimaryBody.append(getHTMLCheckbox('Compositions', Compositions));
+        categoryPrimaryBody.append(getHTMLCheckbox('Styles', Styles));
+        categoryPrimaryBody.append(getHTMLCheckbox('Properties', Properties));
+        categoryPrimaryBody.append(getHTMLCheckbox('Price', Prices));
+    }
 
     // * End Add List Checkbox
 

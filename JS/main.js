@@ -11,7 +11,6 @@ const headerNavbarContainer = $('.header__navbar__container');
 const submenuFooterBtn = $('.footer__navbar__title');
 const listMenuHeader =  Array.from(document.querySelectorAll('.header__user-menu__item'));
 const elementsUserMenuOptionsList = Array.from($(".header__user-menu__item__options__item"));
-const sitemap = document.querySelector('.sitemap');
 let isGitHub = window.location.href.includes('WebSite_BanGiay_T3H2');
 
 // * Start Handler Show/Hidden Back to to btn
@@ -195,43 +194,6 @@ headerNavbarContainer.click(e => e.stopPropagation());
 })();
 
 // * End Handler Login/Logout
-
-// * Start Add Sitemap
-
-(() => {
-    if (sitemap) {
-        const list = sitemap.getAttribute('data-sitemap-item').split(', ');
-        const linkList = sitemap.getAttribute('data-sitemap-link').split(', ');
-        const title = sitemap.getAttribute('data-sitemap-title');
-        let sitemapHTML = `
-            <div class="container sitemap__container">
-                <h1 class="sitemap__title hidden-sm ${title ?? 'hidden'}">
-                    ${title}
-                </h1>
-                <div class="sitemap__list">
-                    ${
-                        list.map((item, index) => `
-                            <div class="sitemap__item">
-                                <a href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : ''}${linkList[index] === '?' ? '' : linkList[index]}" class="sitemap__link">
-                                    ${item}
-                                </a>
-                            </div>
-                        `)
-                            .join(`
-                            <div class="sitemap__icon">
-                                <i class="fas fa-angle-right"></i>
-                            </div>
-                        `)
-                    }
-                    
-                </div>
-            </div>
-        `;
-        sitemap.innerHTML = sitemapHTML;
-    }
-})();
-
-// * End Add Sitemap
 
 // * Scroll To Element
 
