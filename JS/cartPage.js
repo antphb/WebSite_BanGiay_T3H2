@@ -1,7 +1,9 @@
 const sectionElement = document.querySelector("section");
 
-let arrDataStorage = JSON.parse(localStorage.getItem("TTTHH-CART-KEY"));
+let arrDataStorage = JSON.parse(localStorage.getItem("TTTHH-CART-KEY")) ?? [];
 console.log(arrDataStorage);
+
+const getPriceProduct = product => product.discount ? product.price * (100 - product.discount) / 100 : product.price;
 
 
 sectionElement.innerHTML = `<div class="container">
@@ -16,8 +18,9 @@ sectionElement.innerHTML = `<div class="container">
                 </div>
                 <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                     <p class="shopping__cart__product-name">${value.name}</p>
-                    <p class="shopping__cart__old"><span class="shopping__cart__old-price">$98.50</span> <span class="shopping__cart__percent-sales">(-10%)</span></p>
-                    <p class="shopping__cart__new-price">$${value.price}</p>
+                    <p class="shopping__cart__old"><span class="shopping__cart__old-price ${value.discount || 'hidden'}">$${value.price.toFixed(2)}</span>
+                    <span class="shopping__cart__percent-sales ${value.discount || 'hidden'}">(-${value.discount}%)</span></p>
+                    <p class="shopping__cart__new-price">$${getPriceProduct(value).toFixed(2)}</p>
                     <p class="shopping__cart__option">Size: <span class="shopping__cart__size-type">${value.size[0]}</span></p>
                     <p class="shopping__cart__option">Color: <span class="shopping__cart__color-type">${value.color[0]}</span></p>
                 </div>
@@ -33,7 +36,7 @@ sectionElement.innerHTML = `<div class="container">
                             </div>
                         </div>
                         <p class="col col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 shopping__cart__product__price-total">
-                            $${value.price*value.number}
+                            $${(getPriceProduct(value)*value.number).toFixed(2)}
                         </p>
                         <p class="col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 shopping__cart__remove__product">
                             <i class="fa-solid fa-trash"></i>
@@ -55,27 +58,24 @@ sectionElement.innerHTML = `<div class="container">
                             return before + after.number;
                         },0)} items</span>
                         <span class="infomation__detail__money-total">$${(arrDataStorage.reduce((before, after)=>{
-                                return before + (after.number*after.price)
-                        }, 0)).toFixed(3)}</span>
+                                return before + ((getPriceProduct(after)*after.number))
+                        }, 0)).toFixed(2)}</span>
                     </div>
                     <div class="group__need_border-bottom__flex">
                         <span>Shipping</span> 
                         <span class="infomation__detail__shipping-price">$0.00</span>
                     </div>
-                   
                 </div>
                 <div class="group__need__border-bottom">
                     <div class="group__need_border-bottom__flex">
                         <span>Total (tax excl.)</span> 
                         <span class="infomation__detail__money-total__andTax">$${arrDataStorage.reduce((before, after)=>{
-                            return before + (after.number*after.price)
-                    }, 0)}</span>
+                            return before + (getPriceProduct(after)*after.number)
+                    }, 0).toFixed(2)}</span>
                     </div>
                     <div class="group__need_border-bottom__flex">
                         <span>Taxes</span> 
-                    <span class="infomation__detail__tax">$${(arrDataStorage.reduce((before, after)=>{
-                        return before + (after.number*after.price)
-                    }, 0) * 0.1).toFixed(3)}</span>
+                    <span class="infomation__detail__tax">$${(0).toFixed(2)}</span>
                     </div>  
                 </div>
                 <div class="group__need_padding goto__checkout__box">
@@ -138,7 +138,7 @@ function handleUpDownQty(elem, number){
         arrDataStorage.forEach((elem, index) =>{
             if (elem.name === nameProduct){
                 elem.number = elemInputQty.value-0;
-                elemTotalPriceOfProduct.innerHTML = `$${(elem.number*elem.price).toFixed(3)}`;
+                elemTotalPriceOfProduct.innerHTML = `$${(getPriceProduct(elem)*elem.number).toFixed(2)}`;
             }
         })
         localStorage.setItem("TTTHH-CART-KEY", JSON.stringify(arrDataStorage));
@@ -154,8 +154,8 @@ function re_render_detailProduct(){
                     return before + after.number;
                 },0)} items</span>
                 <span class="infomation__detail__money-total">$${(arrDataStorage.reduce((before, after)=>{
-                        return before + (after.number*after.price)
-                }, 0)).toFixed(3)}</span>
+                        return before + (getPriceProduct(after)*after.number)
+                }, 0)).toFixed(2)}</span>
             </div>
             <div class="group__need_border-bottom__flex">
                 <span>Shipping</span> 
@@ -167,14 +167,12 @@ function re_render_detailProduct(){
             <div class="group__need_border-bottom__flex">
                 <span>Total (tax excl.)</span> 
                 <span class="infomation__detail__money-total__andTax">$${(arrDataStorage.reduce((before, after)=>{
-                    return before + (after.number*after.price)
-            }, 0)).toFixed(3)}</span>
+                    return before + (getPriceProduct(after)*after.number)
+            }, 0)).toFixed(2)}</span>
             </div>
             <div class="group__need_border-bottom__flex">
                 <span>Taxes</span> 
-            <span class="infomation__detail__tax">$${(arrDataStorage.reduce((before, after)=>{
-                return before + (after.number*after.price)
-            }, 0) * 0.1).toFixed(3)}</span>
+            <span class="infomation__detail__tax">$${(0).toFixed(2)}</span>
             </div>  
         </div>
         <div class="group__need_padding goto__checkout__box">
@@ -228,7 +226,7 @@ arrInputQty.forEach((elem, index)=>{
         arrDataStorage.forEach((object) =>{
             if (object.name === nameProduct){
                 object.number = elem.value-0;
-                elemTotalPriceOfProduct.innerHTML = `$${(object.price*object.number).toFixed(3)}`;
+                elemTotalPriceOfProduct.innerHTML = `$${(getPriceProduct(object)*object.number).toFixed(2)}`;
             }
         })
         re_render_detailProduct();

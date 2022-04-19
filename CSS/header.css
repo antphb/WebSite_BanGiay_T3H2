@@ -35,6 +35,10 @@
     position: relative;
 }
 
+.header__user-menu__item a {
+    text-decoration: none;
+}
+
 .header__user-menu__item:first-child {
     border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
