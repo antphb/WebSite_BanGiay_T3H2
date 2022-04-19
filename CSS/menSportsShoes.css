@@ -55,10 +55,10 @@ input[type=number] {
 
 .category__danger .category__list .category__item {
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0;
 }
 
@@ -138,7 +138,7 @@ input[type=number] {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   row-gap: 0.9em;
 }
 
@@ -147,8 +147,8 @@ input[type=number] {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .category__item__color:is(:hover, .active) .category__item__color__checkbox {
@@ -162,7 +162,7 @@ input[type=number] {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.15);
-          box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .category__item__color__checkbox input {
@@ -174,8 +174,8 @@ input[type=number] {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-block: 0.6em;
 }
 
@@ -231,7 +231,7 @@ input[type=number] {
 .category__submenu .category__subitem .category__sublink:hover {
   text-decoration: none;
   -webkit-transform: translateX(8px);
-          transform: translateX(8px);
+  transform: translateX(8px);
 }
 
 .category__submenu .category__subitem:first-child {
@@ -282,8 +282,8 @@ input[type=number] {
 
 .category__product__info {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .rating {
@@ -449,7 +449,7 @@ input[type=number] {
 
 .content-product__filter__sort__by.active .content-product__filter__sort__by__list {
   -webkit-animation: sortListAnimation 0.5s ease forwards;
-          animation: sortListAnimation 0.5s ease forwards;
+  animation: sortListAnimation 0.5s ease forwards;
 }
 
 @-webkit-keyframes sortListAnimation {
@@ -457,7 +457,7 @@ input[type=number] {
     visibility: visible;
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -466,7 +466,7 @@ input[type=number] {
     visibility: visible;
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -478,11 +478,11 @@ input[type=number] {
   visibility: hidden;
   background: #fff;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
-          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.18);
   opacity: 0;
   z-index: 2;
   -webkit-transform: translateY(8px);
-          transform: translateY(8px);
+  transform: translateY(8px);
 }
 
 .content-product__filter__sort__by__list ul {
@@ -583,7 +583,7 @@ input[type=number] {
 .function-buttons li {
   opacity: 0;
   -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  animation-delay: 5s;
 }
 
 .function-buttons li a {
@@ -894,7 +894,7 @@ input[type=number] {
 
 .modal__product__content__footer a:hover {
   -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .modal__product__content__footer .btn--facebook:hover {
@@ -919,7 +919,7 @@ input[type=number] {
   left: 50%;
   max-width: 600px;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 #modal-tost .modal-content {
@@ -951,31 +951,31 @@ input[type=number] {
   top: 50%;
   right: 1.2em;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   padding: 5px;
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 @-webkit-keyframes rotateAnimated {
   0% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes rotateAnimated {
   0% {
     -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -983,12 +983,12 @@ input[type=number] {
   0% {
     opacity: 0;
     -webkit-transform: translateX(calc(3.3em + 45px));
-            transform: translateX(calc(3.3em + 45px));
+    transform: translateX(calc(3.3em + 45px));
   }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
@@ -996,12 +996,12 @@ input[type=number] {
   0% {
     opacity: 0;
     -webkit-transform: translateX(calc(3.3em + 45px));
-            transform: translateX(calc(3.3em + 45px));
+    transform: translateX(calc(3.3em + 45px));
   }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
 }
 
@@ -1012,7 +1012,7 @@ input[type=number] {
   }
   .content-product__item:hover .function-buttons li {
     -webkit-animation: functionButtonAnimated 0.25s calc(var(--i) * 0.1s) ease-in-out forwards;
-            animation: functionButtonAnimated 0.25s calc(var(--i) * 0.1s) ease-in-out forwards;
+    animation: functionButtonAnimated 0.25s calc(var(--i) * 0.1s) ease-in-out forwards;
   }
   .function-buttons {
     top: 3.1em;
@@ -1022,7 +1022,7 @@ input[type=number] {
   }
   .function-buttons li {
     -webkit-transform: translateX(calc(3.3em + 45px));
-            transform: translateX(calc(3.3em + 45px));
+    transform: translateX(calc(3.3em + 45px));
   }
   .function-buttons li a:hover {
     background: var(--white-color);

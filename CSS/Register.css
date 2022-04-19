@@ -1,13 +1,16 @@
-.form-group__item input[type="radio"]+label {
-    font-size: 1.4em;
-    margin-inline: 0.28571em 1.42857em;
-    color: #424242;
+.form-group__item input[type="radio"] + label {
+  font-size: 1.4em;
+  margin-inline: 0.28571em 1.42857em;
+  color: #424242;
 }
 
 .form-group__item--radio {
-    justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .form-group__item--radio input {
-    width: auto;
+  width: auto;
 }
+/*# sourceMappingURL=Register.css.map */
