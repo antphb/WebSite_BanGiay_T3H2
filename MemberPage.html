@@ -258,6 +258,21 @@
     <script src="./UTIL/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
     <script src="JS/main.js"></script>
     <script>
+        const card = document.querySelector('.card');
+        const infoCard = card?.querySelector('.details');
+
+        card.onmouseenter = () => {
+            setTimeOutId = setTimeout(() => {
+                infoCard.style.zIndex = 10;
+            }, 1);
+        }
+
+        card.onmouseleave = () => {
+            setTimeOutId = setTimeout(() => {
+                infoCard.style.zIndex = 0;
+            }, 1);
+        }
+
         $('.header__navbar__item--member').addClass('active');
     </script>
 </body>
