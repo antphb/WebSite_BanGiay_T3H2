@@ -759,7 +759,7 @@ input[type=number] {
     margin-top: 0;
   }
   .sitemap {
-    background: transparent;
+    background: transparent !important;
   }
   .sitemap__title {
     color: var(--black-color);

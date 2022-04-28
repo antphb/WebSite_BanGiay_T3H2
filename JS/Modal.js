@@ -167,7 +167,7 @@ const showModalProduct = productItem => {
                                     <div class="col col-xl-6 col-lg-6">
                                         <div class="modal__product__content__body__item modal__product__content__body__item--left d-flex">
                                             <div class="modal__product__content__body__item__img position-relative flex-grow-1 flex-shrink-1">
-                                                <img class="img-contain" src="./IMG/${product.listImage[0]}" alt="">
+                                                <img class="img-contain" src="./IMG/${product.listImage[0]}" alt="${product.name}">
                                                 <ul class="product-flags d-flex list-unstyled">
                                                     ${product.productFlags.map(productFlag => `
                                                         <li class="product-flag reduced-price">${productFlag.toLowerCase().split(' ').join('-')}</li>
@@ -180,7 +180,7 @@ const showModalProduct = productItem => {
                                                 </button>
                                                 <ul class="list-unstyled mb-0">
                                                     ${product.listImage.map((itemImage, index) => {
-                                                        return `<li class="${index === 0 && 'active'}"><img class="img-contain" src="./IMG/${itemImage}" alt=""></li>`;
+                                                        return `<li class="${index === 0 && 'active'}"><img class="img-contain" src="./IMG/${itemImage}" alt="${product.name}"></li>`;
                                                     }).join('')}
                                                 </ul>
                                                 <button class="modal__product__content__body__item__list__btn ${product.listImage.length <= 4 && 'hidden'} d-flex align-items-center justify-content-center down disabled">

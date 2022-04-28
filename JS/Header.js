@@ -149,7 +149,7 @@ header.innerHTML = `
         </div>
         <nav class="header__navbar">
         <a href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? 'https://antphb.github.io/WebSite_BanGiay_T3H2/' : '/'}" class="header__logo">
-            <img class="img-cover" src="./IMG/logo.jpg" alt="">
+            <img class="img-cover" src="./IMG/logo.jpg" alt="TTTHH">
         </a>
 
         <div class="container">
@@ -238,7 +238,7 @@ header.innerHTML = `
                                                 <ul class="header__navbar__item__submenu__item__product-list">
                                                     <li class="header__navbar__item__submenu__item__product header__navbar__item--full-width d-flex">
                                                         <a href="" class="header__navbar__item__submenu__item__product__img d-block">
-                                                            <img class="img-cover" src="./IMG/img-product-small-4.jpg" alt="">
+                                                            <img class="img-cover" src="./IMG/img-product-small-4.jpg" alt="Lunar Force Shoes">
                                                         </a>
                                                         <div class="header__navbar__item__submenu__item__product__info">
                                                             <a href="">
@@ -253,11 +253,11 @@ header.innerHTML = `
                                                     </li>
                                                     <li class="header__navbar__item__submenu__item__product header__navbar__item--full-width d-flex">
                                                         <a href="" class="header__navbar__item__submenu__item__product__img d-block">
-                                                            <img class="img-cover" src="./IMG/img-product-small-3.jpg" alt="">
+                                                            <img class="img-cover" src="./IMG/img-product-small-3.jpg" alt="Saucony Ride Shoes">
                                                         </a>
                                                         <div class="header__navbar__item__submenu__item__product__info">
                                                             <a href="">
-                                                                <h6>Lunar Force Shoes</h6>
+                                                                <h6>Saucony Ride Shoes</h6>
                                                             </a>
                                                             <p>
                                                                 <span class="price">&#36;98.50</span>
@@ -268,11 +268,11 @@ header.innerHTML = `
                                                     </li>
                                                     <li class="header__navbar__item__submenu__item__product header__navbar__item--full-width d-flex">
                                                         <a href="" class="header__navbar__item__submenu__item__product__img d-block">
-                                                            <img class="img-cover" src="./IMG/img-product-small-2.jpg" alt="">
+                                                            <img class="img-cover" src="./IMG/img-product-small-2.jpg" alt="Aero Power Shoes">
                                                         </a>
                                                         <div class="header__navbar__item__submenu__item__product__info">
                                                             <a href="">
-                                                                <h6>Lunar Force Shoes</h6>
+                                                                <h6>Aero Power Shoes</h6>
                                                             </a>
                                                             <p>
                                                                 <span class="price">&#36;98.50</span>
@@ -283,11 +283,11 @@ header.innerHTML = `
                                                     </li>
                                                     <li class="header__navbar__item__submenu__item__product header__navbar__item--full-width d-flex">
                                                         <a href="" class="header__navbar__item__submenu__item__product__img d-block">
-                                                            <img class="img-cover" src="./IMG/img-product-small-1.jpg" alt="">
+                                                            <img class="img-cover" src="./IMG/img-product-small-1.jpg" alt="Slip On Shoes">
                                                         </a>
                                                         <div class="header__navbar__item__submenu__item__product__info">
                                                             <a href="">
-                                                                <h6>Lunar Force Shoes</h6>
+                                                                <h6>Slip On Shoes</h6>
                                                             </a>
                                                             <p>
                                                                 <span class="price">&#36;98.50</span>
@@ -304,7 +304,7 @@ header.innerHTML = `
                                                 <h5>About us</h5>
                                                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                                                 <a href="" class="img">
-                                                    <img class="img-cover" src="./IMG/banner-menu.jpg" alt="">
+                                                    <img class="img-cover" src="./IMG/banner-menu.jpg" alt="Banner Image">
                                                 </a>
                                             </div>
                                         </div>
@@ -312,7 +312,7 @@ header.innerHTML = `
                                 </div>
                             </li>
                             <li class="header__navbar__item header__navbar__item--women full-width header__navbar__item--no-position">
-                                <a href="/SportsShoes.html?page=women" class="header__navbar__link">
+                                <a href="SportsShoes.html?page=women" class="header__navbar__link">
                                     Women
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--sale">Sale</span>
@@ -386,7 +386,7 @@ header.innerHTML = `
                                                 <div class="header__navbar__item__submenu__item__women-products">
                                                     <div class="header__navbar__item__submenu__item__women-product">
                                                         <a href="" class="header__navbar__item__submenu__item__women-product__img d-block">
-                                                            <img class="img-cover" src="./IMG/banner-menu-1.jpg" alt="">
+                                                            <img class="img-cover" src="./IMG/banner-menu-1.jpg" alt="Training shoes">
                                                         </a>
                                                         <a href="" class="header__navbar__item__submenu__item__women-product__title d-block">
                                                             <h5>Training shoes</h5>
@@ -394,7 +394,7 @@ header.innerHTML = `
                                                     </div>
                                                     <div class="header__navbar__item__submenu__item__women-product">
                                                         <a href="" class="header__navbar__item__submenu__item__women-product__img d-block">
-                                                            <img class="img-cover" src="./IMG/banner-menu-2.jpg" alt="">
+                                                            <img class="img-cover" src="./IMG/banner-menu-2.jpg" alt="Running shoes">
                                                         </a>
                                                         <a href="" class="header__navbar__item__submenu__item__women-product__title d-block">
                                                             <h5>Running shoes</h5>
@@ -426,7 +426,7 @@ header.innerHTML = `
                                 </a>
                             </li>
                             <li class="header__navbar__item header__navbar__item--product full-width">
-                                <a href="/SportsShoes.html" class="header__navbar__link">
+                                <a href="SportsShoes.html" class="header__navbar__link">
                                     Product
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__link__icon-mobile show-medium">

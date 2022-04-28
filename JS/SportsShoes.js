@@ -81,6 +81,11 @@
         `)
         Sitemap();
 
+        $('.sub-sitemap').html(`
+            <img class="img-fluid" src="${texts[1].background}" alt="${texts[1].title}">
+            <h1 class="sitemap__title mt-4 mb-0">${texts[1].title}</h1>
+        `)
+
         const introduction = JSON.parse(texts[2]);
         $('.content .introduce').html(introduction.description);
         if (introduction['list-products'])
@@ -191,8 +196,8 @@ function handleSportsShoes(contentProductList, Categories, Sizes, Color, Composi
                     <li class="category__product__item">
                         <div class="category__product__img">
                             <a href="">
-                                <img class="img-cover " src="./IMG/${item.image}" alt="">
-                                <img class="img-cover hover" src="./IMG/${item.imageHover}" alt="">
+                                <img class="img-cover " src="./IMG/${item.image}" alt="${item.name}">
+                                <img class="img-cover hover" src="./IMG/${item.imageHover}" alt="${item.name}">
                             </a>
                         </div>
                         <div class="category__product__info">
@@ -342,6 +347,9 @@ function handleSportsShoes(contentProductList, Categories, Sizes, Color, Composi
         }
 
         updateNumberContentProduct(products);
+
+        console.log(products);
+
         $('.content-product__pagination__btn-nav')[products.length <= 9 ? 'addClass' : 'removeClass']('hidden');
 
         const compareProductList = JSON.parse(localStorage.getItem('TTTHH-COMPARE-KEY')) ?? [];
@@ -353,8 +361,8 @@ function handleSportsShoes(contentProductList, Categories, Sizes, Color, Composi
                         <div class="content-product__item pb-md-3 position-relative d-flex flex-column no-gutters">
                             <div class="content-product__item__img order-1">
                                 <a href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : ''}/ProductDetaildPage.html?product=${product.slug}">
-                                    <img class="img-cover" src="./IMG/${product.image}" alt="">
-                                    <img class="img-cover hover" src="./IMG/${product.imageHover}" alt="">
+                                    <img class="img-cover" src="./IMG/${product.image}" alt="${product.name}">
+                                    <img class="img-cover hover" src="./IMG/${product.imageHover}" alt="${product.name}">
                                     <ul class="product-flags d-flex flex-wrap list-unstyled">
                                         ${product.productFlags.map(productFlag => {
                                             let res = productFlag.toLowerCase().split(' ').join('-');

@@ -90,7 +90,7 @@ fetch('https://json-server-web-giay-btl.herokuapp.com/list-products')
                     
                     </div>
                     <div class="row form-register-product-right__group-btn">
-                        <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 form-register-product-right__add-cart btn">ADD TO CART</div>
+                        <div onclick='handlerClickCart(this, ${JSON.stringify(product)}, "#modal-tost", "${product.name} Product successfully added to your shopping cart. <a href=${`/Cart.html`}>View cart.</a>")' class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6 form-register-product-right__add-cart btn">ADD TO CART</div>
                         <div onclick='handlerClickCompare(this, ${JSON.stringify(product)}, "#modal-tost", "The product has been added to list compare. <a href=${`/ProductsCompare.html`}>View list compare.</a>")' class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 form-register-product-right__add-compare btn ${compareProductList.hasProduct(product) && 'is-added'}"><i class="fas fa-redo-alt"></i>Add to Compare</div>
                         <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 form-register-product-right__in-stock btn"><i class="fa-solid fa-check"></i>In stock</div>
                     </div>  

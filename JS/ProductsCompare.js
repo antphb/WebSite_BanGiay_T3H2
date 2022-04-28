@@ -28,7 +28,7 @@ const getHTMLCompareProducts = products => {
                             <div class="content-product__item mx-auto">
                                 <div class="content-product__item__img position-relative">
                                     <a class="d-block" href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : ''}/ProductDetaildPage.html?product=${product.slug}">
-                                        <img class="img-contain" src="./IMG/${product.image}" alt="">
+                                        <img class="img-contain" src="./IMG/${product.image}" alt="${product.name}">
                                     </a>
                                     <ul class="product-flags d-flex flex-wrap list-unstyled">
                                         ${product.productFlags.map(productFlag => `

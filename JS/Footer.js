@@ -7,7 +7,7 @@ footer.innerHTML = `
             <div class="row no-gutters">
                 <div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                     <a href="/" class="footer__navbar__logo">
-                        <img src="./IMG/logo.jpg" alt="" class="img-cover">
+                        <img src="./IMG/logo.jpg" alt="TTTHH" class="img-cover">
                     </a>
                 </div>
                 <div class="col col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12">
