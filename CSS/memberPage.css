@@ -194,4 +194,9 @@ section {
 .col-for-tablet {
   display: none;
 }
+
+h2
+{
+  text-align: center;
+}
 /*# sourceMappingURL=memberPage.css.map */
