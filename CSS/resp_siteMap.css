@@ -1,0 +1,24 @@
+@media (max-width: 991px) {
+    .site__map {
+      padding: 7em 0;
+    }
+  
+  }
+  
+  @media (max-width: 575px) {
+    .site__map {
+      padding: 3px 0;
+      background-color: #fff;
+      color: #333;
+    }
+    .site__map > p {
+      color: #555;
+    }
+    .site__map-home, .site-map-product-details {
+      color: #555;
+    }
+    .site__map-home:focus, .site-map-product-details:focus {
+      color: var(--blue-color);
+    }
+    
+  }

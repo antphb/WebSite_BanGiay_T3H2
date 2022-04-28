@@ -191,7 +191,7 @@ header.innerHTML = `
                                                             <a href="">Women</a>
                                                         </li>
                                                         <li>
-                                                            <a href="">Men</a>
+                                                            <a href="./SportsShoes.html?page=men">Men</a>
                                                         </li>
                                                         <li>
                                                             <a href="">Couple</a>
@@ -407,7 +407,7 @@ header.innerHTML = `
                                 </div>
                             </li>
                             <li class="header__navbar__item full-width header__navbar__item--no-position">
-                                <a href="" class="hidden-medium header__navbar__link">
+                                <a href="./SiteMap.html" class="hidden-medium header__navbar__link">
                                     Site map
                                     <i class="fas fa-angle-down hidden-medium"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--new">New</span>
