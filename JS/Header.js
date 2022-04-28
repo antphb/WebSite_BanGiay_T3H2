@@ -169,7 +169,7 @@ header.innerHTML = `
                                 <a href="index.html" class="header__navbar__link">Home</a>
                             </li>
                             <li class="header__navbar__item header__navbar__item--men full-width header__navbar__item--no-position">
-                                <a href="SportsShoes.html?page=men" class="header__navbar__link">
+                                <a href="./SportsShoes.html?page=men" class="header__navbar__link">
                                     Men
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--hot">Hot</span>
@@ -312,7 +312,7 @@ header.innerHTML = `
                                 </div>
                             </li>
                             <li class="header__navbar__item header__navbar__item--women full-width header__navbar__item--no-position">
-                                <a href="SportsShoes.html?page=women" class="header__navbar__link">
+                                <a href="./SportsShoes.html?page=women" class="header__navbar__link">
                                     Women
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--sale">Sale</span>
@@ -426,7 +426,7 @@ header.innerHTML = `
                                 </a>
                             </li>
                             <li class="header__navbar__item header__navbar__item--product full-width">
-                                <a href="SportsShoes.html" class="header__navbar__link">
+                                <a href="./SportsShoes.html" class="header__navbar__link">
                                     Product
                                     <i class="hidden-medium fas fa-angle-down"></i>
                                     <span class="header__navbar__link__icon-mobile show-medium">
