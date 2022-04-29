@@ -139,8 +139,7 @@
                     if (href) {
                         window.location = `/${href}.html`;
                     } else {
-                        history.back();
-                        window.reload();
+                        window.location = `/index.html`;
                     }
                 } else {
                     msgLogin.classList.add('invalid');
