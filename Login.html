@@ -125,6 +125,10 @@
             const loginForm = new Validator('#login');
             const msgLogin = document.querySelector('#login .login-msg');
 
+            if (!document.referrer.includes('Login') && !document.referrer.includes('Register')) {
+                localStorage.setItem('prevHref', document.referrer);
+            }
+
             loginForm.onSubmit = data => {
                 const userList = JSON.parse(localStorage.getItem('user-ttthh-key'))
                     ?? []; 
@@ -139,8 +143,9 @@
                     if (href) {
                         window.location = `/${href}.html`;
                     } else {
-                        history.back();
-                        window.reload();
+                        const prevHref = localStorage.getItem('prevHref');
+                        localStorage.removeItem('prevHref');
+                        window.location = prevHref;
                     }
                 } else {
                     msgLogin.classList.add('invalid');
