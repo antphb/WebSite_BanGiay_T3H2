@@ -21,10 +21,10 @@ footer.innerHTML = `
                         </h4>
                         <ul class="footer__navbar__list">
                             <li class="footer__navbar__item">
-                                <a href="" class="footer__navbar__link">LOGIN</a>
+                                <a href="Login.html" class="footer__navbar__link">LOGIN</a>
                             </li>
                             <li class="footer__navbar__item">
-                                <a href="" class="footer__navbar__link">MY ACCOUNT</a>
+                                <a href="MyAccount.html" class="footer__navbar__link">MY ACCOUNT</a>
                             </li>
                             <li class="footer__navbar__item">
                                 <a href="" class="footer__navbar__link">ADDRESSES</a>
@@ -58,7 +58,7 @@ footer.innerHTML = `
                                 <a href="" class="footer__navbar__link">BEST SELLER</a>
                             </li>
                             <li class="footer__navbar__item">
-                                <a href="" class="footer__navbar__link">SITEMAP</a>
+                                <a href="SiteMap.html" class="footer__navbar__link">SITEMAP</a>
                             </li>
                             <li class="footer__navbar__item">
                                 <a href="" class="footer__navbar__link">PRIVACY</a>
