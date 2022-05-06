@@ -84,7 +84,6 @@ sectionElement.innerHTML = `<div class="container">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <select name="tp" id="txttp" class="col-sm-12 form-control">
-                        
                                         </select>
                                         <span id="tbtp" class="text-danger">(*)</span>
                                     </div>
@@ -369,9 +368,9 @@ $(document).ready(function(){
     const quanhn=["Quận Hoàn Kiếm", "Quận Ba Đình","Quận Hai Bà Trưng","Quận Tây Hồ","Quận Đống Đa","Quận Cầu Giấy","Quận Long Biên","Quận Hoàng Mai","Quận Hà Đông","Quận Thanh Xuân","Quận Bắc Từ Liêm","Quận Nam Từ Liêm"]
     quanhn.sort()
 
-    let texttp = "";
+    let texttp = "<option value=''selected></option>";
     for (let i = 0; i < thanhpho.length; i++) {
-        texttp += "<option value="+thanhpho[i]+">"+thanhpho[i]+"</option>";
+        texttp += "<option value="+'"'+thanhpho[i]+'"'+">"+thanhpho[i]+"</option>";
     }
     $("#txttp").html(texttp)
 
@@ -434,26 +433,13 @@ $(document).ready(function(){
     $("#txtDiaChi").blur(kiemtradiachi)
 
     function kiemtratp() {
-        var textquan=""
         var tp=$("#txttp").val()
+        // alert(tp=="")
         if (tp=="")
         {
-            $("#tbquan").html("(*)Bắt buộc chọn")
+            $("#tbtp").html("(*)Bắt buộc chọn")
             return false
         }
-        if (tp=="Hồ")
-        {
-            for (let i = 0; i < quanhcm.length; i++) {
-                textquan += "<option value="+quanhcm[i]+">"+quanhcm[i]+"</option>";
-            }
-        }
-        if (tp=="Hà")
-        {
-            for (let i = 0; i < quanhn.length; i++) {
-                textquan += "<option value="+quanhn[i]+">"+quanhn[i]+"</option>";
-            }
-        }
-        $("#txtquan").html(textquan)
         $("#tbtp").html("(*)")
         return true
     }
@@ -461,22 +447,40 @@ $(document).ready(function(){
 
     function kiemtraquan() {
         var quan=$("#txtquan").val()
+        var tp=$("#txttp").val()
+        var textquan=""
+
         if (quan=="")
         {
             $("#tbquan").html("(*)Bắt buộc chọn")
             return false
         }
+
+        if (tp=="Hồ Chí Minh")
+        {
+            for (let i = 0; i < quanhcm.length; i++) {
+                textquan += "<option value="+'"'+quanhcm[i]+'"'+">"+quanhcm[i]+"</option>";
+            }
+        }
+
+        if (tp=="Hà Nội")
+        {
+            for (let i = 0; i < quanhn.length; i++) {
+                textquan += "<option value="+'"'+quanhn[i]+'"'+">"+quanhn[i]+"</option>";
+            }
+        }
+        $("#txtquan").html(textquan)
         $("#tbquan").html("(*)")
-        return false
+        return true
     }
-    $("#txttp").click(kiemtraquan)
+    $("#txttp").change(kiemtraquan)
 
     $("#btnSave").click(function()
     {
-        if (kiemtrahoten()==false || kiemtrasdt()==false || kiemtradiachi()==false)
+        if (kiemtrahoten()==false || kiemtrasdt()==false || kiemtradiachi()==false || kiemtratp()==false || kiemtraquan()==false)
         {
             // $("#thongbao").html("(*)Mời bạn nhập đúng và đầy đủ thông tin")
-            alert("(*)Mời bạn nhập đúng và đầy đủ thông tin")
+            alert("Mời bạn nhập đúng và đầy đủ thông tin")
             return false;
         }
         $("#myModal").modal("hide");
