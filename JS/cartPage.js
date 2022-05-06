@@ -83,13 +83,13 @@ sectionElement.innerHTML = `<div class="container">
                             <div class="form-froup">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <select name="tp" id="txttp" class="col-sm-12">
+                                        <select name="tp" id="txttp" class="col-sm-12 form-control">
                         
                                         </select>
                                         <span id="tbtp" class="text-danger">(*)</span>
                                     </div>
                                     <div class="col-sm-6">
-                                        <select name="quan" id="txtquan" class="col-sm-12">
+                                        <select name="quan" id="txtquan" class="col-sm-12 form-control">
                                             
                                         </select>
                                         <span id="tbquan" class="text-danger">(*)</span>
@@ -103,7 +103,7 @@ sectionElement.innerHTML = `<div class="container">
                             </div>
 
                             <div class="form-froup">
-                                <textarea name="" id="" cols="215" rows="5" placeholder="Note"></textarea>
+                                <textarea class="form-control" name="" id="" cols="215" rows="5" placeholder="Note"></textarea>
                             </div>
                             
                             <div class="form-group">
