@@ -47,7 +47,126 @@ sectionElement.innerHTML = `<div class="container">
             
             
         </div>
+
         <a class="goto__shopping-btn" href="./index.html">CONTINUE SHOPPING</a>
+        <a class="goto__shopping-btn" href="" id="myBtn" data-toggle="modal" data-target="#myModal">PayMent</a>
+        <!-- Button to Open the Modal -->
+        <!-- modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="text-center modal-title  font-weight-bold ">Ordering Information</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group">
+                                <h3>Delivery Address</h3>
+                                <div id="thongbao" class="text-center text-danger">
+                                </div>
+                            </div>
+                            <div class="form-froup">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" name="" id="txtht" class="form-control" required placeholder="Full Name">
+                                        <span id="tbht" class="text-danger">(*)</span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="" id="txtsdt" class="form-control" required placeholder="Number phone">
+                                        <span id="tbsdt" class="text-danger">(*)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-froup">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <select name="tp" id="txttp" class="col-sm-12">
+                        
+                                        </select>
+                                        <span id="tbtp" class="text-danger">(*)</span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <select name="quan" id="txtquan" class="col-sm-12">
+                                            
+                                        </select>
+                                        <span id="tbquan" class="text-danger">(*)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-froup">
+                                <input type="text" name="" id="txtDiaChi" class="form-control" required placeholder="Address">
+                                <span id="tbDiaChi" class="text-danger">(*)</span>
+                            </div>
+
+                            <div class="form-froup">
+                                <textarea name="" id="" cols="215" rows="5" placeholder="Note"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <h3>Product Information</h3>
+                            </div>
+
+                            <div class="shopping__cart__child">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <h4 class="text-center">Tên sản phẩm</h4>
+                                    </div>
+                                    <div class="col-4">
+                                        <h4 class="text-center">Số lượng</h4>
+                                    </div>
+                                    <div class="col-4" class="">
+                                        <h4>Thành giá</h4>
+                                    </div>
+                                </div>    
+
+                                ${arrDataStorage.map((value, index)=>`
+                                <div class="row no-gutters shopping__cart__child__box">
+                                    <div class="col col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
+                                        <img class="shopping__cart__product-img" src="IMG/${value.image}" alt="${value.name}">
+                                    </div>
+                                    <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                                        <p class="shopping__cart__product-name">${value.name}</p>
+                                        
+                                        <p class="shopping__cart__new-price">$${getPriceProduct(value).toFixed(2)}</p>
+                                        <p class="shopping__cart__option">Size: <span class="shopping__cart__size-type">${value.size[0]}</span></p>
+                                        <p class="shopping__cart__option">Color: <span class="shopping__cart__color-type">${value.color[0]}</span></p>
+                                    </div>
+                                    <div class="col col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                                        <div class="row no-gutters">
+                                            <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+                                                <div class="box__input-quantity">
+                                                    <p class="col col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 shopping__cart__product__price-total">
+                                                        ${value.number}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <p class="col col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 shopping__cart__product__price-total">
+                                                $${(getPriceProduct(value)*value.number).toFixed(2)}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>`).join("")}
+
+                            </div>
+                            <div class="form-group">
+                                <h1 class="text-right mt-3">Total (tax excl.): $${arrDataStorage.reduce((before, after)=>{
+                                    return before + (getPriceProduct(after)*after.number)
+                                }, 0).toFixed(2)}</h1>
+                                
+                            </div>
+                            <button type="button" id="btnSave" class="btn btn-success btn-block">Order</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 infomation__detail">
         <div>
@@ -233,3 +352,136 @@ arrInputQty.forEach((elem, index)=>{
         localStorage.setItem("TTTHH-CART-KEY", JSON.stringify(arrDataStorage));
     })
 })
+
+
+$(document).ready(function(){
+    
+    const thanhpho = ["Hồ Chí Minh", "Hà Nội"];
+
+    const quanhcm=["Quận Bình Tân","Quận Bình Thạnh","Quận Gò Vấp", "Quận Phú Nhuận","Quận Tân Bình","Quận Tân Phú","Quận Thủ Đức","Huyện Bình Chánh","Huyện Cần Giờ","Huyện Củ Chi","Huyện Hóc Môn","Huyện Nhà Bè"]
+
+    for (let i=1; i<13;i++)
+    {
+        quanhcm.push("Quận "+i)
+    }
+    quanhcm.sort()
+
+    const quanhn=["Quận Hoàn Kiếm", "Quận Ba Đình","Quận Hai Bà Trưng","Quận Tây Hồ","Quận Đống Đa","Quận Cầu Giấy","Quận Long Biên","Quận Hoàng Mai","Quận Hà Đông","Quận Thanh Xuân","Quận Bắc Từ Liêm","Quận Nam Từ Liêm"]
+    quanhn.sort()
+
+    let texttp = "";
+    for (let i = 0; i < thanhpho.length; i++) {
+        texttp += "<option value="+thanhpho[i]+">"+thanhpho[i]+"</option>";
+    }
+    $("#txttp").html(texttp)
+
+    function kiemtrahoten()
+    {
+        var re=/^[A-Z][a-zA-Z]{3,}(?: [A-Z][a-zA-Z]*){0,2}$/
+        var hoten=$("#txtht").val()
+        if (hoten.trim()=="")
+        {
+            $("#tbht").html("*Bắt buộc nhập")
+            return false
+        }
+        if (!re.test(hoten))
+        {
+            $("#tbht").html("*Viết hoa chữ cái đầu tiên của từ chữ")
+            return false
+        }
+        $("#tbht").html("(*)")
+        return true
+    }
+    $("#txtht").blur(kiemtrahoten)
+
+    function kiemtrasdt()
+    {
+        var re=/^(84|0[3|5|7|8|9])+([0-9]{8})$/
+        var sdt=$("#txtsdt").val()
+        if (sdt.trim()=="")
+        {
+            $("#tbsdt").html("(*)Bắt buộc nhập")
+            return false
+        }
+        if (!re.test(sdt))
+        {
+            $("#tbsdt").html("(*)Bắt đầu từ 84 hoặc 03, 05, 07, 08, 09 và phải đủ 10 số")
+            return false
+        }
+        $("#tbsdt").html("(*)")
+        return true
+    }
+    $("#txtsdt").blur(kiemtrasdt)
+
+    function kiemtradiachi()
+    {
+        var re=/^\d+\s[A-z]+\s[A-z]+/
+        var diachi=$("#txtDiaChi").val()
+        // alert(diachi)
+        if (diachi.trim()=="")
+        {
+            $("#tbDiaChi").html("(*)Bắt buộc nhập")
+            return false
+        }
+        if (!re.test(diachi))
+        {
+            $("#tbDiaChi").html("Số nhà tên đường xã")
+            return false
+        }
+        $("#tbDiaChi").html("(*)")
+        return true
+    }
+    $("#txtDiaChi").blur(kiemtradiachi)
+
+    function kiemtratp() {
+        var textquan=""
+        var tp=$("#txttp").val()
+        if (tp=="")
+        {
+            $("#tbquan").html("(*)Bắt buộc chọn")
+            return false
+        }
+        if (tp=="Hồ")
+        {
+            for (let i = 0; i < quanhcm.length; i++) {
+                textquan += "<option value="+quanhcm[i]+">"+quanhcm[i]+"</option>";
+            }
+        }
+        if (tp=="Hà")
+        {
+            for (let i = 0; i < quanhn.length; i++) {
+                textquan += "<option value="+quanhn[i]+">"+quanhn[i]+"</option>";
+            }
+        }
+        $("#txtquan").html(textquan)
+        $("#tbtp").html("(*)")
+        return true
+    }
+    $("#txttp").click(kiemtratp)
+
+    function kiemtraquan() {
+        var quan=$("#txtquan").val()
+        if (quan=="")
+        {
+            $("#tbquan").html("(*)Bắt buộc chọn")
+            return false
+        }
+        $("#tbquan").html("(*)")
+        return false
+    }
+    $("#txttp").click(kiemtraquan)
+
+    $("#btnSave").click(function()
+    {
+        if (kiemtrahoten()==false || kiemtrasdt()==false || kiemtradiachi()==false)
+        {
+            // $("#thongbao").html("(*)Mời bạn nhập đúng và đầy đủ thông tin")
+            alert("(*)Mời bạn nhập đúng và đầy đủ thông tin")
+            return false;
+        }
+        $("#myModal").modal("hide");
+        alert("Order Successfully ")
+        return true;
+    })
+})
+
