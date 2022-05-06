@@ -2,7 +2,6 @@ function Validator(selector) {
     const formElement = document.querySelector(selector);
     const inputElementsHasRule = formElement.querySelectorAll('[rule]');
     const inputElements = [...formElement.querySelectorAll('input')];
-    let emailName = "";
     let submitCode = "";
     const rules = {};
     const validatorRules = {
@@ -11,53 +10,15 @@ function Validator(selector) {
         },
         email(value) {
             let isValid =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) ? undefined : 'Vui lòng nhập email';
-            console.log($("#email-id-register"));
-            if (isValid === undefined && (submitCode === "" || emailName !== value)){
-                emailName = value;
-                submitCode = Math.random().toString(36).substring(2,8);
-                Email.send({
-                SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
-                To : value,
-                From : "hieurio12@gmail.com",
-                Subject : "THHHT Shop, Xác thực tài khoản!",
-                Body : 'Mã xác thực tài khoản của bạn là : ' + submitCode,
-                }).then(
-                    message => alert("Đã gửi mã xác thực đến gmail của bạn!")
-                );
-            }
+           
             return isValid;
-        },
-        min(minLength) {
-            return (value) => {
-                return value.length >= minLength ? undefined : `Vui lòng nhập hơn ${minLength} ký tự`;
-            }
-        },
-        formatDate(value) {
-            if (value.length === 0)
-                return undefined;
-            return /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/.test(value) ? undefined : 'Vui lòng nhập theo dạng DD/MM/YYYY';
         },
         uniqueEmail(value) {
             const emailList = JSON.parse(localStorage.getItem('user-ttthh-key'))
                 ?.map(item => item.email) 
                 ?? []; 
 
-            return emailList.includes(value) ? 'Email đã được sử dụng' : undefined;
-        },
-        uniqueSubmitCode(value){
-            if (value.length !== 6){
-                return "Phải đúng 6 kí tự!";
-            }
-            let isValid = /^[a-zA-Z0-9]{6}$/.test(value);
-            if (!isValid){
-                return 'Không được có ký tự đặc biệt hay dấu cách';
-            }
-            if (value !== "" && value === submitCode){
-                return undefined;
-            }
-            return 'Mã xác thực không đúng!';
-           
-            
+            return emailList.includes(value) ? undefined : "Không có email này trong hệ thống, xin kiểm tra lại!";
         }
     }
 
@@ -138,11 +99,27 @@ function Validator(selector) {
                     a[b.name] = b.value;
                     return a;
                 }, {});
-                console.log(dataInput);
-                if (this.onSubmit)
-                    this.onSubmit(dataInput);
-                else
-                    formElement.submit();
+                let nameEmail = dataInput.email;
+                let password = "";
+                const emailList = JSON.parse(localStorage.getItem('user-ttthh-key'));
+                emailList.forEach((value)=>{
+                    if (value.email === nameEmail){
+                        password = value.password;
+                    }
+                })
+                Email.send({
+                    SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
+                    To : nameEmail,
+                    From : "hieurio12@gmail.com",
+                    Subject : "THHHT Shop, Quên mật khẩu!",
+                    Body : 'Mật khẩu đăng nhập của bạn là : ' + password,
+                    }).then(
+                        message => alert("Mật khẩu đã được gửi tới hộp thư gmail của bạn!")
+                );
+                setTimeout(()=>{
+                    location.href='/WebSite_BanGiay_T3H2/Login.html';                    
+                },3000);
+                 
             }
         }
     }

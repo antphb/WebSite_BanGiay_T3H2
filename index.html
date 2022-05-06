@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="./CSS/resp_footer.min.css">
         <link rel="stylesheet" href="./CSS/style.min.css">
         <link rel="stylesheet" href="./CSS/resp_style.min.css">
+        <script src="../WebSite_BanGiay_T3H2/JS/smtp.js"></script>
     </head>
     <body>
         <div class="loading">
@@ -151,8 +152,8 @@
                                         <h1>Newsletter</h1>
                                         <p>Make sure that you're always the first who receive our latest news and hottest promotion. We never send spam!!!</p>
                                         <div class="form__get__letter__desc__form__input">
-                                            <input type="email" name="" id="" placeholder="Your email...">
-                                            <button><i class="fa-solid fa-paper-plane"></i></button>
+                                            <input type="email" name="" id="customer-email" placeholder="Your email...">
+                                            <button><i class="fa-solid fa-paper-plane btn__send__email"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -186,6 +187,20 @@
                 $('.app').removeClass('hidden');
                 $('.loading').addClass('hidden');
             }, 2000)
+
+            $('.btn__send__email').click(()=>{
+                let valueEmail = $("#customer-email").val();
+                console.log(valueEmail);
+                Email.send({
+                SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
+                To : valueEmail.trim(),
+                From : "hieurio12@gmail.com",
+                Subject : "THHHT Shop Xin Chào Bạn!",
+                Body : "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop"
+                }).then(
+                message => alert("Gửi thành công!")
+                );
+            })
         </script>
     </body>
 </html>
