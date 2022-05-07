@@ -33,7 +33,16 @@ const members = [
 ]
 sectionElement.innerHTML =`<div class="box">
 <div class="row no-gutters">
-    ${members.map(member => `
+    ${members.map((member, index) => {
+        let temp = '';
+
+        if (index === 2)
+            temp = '<div class="col col-xl-4 col-lg-4 col-md-3 col-sm-12 col-12 col-for-tablet"></div>';
+        else if (index === 3)
+            temp = '<div class="col col-xl-2 col-lg-2 col-md-0 col-sm-0 col-0"></div>';
+
+        return `
+        ${temp}
         <div class="col col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
                 <div class="imgBox">
@@ -77,7 +86,8 @@ sectionElement.innerHTML =`<div class="box">
                 </div>
             </div>
         </div>
-    `).join('')}
+    `
+    }).join('')}
 </div>`;
 
 $('.header__navbar__item--member').addClass('active');
