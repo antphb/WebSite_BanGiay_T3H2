@@ -221,4 +221,31 @@
     margin-left: 0.6em;
   }
 }
+
+@media (max-width: 345px) {
+  .header__user-menu__item--search>.header__user-menu__item__option {
+    position: fixed;
+    top: var(--user-menu-box-height);
+    left: 8px;
+    right: 8px;
+  }
+  .header__user-menu__item__options__item.header__user-menu__item--search__box {
+    justify-content: space-between;
+  }
+  .header__user-menu__item__options__item.header__user-menu__item--search__box .header__user-menu__item__options__item__input {
+    flex: 1;
+  }
+}
+
+@media (max-width: 327px) {
+  header .header__user-menu-box .container {
+    margin: 0 !important;
+    padding: 0 8px !important;
+    max-width: 100%;
+  }
+
+  header .header__user-menu-box .header__user-menu__item {
+    padding: 2px;
+  }
+}
 /*# sourceMappingURL=resp_header.css.map */
