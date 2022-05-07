@@ -152,7 +152,7 @@ function Validator(selector) {
                 if (submitCode === "" || emailName !== email){
                     emailName = email;
                     submitCode = Math.random().toString(36).substring(2,8);
-                    Email.sendEmail(email, "THHHT Shop, Xác thực tài khoản!", 'Mã xác thực tài khoản của bạn là : ' + submitCode)
+                    Email.sendEmail(email, "HTTTH Shop, Xác thực tài khoản!", 'Mã xác thực tài khoản của bạn là : ' + submitCode)
                         .then(
                             () => alert("Đã gửi mã xác thực đến gmail của bạn!")
                         );

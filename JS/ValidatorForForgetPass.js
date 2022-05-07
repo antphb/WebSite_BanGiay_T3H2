@@ -107,7 +107,7 @@ function Validator(selector) {
                         password = value.password;
                     }
                 })
-                Email.sendEmail(nameEmail, "THHHT Shop, Quên mật khẩu!", 'Mật khẩu đăng nhập của bạn là : ' + password)
+                Email.sendEmail(nameEmail, "HTTTH Shop, Quên mật khẩu!", 'Mật khẩu đăng nhập của bạn là : ' + password)
                     .then(() => {
                         alert("Mật khẩu đã được gửi tới hộp thư gmail của bạn!");
                         window.location = '/Login.html';
