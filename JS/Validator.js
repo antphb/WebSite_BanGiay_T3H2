@@ -11,7 +11,7 @@ function Validator(selector) {
         },
         email(value) {
             let isValid =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) ? undefined : 'Vui lòng nhập email';
-            console.log($("#email-id-register"));
+  
             if (isValid === undefined && (submitCode === "" || emailName !== value)){
                 emailName = value;
                 submitCode = Math.random().toString(36).substring(2,8);
