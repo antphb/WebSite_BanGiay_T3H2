@@ -242,6 +242,7 @@ section > .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  align-items: center;
 }
 
 .infomation__detail__item__policy > i {

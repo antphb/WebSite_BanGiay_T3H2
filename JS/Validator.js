@@ -46,7 +46,7 @@ function Validator(selector) {
         beforeDayNow(value) {
             if (value === '')
                 return undefined;
-            return new Date(value) < new Date() ? undefined : 'Ngày sinh phải bé hơn ngày hiện tại';
+            return new Date(value.split('/').reverse().join('-')) < new Date() ? undefined : 'Ngày sinh phải bé hơn ngày hiện tại';
         }
     }
 
@@ -124,8 +124,6 @@ function Validator(selector) {
                 if (!result)
                     check = false;
             });
-
-            console.log(this.onSubmit);
 
             if (check) {
                 var dataInput = inputElements.reduce((a, b) => {

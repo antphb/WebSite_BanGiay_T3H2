@@ -10,7 +10,6 @@ function Validator(selector) {
         },
         email(value) {
             let isValid =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) ? undefined : 'Vui lòng nhập email';
-           
             return isValid;
         },
         uniqueEmail(value) {
@@ -110,7 +109,8 @@ function Validator(selector) {
                 Email.sendEmail(nameEmail, "HTTTH Shop, Quên mật khẩu!", 'Mật khẩu đăng nhập của bạn là : ' + password)
                     .then(() => {
                         alert("Mật khẩu đã được gửi tới hộp thư gmail của bạn!");
-                        window.location = '/Login.html';
+                        const linkGithub = window.location.href.includes('/WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : '';
+                        window.location = linkGithub + '/Login.html';
                     }
                 );
             }

@@ -81,6 +81,4 @@ function validFile(elem, elemParrent, regex, notice){
     return true;
 }
 
-
-
 start();

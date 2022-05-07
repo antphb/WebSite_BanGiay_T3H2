@@ -137,7 +137,7 @@
                                         <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
                                             <label for="">Verification codes</label>
                                         </div>
-                                        <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                        <div class="form-group__item form-group__item--input form-group__item--text--right col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                             <input type="text" rule="uniqueSubmitCode" name="submit_code" placeholder="Code Submit In Your Mail">
                                             <span class="form-group__item__text get-code">Get Code</span>
                                         </div>
@@ -172,12 +172,13 @@
         <script src="./UTIL/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
         <script src="./JS/smtp.js"></script>
         <script src="./JS/main.min.js"></script>
-        <script src="./JS/Validator.js"></script>
+        <script src="./JS/Validator.min.js"></script>
         <script src="./JS/AuthenticatorForm.min.js"></script>
         <script>    
             const registerForm = new Validator('#register');
             const USERS_TTTHH_KEY = 'user-ttthh-key';
             const userList = JSON.parse(localStorage.getItem(USERS_TTTHH_KEY)) ?? [];
+            const linkGithub = window.location.href.includes('/WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : '';
 
             if (!document.referrer.includes('Register.html')) {
                 localStorage.setItem('prevRegister', document.referrer);
@@ -191,7 +192,7 @@
                 if (prevRegister) {
                     window.location = prevRegister;
                 } else 
-                    window.location = '/Login.html';
+                    window.location = linkGithub + '/Login.html';
             };
         </script>
     </body>

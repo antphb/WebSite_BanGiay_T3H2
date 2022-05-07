@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="./UTIL/bootstrap-4.6.1-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="./CSS/base.min.css">
         <link rel="stylesheet" href="./CSS/header.min.css">
-        <link rel="stylesheet" href="./CSS/resp_header.css">
+        <link rel="stylesheet" href="./CSS/resp_header.min.css">
         <link rel="stylesheet" href="./CSS/footer.min.css">
         <link rel="stylesheet" href="./CSS/resp_footer.min.css">
         <link rel="stylesheet" href="./CSS/style.min.css">
@@ -192,13 +192,6 @@
                 let valueEmail = $("#customer-email").val();
                 console.log(valueEmail);
                 Email.sendEmail(valueEmail.trim(), "THHHT Shop Xin Chào Bạn!", "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop")
-                /*Email.send({
-                    SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
-                    To : valueEmail.trim(),
-                    From : "hieurio12@gmail.com",
-                    Subject : "THHHT Shop Xin Chào Bạn!",
-                    Body : "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop"
-                })*/
                 .then(
                     message => alert("Gửi thành công!")
                 );
