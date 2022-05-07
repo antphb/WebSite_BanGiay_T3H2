@@ -11,20 +11,6 @@ function Validator(selector) {
         },
         email(value) {
             let isValid =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) ? undefined : 'Vui lòng nhập email';
-  
-            if (isValid === undefined && (submitCode === "" || emailName !== value)){
-                emailName = value;
-                submitCode = Math.random().toString(36).substring(2,8);
-                Email.send({
-                SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
-                To : value,
-                From : "hieurio12@gmail.com",
-                Subject : "THHHT Shop, Xác thực tài khoản!",
-                Body : 'Mã xác thực tài khoản của bạn là : ' + submitCode,
-                }).then(
-                    message => alert("Đã gửi mã xác thực đến gmail của bạn!")
-                );
-            }
             return isValid;
         },
         min(minLength) {
@@ -56,8 +42,11 @@ function Validator(selector) {
                 return undefined;
             }
             return 'Mã xác thực không đúng!';
-           
-            
+        },
+        beforeDayNow(value) {
+            if (value === '')
+                return undefined;
+            return new Date(value) < new Date() ? undefined : 'Ngày sinh phải bé hơn ngày hiện tại';
         }
     }
 
@@ -100,6 +89,10 @@ function Validator(selector) {
         return !messengerError;
     }
 
+    const handleValidatorEmail = () => {
+        return handlerValidator($('input#email-id')[0], getMessengerError($('input#email-id')[0]));
+    }
+
     if (formElement) {
 
         inputElementsHasRule.forEach(inputElement => {
@@ -131,6 +124,9 @@ function Validator(selector) {
                 if (!result)
                     check = false;
             });
+
+            console.log(this.onSubmit);
+
             if (check) {
                 var dataInput = inputElements.reduce((a, b) => {
                     if (b.type === 'radio' && !b.checked)
@@ -138,12 +134,31 @@ function Validator(selector) {
                     a[b.name] = b.value;
                     return a;
                 }, {});
-                console.log(dataInput);
                 if (this.onSubmit)
                     this.onSubmit(dataInput);
                 else
                     formElement.submit();
             }
         }
+    }
+
+    const getCodeBtn = $('.form-group__item__text.get-code');
+
+    if (getCodeBtn) {
+        getCodeBtn.click(() =>{
+            if (handleValidatorEmail()) {
+                const email = $('input#email-id')[0].value;
+                console.log(email);
+                if (submitCode === "" || emailName !== email){
+                    emailName = email;
+                    submitCode = Math.random().toString(36).substring(2,8);
+                    Email.sendEmail(email, "THHHT Shop, Xác thực tài khoản!", 'Mã xác thực tài khoản của bạn là : ' + submitCode)
+                        .then(
+                            () => alert("Đã gửi mã xác thực đến gmail của bạn!")
+                        );
+                } else
+                    alert("Đã gửi mã xác thực đến gmail của bạn!");
+            }
+        });
     }
 }

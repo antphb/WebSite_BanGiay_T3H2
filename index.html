@@ -16,7 +16,6 @@
         <link rel="stylesheet" href="./CSS/resp_footer.min.css">
         <link rel="stylesheet" href="./CSS/style.min.css">
         <link rel="stylesheet" href="./CSS/resp_style.min.css">
-        <script src="../WebSite_BanGiay_T3H2/JS/smtp.js"></script>
     </head>
     <body>
         <div class="loading">
@@ -179,6 +178,7 @@
         <script src="./JS/Footer.min.js"></script>
         <script src="./UTIL/jQuery/jQuery.js"></script>
         <script src="./UTIL/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+        <script src="./JS/smtp.js"></script>
         <script src="./JS/main.min.js"></script>
         <script>
             $('.header__navbar__item--home').addClass('active');
@@ -191,14 +191,16 @@
             $('.btn__send__email').click(()=>{
                 let valueEmail = $("#customer-email").val();
                 console.log(valueEmail);
-                Email.send({
-                SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
-                To : valueEmail.trim(),
-                From : "hieurio12@gmail.com",
-                Subject : "THHHT Shop Xin Chào Bạn!",
-                Body : "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop"
-                }).then(
-                message => alert("Gửi thành công!")
+                Email.sendEmail(valueEmail.trim(), "THHHT Shop Xin Chào Bạn!", "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop")
+                /*Email.send({
+                    SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
+                    To : valueEmail.trim(),
+                    From : "hieurio12@gmail.com",
+                    Subject : "THHHT Shop Xin Chào Bạn!",
+                    Body : "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop"
+                })*/
+                .then(
+                    message => alert("Gửi thành công!")
                 );
             })
         </script>

@@ -107,19 +107,12 @@ function Validator(selector) {
                         password = value.password;
                     }
                 })
-                Email.send({
-                    SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
-                    To : nameEmail,
-                    From : "hieurio12@gmail.com",
-                    Subject : "THHHT Shop, Quên mật khẩu!",
-                    Body : 'Mật khẩu đăng nhập của bạn là : ' + password,
-                    }).then(
-                        message => alert("Mật khẩu đã được gửi tới hộp thư gmail của bạn!")
+                Email.sendEmail(nameEmail, "THHHT Shop, Quên mật khẩu!", 'Mật khẩu đăng nhập của bạn là : ' + password)
+                    .then(() => {
+                        alert("Mật khẩu đã được gửi tới hộp thư gmail của bạn!");
+                        window.location = '/Login.html';
+                    }
                 );
-                setTimeout(()=>{
-                    location.href='/WebSite_BanGiay_T3H2/Login.html';                    
-                },3000);
-                 
             }
         }
     }

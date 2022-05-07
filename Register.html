@@ -15,9 +15,7 @@
         <link rel="stylesheet" href="./CSS/login.min.css">
         <link rel="stylesheet" href="./CSS/resp_login.min.css">
         <link rel="stylesheet" href="./CSS/Register.min.css">
-        <link rel="stylesheet" href="./CSS/resp_Register.css">
         <link rel="stylesheet" href="./CSS/style.min.css">
-        <script src="../WebSite_BanGiay_T3H2/JS/smtp.js"></script>
     </head>
     <body>
         <main class="app">
@@ -107,7 +105,7 @@
                                         </div>
                                         <div class="form-group__item form-group__item--input form-group__item--text--right col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                             <input rule="required|min:6" name="password" type="password">
-                                            <span class="form-group__item__text">Show</span>
+                                            <span class="form-group__item__text show-password">Show</span>
                                         </div>
                                         <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
                                         </div>
@@ -123,7 +121,7 @@
                                             <label for="">Birthdate</label>
                                         </div>
                                         <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <input type="text" rule="formatDate" name="birthdate" placeholder="MM/DD/YYYY">
+                                            <input type="text" rule="formatDate|beforeDayNow" name="birthdate" placeholder="MM/DD/YYYY">
                                         </div>
                                         <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
                                             <span>Optional</span>
@@ -137,13 +135,14 @@
                                 <div class="form-group">
                                     <div class="row no-gutters">
                                         <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-                                            <label for="">Mã Xác Thực</label>
+                                            <label for="">Verification codes</label>
                                         </div>
                                         <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                             <input type="text" rule="uniqueSubmitCode" name="submit_code" placeholder="Code Submit In Your Mail">
+                                            <span class="form-group__item__text get-code">Code</span>
                                         </div>
                                         <div class="form-group__item form-group__item--msg col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-                                           
+                                        
                                         </div>
                                         <div class="col col-xl-3 col-lg-3 col-md-3 hidden-small"></div>
                                         <div class="sm-mx-center form-group__item col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -171,6 +170,7 @@
         <script src="./JS/Footer.min.js"></script>
         <script src="./UTIL/jQuery/jQuery.js"></script>
         <script src="./UTIL/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+        <script src="./JS/smtp.js"></script>
         <script src="./JS/main.min.js"></script>
         <script src="./JS/Validator.js"></script>
         <script src="./JS/AuthenticatorForm.min.js"></script>
@@ -178,10 +178,20 @@
             const registerForm = new Validator('#register');
             const USERS_TTTHH_KEY = 'user-ttthh-key';
             const userList = JSON.parse(localStorage.getItem(USERS_TTTHH_KEY)) ?? [];
-            
+
+            if (!document.referrer.includes('Register.html')) {
+                localStorage.setItem('prevRegister', document.referrer);
+            }
+
             registerForm.onSubmit = data => {
+                console.log(data);
                 localStorage.setItem(USERS_TTTHH_KEY, JSON.stringify([...userList, data]));
-                history.back();
+                const prevRegister = localStorage.getItem('prevRegister');
+                localStorage.removeItem('prevRegister');
+                if (prevRegister) {
+                    window.location = prevRegister;
+                } else 
+                    window.location = '/Login.html';
             };
         </script>
     </body>

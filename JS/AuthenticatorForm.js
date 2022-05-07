@@ -1,4 +1,4 @@
-const showPasswordBtn = $('.form-group__item__text');
+const showPasswordBtn = $('.form-group__item__text.show-password');
 
 // * Start Handler Show/Hidden Password Form
 
