@@ -406,7 +406,7 @@ header.innerHTML = `
                                     </div>
                                 </div>
                             </li>
-                            <li class="header__navbar__item full-width header__navbar__item--no-position">
+                            <li class="header__navbar__item header__navbar__item--site-map full-width header__navbar__item--no-position">
                                 <a href="./SiteMap.html" class="hidden-medium header__navbar__link">
                                     Site map
                                     <i class="fas fa-angle-down hidden-medium"></i>
