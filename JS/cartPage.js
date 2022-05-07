@@ -57,13 +57,13 @@ sectionElement.innerHTML = `<div class="container">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="text-center modal-title  font-weight-bold ">Ordering Information</h4>
+                        <h1 class="text-center modal-title  font-weight-bold ">Ordering Information</h1>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <div class="modal-body">
                         <form action="">
                             <div class="form-group">
-                                <h3>Delivery Address</h3>
+                                <h2 class="text-center">Delivery Address</h2>
                                 <div id="thongbao" class="text-center text-danger">
                                 </div>
                             </div>
@@ -89,7 +89,6 @@ sectionElement.innerHTML = `<div class="container">
                                     </div>
                                     <div class="col-sm-6">
                                         <select name="quan" id="txtquan" class="col-sm-12 form-control">
-                                            
                                         </select>
                                         <span id="tbquan" class="text-danger">(*)</span>
                                     </div>
@@ -106,19 +105,19 @@ sectionElement.innerHTML = `<div class="container">
                             </div>
                             
                             <div class="form-group">
-                                <h3>Product Information</h3>
+                                <h2 class="text-center mt-2">Product Information</h2>
                             </div>
 
                             <div class="shopping__cart__child">
                                 <div class="row">
                                     <div class="col-4">
-                                        <h4 class="text-center">Tên sản phẩm</h4>
+                                        <h3 class="text-center">Product name</h3>
                                     </div>
                                     <div class="col-4">
-                                        <h4 class="text-center">Số lượng</h4>
+                                        <h3 class="text-center">Quantity</h3>
                                     </div>
                                     <div class="col-4" class="">
-                                        <h4>Thành giá</h4>
+                                        <h3>Price</h3>
                                     </div>
                                 </div>    
 
@@ -157,11 +156,11 @@ sectionElement.innerHTML = `<div class="container">
                                 }, 0).toFixed(2)}</h1>
                                 
                             </div>
-                            <button type="button" id="btnSave" class="btn btn-success btn-block">Order</button>
+                            <button type="button" id="btnSave" class="btn btn-outline-success btn-lg btn-block">Order</button>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+                        <button type="button" class="btn btn-default btn-outline-dark" data-dismiss="modal">Close</button> 
                     </div>
                 </div>
             </div>
@@ -368,7 +367,7 @@ $(document).ready(function(){
     const quanhn=["Quận Hoàn Kiếm", "Quận Ba Đình","Quận Hai Bà Trưng","Quận Tây Hồ","Quận Đống Đa","Quận Cầu Giấy","Quận Long Biên","Quận Hoàng Mai","Quận Hà Đông","Quận Thanh Xuân","Quận Bắc Từ Liêm","Quận Nam Từ Liêm"]
     quanhn.sort()
 
-    let texttp = "<option value=''selected></option>";
+    let texttp = "<option value=''selected>City</option>";
     for (let i = 0; i < thanhpho.length; i++) {
         texttp += "<option value="+'"'+thanhpho[i]+'"'+">"+thanhpho[i]+"</option>";
     }
@@ -448,8 +447,8 @@ $(document).ready(function(){
     function kiemtraquan() {
         var quan=$("#txtquan").val()
         var tp=$("#txttp").val()
-        var textquan=""
-
+        var textquan="";
+        $("#txtquan").html(textquan)
         if (quan=="")
         {
             $("#tbquan").html("(*)Bắt buộc chọn")
