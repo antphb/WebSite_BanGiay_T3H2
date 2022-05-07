@@ -394,7 +394,7 @@ $(document).ready(function(){
 
     function kiemtrasdt()
     {
-        var re=/^(84|0[3|5|7|8|9])+([0-9]{8})$/
+        var re=/^(\+84|0[3|5|7|8|9])+([0-9]{8})$/
         var sdt=$("#txtsdt").val()
         if (sdt.trim()=="")
         {

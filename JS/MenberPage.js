@@ -34,7 +34,7 @@ const members = [
 sectionElement.innerHTML =`<div class="box">
 <div class="row no-gutters">
     ${members.map(member => `
-        <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+        <div class="col col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
             <div class="card">
                 <div class="imgBox">
                     <img src="IMG/${member.image[0]}" alt="Menber 1">

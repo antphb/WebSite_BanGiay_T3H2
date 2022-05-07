@@ -7,10 +7,10 @@ function Validator(selector) {
     const rules = {};
     const validatorRules = {
         required(value) {
-            return value ? undefined : 'Vui lòng nhập trường này';
+            return value.trim() ? undefined : 'Vui lòng nhập trường này';
         },
         email(value) {
-            let isValid =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) ? undefined : 'Vui lòng nhập email';
+            let isValid =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value.trim()) ? undefined : 'Vui lòng nhập email';
             return isValid;
         },
         min(minLength) {
@@ -21,7 +21,7 @@ function Validator(selector) {
         formatDate(value) {
             if (value.length === 0)
                 return undefined;
-            return /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/.test(value) ? undefined : 'Vui lòng nhập theo dạng DD/MM/YYYY';
+            return /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/.test(value.trim()) ? undefined : 'Vui lòng nhập theo dạng DD/MM/YYYY';
         },
         uniqueEmail(value) {
             const emailList = JSON.parse(localStorage.getItem('user-ttthh-key'))
@@ -47,6 +47,18 @@ function Validator(selector) {
             if (value === '')
                 return undefined;
             return new Date(value.split('/').reverse().join('-')) < new Date() ? undefined : 'Ngày sinh phải bé hơn ngày hiện tại';
+        },
+        firstName(value) {
+            return /^[A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ][a-zắằẳẵặăấầẩẫậâáàãảạđếềểễệêéèẻẽẹíìỉĩịốồổỗộôớờởỡợơóòõỏọứừửữựưúùủũụýỳỷỹỵ]*( [A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ][a-zắằẳẵặăấầẩẫậâáàãảạđếềểễệêéèẻẽẹíìỉĩịốồổỗộôớờởỡợơóòõỏọứừửữựưúùủũụýỳỷỹỵ]*)*$/
+                .test(value.trim())
+                    ? undefined
+                    : 'Họ đệm phải bắt đầu bằng ký tư hoa';
+        },
+        lastName(value) {
+            return /^[A-ZẮẰẲẴẶĂẤẦẨẪẬÂÁÀÃẢẠĐẾỀỂỄỆÊÉÈẺẼẸÍÌỈĨỊỐỒỔỖỘÔỚỜỞỠỢƠÓÒÕỎỌỨỪỬỮỰƯÚÙỦŨỤÝỲỶỸỴ][a-zắằẳẵặăấầẩẫậâáàãảạđếềểễệêéèẻẽẹíìỉĩịốồổỗộôớờởỡợơóòõỏọứừửữựưúùủũụýỳỷỹỵ]*$/
+                .test(value.trim())
+                    ? undefined
+                    : 'Tên phải bắt đầu bằng ký tư hoa';
         }
     }
 
@@ -129,7 +141,7 @@ function Validator(selector) {
                 var dataInput = inputElements.reduce((a, b) => {
                     if (b.type === 'radio' && !b.checked)
                         return a;
-                    a[b.name] = b.value;
+                    a[b.name] = b.value.trim();
                     return a;
                 }, {});
                 if (this.onSubmit)
