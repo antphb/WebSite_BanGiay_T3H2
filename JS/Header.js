@@ -1,8 +1,6 @@
 const header = document.querySelector('header');
-
 const cartProductList = JSON.parse(localStorage.getItem('TTTHH-CART-KEY')) ?? [];
 const numberProduct = cartProductList.reduce((prev, element) => prev + element.number, 0);
-
 const compareProductList = JSON.parse(localStorage.getItem('TTTHH-COMPARE-KEY')) ?? [];
 const numberOfComponents = compareProductList.length;
 
@@ -112,7 +110,7 @@ header.innerHTML = `
                                     </a>
                                 </li>
                                 <li class="header__user-menu__item__options__item">
-                                    <a href="/cartPage.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                    <a href="./cartPage.html" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
                                     <i class="fas fa-shopping-cart"></i>
                                     Checkout
                                     </a>

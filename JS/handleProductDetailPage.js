@@ -4,11 +4,10 @@ var productSlug = url.searchParams.get("product");
 
 const getPriceProduct = product => product.discount ? product.price * (100 - product.discount) / 100 : product.price;
 
-fetch('https://json-server-web-giay-btl.herokuapp.com/list-products')
+fetch(`https://json-server-web-giay-btl.herokuapp.com/list-products?slug=${productSlug}`)
     .then(data => data.json())
     .then(products => {
-        const product = products.find(product => product.slug === productSlug);
-
+        const product = products[0];
         $('section').html(`
             <div class="site__map">
                 <p><a href="index.html" class="site__map-home">HOME</a> <span> > </span>
