@@ -1,9 +1,15 @@
-const backToTopBtn = $('.back-to-top');
 const app = $('.app');
+
+app.append(`     
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+`);
+
+const backToTopBtn = $('.back-to-top');
 const navbarBtn = $('.header__navbar__menu-btn');
 const navbarElement = $('.header__navbar__container');
 const navbarModal = $('.header__navbar__modal');
-const navbarModalOverlay = $('.modal__overlay');
 const closeNavbarBtn = $('.header__navbar__close-menu');
 const submenuBtn = $('.header__navbar__link__icon-mobile');
 const headerNavbarItems = $('.header__navbar__item');
@@ -26,7 +32,7 @@ let isGitHub = window.location.href.includes('WebSite_BanGiay_T3H2');
 
     window.addEventListener('resize', () => {
         app.removeClass('open-menu');
-        $([...navbarModalOverlay, ...navbarElement, ...navbarModal]).removeClass('open');
+        $([...$('.modal__overlay'), ...navbarElement, ...navbarModal]).removeClass('open');
     })
 })();
 
@@ -49,7 +55,7 @@ let isGitHub = window.location.href.includes('WebSite_BanGiay_T3H2');
         navbarElement.toggleClass('open');
         navbarModal.toggleClass('open');
         app.toggleClass('open-menu');
-        navbarModalOverlay.toggleClass('open');
+        $('.modal__overlay').toggleClass('open');
         e.stopPropagation();
     }
     

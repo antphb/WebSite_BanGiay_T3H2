@@ -47,6 +47,7 @@
   }
   .show-medium {
     display: block;
+    z-index: 1;
   }
   .app.open-menu {
     margin-left: var(--navbar-height-mobile);

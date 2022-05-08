@@ -85,7 +85,8 @@ section > .container {
 
 #shopping__cart__quantity-product {
   font-size: 1.4rem;
-  width: 45px;
+  width: 100%;
+  max-width: 45px;
   outline: none;
   height: 40px;
   border: none;

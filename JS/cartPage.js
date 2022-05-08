@@ -25,7 +25,7 @@ sectionElement.innerHTML = `<div class="container">
                     <p class="shopping__cart__option">Color: <span class="shopping__cart__color-type">${value.color[0]}</span></p>
                 </div>
                 <div class="col col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
-                    <div class="row no-gutters">
+                    <div class="row no-gutters align-items-center">
                         <div class="col col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
                             <div class="box__input-quantity">
                                 <input type="text" id="shopping__cart__quantity-product" value="${value.number}">

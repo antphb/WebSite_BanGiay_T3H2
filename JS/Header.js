@@ -409,12 +409,7 @@ header.innerHTML = `
                             <li class="header__navbar__item header__navbar__item--site-map full-width header__navbar__item--no-position">
                                 <a href="./SiteMap.html" class="hidden-medium header__navbar__link">
                                     Site map
-                                    <i class="fas fa-angle-down hidden-medium"></i>
                                     <span class="header__navbar__item__note header__navbar__item__note--new">New</span>
-                                    <span class="header__navbar__link__icon-mobile show-medium">
-                                        <i class="plus fas fa-plus"></i>
-                                        <i class="minus fas fa-minus"></i>
-                                    </span>
                                 </a>
                             </li>
                         </ul>
@@ -479,3 +474,7 @@ header.innerHTML = `
         </div>
     </nav>
 `;
+
+const overlay = document.createElement('div');
+overlay.classList.add('modal__overlay');
+header.after(overlay);
