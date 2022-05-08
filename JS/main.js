@@ -23,6 +23,11 @@ let isGitHub = window.location.href.includes('WebSite_BanGiay_T3H2');
             ? backToTopBtn.fadeIn(400, "linear")
             : backToTopBtn.fadeOut(400, "linear");
     });
+
+    window.addEventListener('resize', () => {
+        app.removeClass('open-menu');
+        $([...navbarModalOverlay, ...navbarElement, ...navbarModal]).removeClass('open');
+    })
 })();
 
 // * End Handler Show/Hidden Back to to btn
