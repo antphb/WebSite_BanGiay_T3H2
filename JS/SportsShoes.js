@@ -98,11 +98,11 @@
         const {Categories, Sizes, Color, Compositions, Styles, Properties, Prices} = JSON.parse(texts[4]);
 
         handleSportsShoes(JSON.parse(texts[0]), Categories, Sizes, Color, Compositions, Styles, Properties, Prices);
-        $(active)?.addClass('active');
+        if (window.innerWidth >= 991)
+            $(active)?.addClass('active');
         $('.loading').addClass('hidden');
         $('.app').removeClass('hidden');
     });
-
 })();
 
 const getPriceProduct = product => product.discount ? product.price * (100 - product.discount) / 100 : product.price;
@@ -357,7 +357,7 @@ function handleSportsShoes(contentProductList, Categories, Sizes, Color, Composi
         return `
             <div class="row no-gutters">
                 ${products.map((product, index) => index < 9*(i-1) || index >= 9*i ? '' : `
-                    <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-6 col-6">
+                    <div class="col col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="content-product__item pb-md-3 position-relative d-flex flex-column no-gutters">
                             <div class="content-product__item__img order-1">
                                 <a href="${window.location.href.includes('WebSite_BanGiay_T3H2') ? '/WebSite_BanGiay_T3H2' : ''}/ProductDetaildPage.html?product=${product.slug}">

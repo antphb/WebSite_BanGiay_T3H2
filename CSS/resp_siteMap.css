@@ -1,24 +1,31 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 @media (max-width: 991px) {
-    .site__map {
-      padding: 7em 0;
-    }
-  
+  .site__map {
+    padding: 7em 0;
+  }
+
+}
+
+@media (max-width: 575px) {
+  .site__map {
+    padding: 3px 0;
+    background-color: #fff;
+    color: #333;
+  }
+  .site__map > p {
+    color: #555;
+  }
+  .site__map-home, .site-map-product-details {
+    color: #555;
+  }
+  .site__map-home:focus, .site-map-product-details:focus {
+    color: var(--blue-color);
   }
   
-  @media (max-width: 575px) {
-    .site__map {
-      padding: 3px 0;
-      background-color: #fff;
-      color: #333;
-    }
-    .site__map > p {
-      color: #555;
-    }
-    .site__map-home, .site-map-product-details {
-      color: #555;
-    }
-    .site__map-home:focus, .site-map-product-details:focus {
-      color: var(--blue-color);
-    }
-    
-  }
+}

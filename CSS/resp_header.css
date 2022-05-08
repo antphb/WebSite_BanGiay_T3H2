@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 @charset "UTF-8";
 /* Resp */
 @media (min-width: 992px) {
@@ -77,13 +84,16 @@
     border-right: 1px solid var(--white-color);
     overflow: auto;
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+        transform: translateX(-100%);
     -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
     transition: 0.25s;
   }
   .header__navbar__container.open {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+            -ms-transform: translateX(0);
+        transform: translateX(0);
   }
   .header__navbar__list {
     -webkit-box-orient: vertical;
@@ -111,7 +121,8 @@
     opacity: 1;
     visibility: visible;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+            -ms-transform: translateY(0);
+        transform: translateY(0);
   }
   .header__navbar__link {
     color: var(--white-color) !important;
@@ -163,7 +174,8 @@
   }
   /* ? Khi văn bản quá dài thì thay bằng dấu ...  */
   .header__navbar__item__submenu__item__product__info a h6 {
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -187,7 +199,8 @@
     height: unset;
     top: 50%;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
     margin-right: 1.15384em;
     width: 30px;
     height: 30px;
@@ -231,22 +244,41 @@
     right: 8px;
   }
   .header__user-menu__item__options__item.header__user-menu__item--search__box {
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .header__user-menu__item__options__item.header__user-menu__item--search__box .header__user-menu__item__options__item__input {
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
 }
 
-@media (max-width: 327px) {
+@media (max-width: 312px) {
   header .header__user-menu-box .container {
-    margin: 0 !important;
-    padding: 0 8px !important;
+    margin: 0;
     max-width: 100%;
   }
-
-  header .header__user-menu-box .header__user-menu__item {
-    padding: 2px;
+  .header__user-menu__item__number {
+    margin-left: 4px;
   }
 }
-/*# sourceMappingURL=resp_header.css.map */
+
+@media (max-width: 296px) {
+  header .header__user-menu-box .container {
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 296px) {
+  header .header__user-menu-box .container {
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 275px) {
+  header .header__user-menu__item {
+    padding: 0 4px;
+  }
+}

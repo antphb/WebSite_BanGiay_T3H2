@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 :root {
   --user-menu-box-height: 50px;
   --navbar-height: 158px;
@@ -152,6 +159,7 @@ body {
 
 .back-to-top:hover {
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
   cursor: pointer;
   background-color: var(--back-to-top-hover-bg-color);
@@ -165,6 +173,7 @@ body {
   opacity: 0;
   visibility: hidden;
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
@@ -173,7 +182,8 @@ body {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
 }
 
 .modal__overlay.open {
@@ -183,6 +193,7 @@ body {
 
 .hover-text {
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
@@ -195,6 +206,7 @@ body {
   overflow: hidden;
   width: 100%;
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
@@ -273,6 +285,9 @@ body {
 
 /* Small */
 @media (max-width: 768px) {
+  .container {
+    max-width: calc(100% - 16px);
+  }
   .hidden-sm {
     display: none !important;
   }
@@ -417,4 +432,3 @@ body {
     transform: scale(1.2, 1);
   }
 }
-/*# sourceMappingURL=base.css.map */

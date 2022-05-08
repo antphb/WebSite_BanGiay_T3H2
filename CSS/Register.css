@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .form-group__item input[type="radio"] + label {
   font-size: 1.4em;
   margin-inline: 0.28571em 1.42857em;
@@ -13,4 +20,3 @@
 .form-group__item--radio input {
   width: auto;
 }
-/*# sourceMappingURL=Register.css.map */

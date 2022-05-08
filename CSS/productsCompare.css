@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 section {
   padding-bottom: 5em;
 }
@@ -35,7 +42,8 @@ section {
   top: 50%;
   left: 20px;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
   font-size: 2rem;
 }
 
@@ -46,6 +54,7 @@ section {
   font-weight: 400;
   padding: 0.46667em 0.8em;
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
@@ -152,6 +161,7 @@ section {
           user-select: none;
   z-index: 1;
   -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
@@ -212,4 +222,3 @@ section {
   font-weight: 600;
   color: #2a61d2;
 }
-/*# sourceMappingURL=productsCompare.css.map */

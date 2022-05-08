@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .site__map {
   padding: 11em 0;
   background-color: var(--sitemap-bg-color);
@@ -94,6 +101,7 @@
 .form-register-product-left__tool-zoom:hover {
   color: #fff;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
   background-color: var(--blue-color);
 }
@@ -103,7 +111,8 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
 }
 
 .form-register-product__list__box-menu {
@@ -126,7 +135,8 @@
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
   left: 10px;
 }
 
@@ -134,13 +144,15 @@
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
   right: 10px;
 }
 
 .form-register-product__list__btn:hover {
   background-color: #2a61d2;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 
@@ -161,6 +173,7 @@
 .form-register-product__list-img:hover {
   opacity: 1;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 
@@ -219,8 +232,10 @@
 
 .form-register-product-right__item__social:hover > a > i {
   -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+          -ms-transform: scale(1.5);
+      transform: scale(1.5);
   -webkit-transition: .4s;
+  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -374,6 +389,7 @@
   background-color: #2a61d2;
   color: #fff;
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -423,6 +439,7 @@
 .form-register-product-right__add-wist-list:hover {
   color: #2a61d2;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 
@@ -438,6 +455,7 @@
 .form-register-product-right__add-compare:hover {
   color: var(--blue-color);
   -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -530,6 +548,7 @@
   right: 0;
   width: auto;
   -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -542,6 +561,7 @@
   right: 0;
   width: auto;
   -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -678,4 +698,3 @@
   color: var(--product-flag-online-only-color);
   border-color: var(--product-flag-online-only-color);
 }
-/*# sourceMappingURL=productDetailPage.css.map */

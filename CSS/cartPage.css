@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 section > .container {
   margin-top: 3.2rem;
   margin-bottom: 3.2rem;
@@ -155,6 +162,7 @@ section > .container {
 .shopping__cart__remove__product:hover > i {
   color: var(--red-color);
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -174,6 +182,7 @@ section > .container {
   color: #fff;
   background-color: #306de9;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 
@@ -226,6 +235,7 @@ section > .container {
   text-decoration: none;
   background-color: #306de9;
   -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 
@@ -243,11 +253,12 @@ section > .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .infomation__detail__item__policy > i {
   font-size: 2.8rem;
   margin-right: 1.8rem;
 }
-/*# sourceMappingURL=cartPage.css.map */

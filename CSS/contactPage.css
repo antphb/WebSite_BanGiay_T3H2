@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 .site__map {
   padding: 11em 0;
   background-color: var(--sitemap-bg-color);
@@ -114,6 +121,10 @@
   color: #acaaa6;
 }
 
+.no-gutters > .group__form__input::-moz-placeholder {
+  color: #acaaa6;
+}
+
 .no-gutters > .group__form__input::placeholder {
   color: #acaaa6;
 }
@@ -203,4 +214,3 @@ label[for=choose-file] {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-/*# sourceMappingURL=contactPage.css.map */

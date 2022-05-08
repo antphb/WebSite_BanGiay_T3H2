@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -201,6 +208,7 @@ input[type=number] {
   list-style: none;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
@@ -222,13 +230,15 @@ input[type=number] {
   font-size: 1.3em;
   font-weight: 300;
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
 .category__submenu .category__subitem .category__sublink:hover {
   text-decoration: none;
   -webkit-transform: translateX(8px);
-  transform: translateX(8px);
+  -ms-transform: translateX(8px);
+      transform: translateX(8px);
 }
 
 .category__submenu .category__subitem:first-child {
@@ -268,6 +278,7 @@ input[type=number] {
 
 :is(.content-product__item, .category__product__img) a img {
   -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
@@ -292,7 +303,8 @@ input[type=number] {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--black-color);
@@ -479,7 +491,8 @@ input[type=number] {
   opacity: 0;
   z-index: 2;
   -webkit-transform: translateY(8px);
-  transform: translateY(8px);
+  -ms-transform: translateY(8px);
+      transform: translateY(8px);
 }
 
 .content-product__filter__sort__by__list ul {
@@ -532,6 +545,7 @@ input[type=number] {
   background-color: rgba(255, 255, 255, 0.8);
   opacity: 0;
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -595,6 +609,7 @@ input[type=number] {
   border-radius: 50%;
   cursor: pointer;
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -699,7 +714,8 @@ input[type=number] {
   }
   .function-buttons li {
     -webkit-transform: translateX(calc(3.3em + 45px));
-    transform: translateX(calc(3.3em + 45px));
+    -ms-transform: translateX(calc(3.3em + 45px));
+        transform: translateX(calc(3.3em + 45px));
   }
   .function-buttons li a:hover {
     background: var(--white-color);
@@ -779,4 +795,3 @@ input[type=number] {
     margin-top: 2em;
   }
 }
-/*# sourceMappingURL=sportsShoes.css.map */

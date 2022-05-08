@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 /* Resp */
 /* Large */
 /* Medium */
@@ -28,7 +35,8 @@
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
     color: #fff;
   }
   .map__store__child {
@@ -115,4 +123,3 @@
     right: 0.2em;
   }
 }
-/*# sourceMappingURL=resp_style.css.map */

@@ -1,6 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 section {
   min-height: 100vh;
   background-image: -webkit-gradient(linear, left top, right top, from(#fc00ff), to(#00dbde));
+  background-image: -o-linear-gradient(left, #fc00ff, #00dbde);
   background-image: linear-gradient(to right, #fc00ff, #00dbde);
 }
 
@@ -12,7 +20,8 @@ section {
   position: relative;
   margin: 0 auto;
   -webkit-transform: translateX(0);
-          transform: translateX(0);
+          -ms-transform: translateX(0);
+      transform: translateX(0);
   width: 50%;
   height: 400px;
   background-color: #fff;
@@ -23,6 +32,7 @@ section {
   -webkit-box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
           box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.25);
   -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
 }
 
@@ -35,7 +45,8 @@ section {
   position: absolute;
   inset: 0;
   -webkit-transform-origin: left;
-          transform-origin: left;
+          -ms-transform-origin: left;
+      transform-origin: left;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   background-color: #000;
@@ -43,8 +54,10 @@ section {
   height: 100%;
   z-index: 1;
   -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
-  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover > .imgBox {
@@ -165,6 +178,7 @@ section {
   text-decoration: none;
   color: #Fff;
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
   display: inline-block;
   font-size: 1.8rem;
@@ -177,6 +191,7 @@ section {
 .social__item:hover {
   background-color: #ff1d50;
   -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
@@ -199,4 +214,3 @@ h2
 {
   text-align: center;
 }
-/*# sourceMappingURL=memberPage.css.map */

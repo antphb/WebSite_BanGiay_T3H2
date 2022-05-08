@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 /* Start Footer Navbar */
 .footer__navbar {
   background-color: var(--primary-bg-color);
@@ -43,6 +50,7 @@
   text-transform: uppercase;
   color: #aaa;
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
   display: inline-block;
 }
@@ -79,4 +87,3 @@
 }
 
 /* End Footer Navbar */
-/*# sourceMappingURL=footer.css.map */

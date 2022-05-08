@@ -1,3 +1,17 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 section {
   padding-bottom: 5.4rem;
 }
@@ -52,4 +66,3 @@ section .logout-btn {
 section .logout-btn:hover {
   background-color: var(--primary-btn-hover-bg-color);
 }
-/*# sourceMappingURL=myAccount.css.map */

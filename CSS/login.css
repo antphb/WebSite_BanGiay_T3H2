@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 section {
   text-align: center;
   margin-bottom: 5.2em;
@@ -164,6 +171,7 @@ form > p > a {
   color: var(--black-color);
   padding: 5px 15px;
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
   text-align: center;
   margin: auto;
@@ -181,6 +189,7 @@ form .submit {
   padding: 0.5em 1.42857em;
   margin-top: 0.5em;
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
@@ -215,6 +224,7 @@ form .submit:hover {
   display: flex;
   padding-block: 0.9em;
   -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
   cursor: pointer;
   border-radius: 2px;
@@ -276,4 +286,3 @@ form .submit:hover {
   font-weight: 300;
   color: #000;
 }
-/*# sourceMappingURL=login.css.map */
