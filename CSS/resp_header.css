@@ -57,6 +57,8 @@
     z-index: 1;
   }
   .app.open-menu {
+    position: fixed;
+    inset: 0;
     margin-left: var(--navbar-height-mobile);
     overflow: auto;
   }
@@ -67,6 +69,7 @@
     z-index: 2;
   }
   .header__navbar__modal.open {
+    height: 100vh;
     visibility: visible;
     overflow: auto;
   }
