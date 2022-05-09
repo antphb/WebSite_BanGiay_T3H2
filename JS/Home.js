@@ -24,5 +24,5 @@ $("#customer-email").blur(function(){
         return false;
     }
     elemErr.innerHTML = "";
-    return rtue;
+    return true;
 })
