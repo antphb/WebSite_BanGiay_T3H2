@@ -29,7 +29,12 @@ $(".btn__send__email").click(() => {
       valueEmail.trim(),
       "THHHT Shop Xin Chào Bạn!",
       "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop"
-    ).then((message) => alert("Gửi thành công!"));
+    ).then(() => toast({
+      title: "Thành công!",
+      message: "Gửi thành công.",
+      type: "success",
+      duration: 5000
+    }));
   }
 });
 

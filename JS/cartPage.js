@@ -478,12 +478,12 @@ $(document).ready(function(){
         if (kiemtrahoten()==false || kiemtrasdt()==false || kiemtradiachi()==false || kiemtratp()==false || kiemtraquan()==false)
         {
             // $("#thongbao").html("(*)Mời bạn nhập đúng và đầy đủ thông tin")
-            alert("Mời bạn nhập đúng và đầy đủ thông tin")
+            toast({title: 'Thiếu dữ liệu', message: 'Mời bạn nhập đúng và đầy đủ thông tin', type: 'warning', duration: 5000})
             return false;
         }
 
         $("#myModal").modal("hide");
-        alert("Order Successfully")
+        toast({title: 'Thành công', message: 'Order Successfully', type: 'success', duration: 5000})
         localStorage.removeItem("TTTHH-CART-KEY");
         return true;
     })

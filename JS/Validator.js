@@ -168,10 +168,10 @@ function Validator(selector) {
                     submitCode = Math.random().toString(36).substring(2,8);
                     Email.sendEmail(email, "HTTTH Shop, Xác thực tài khoản!", 'Mã xác thực tài khoản của bạn là : ' + submitCode)
                         .then(
-                            () => alert("Đã gửi mã xác thực đến gmail của bạn!")
+                            () => toast({title: 'Thành công!', message: 'Đã gửi mã xác thực đến email của bạn.', type: 'success', duration: 5000})
                         );
                 } else
-                    alert("Đã gửi mã xác thực đến gmail của bạn!");
+                    toast({title: 'Thành công!', message: 'Đã gửi mã xác thực đến email của bạn.', type: 'success', duration: 5000});
             }
         });
     }
