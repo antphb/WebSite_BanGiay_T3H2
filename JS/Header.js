@@ -72,6 +72,11 @@ header.innerHTML = `
                                         &#36; USD
                                     </a>
                                 </li>
+                                <li class="header__user-menu__item__options__item">
+                                    <a href="#" class="header__user-menu__item__options__item__link header__user-menu__item__options__item__name">
+                                        Đ VND
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>

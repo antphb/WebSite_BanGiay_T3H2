@@ -254,7 +254,13 @@
   border: 1px solid #fff;
   margin-right: 0.8rem;
 }
-
+.map__store__box__left__col__btn-box > button:hover{
+  background-color: #fff;
+  transition: 0.3s
+}
+.map__store__box__left__col__btn-box > button:hover>i{
+  color: #2a61d2
+}
 .map__store__box__left__col__btn {
   color: #fff;
   font-size: 1.6rem;
@@ -359,7 +365,7 @@
       -ms-flex: 9;
           flex: 9;
   margin-right: auto;
-  padding: 1.6em 1.4em;
+  padding: 0.6em 1.4em;
 }
 
 .form__get__letter__desc__form__input > input::-webkit-input-placeholder {
