@@ -19,6 +19,8 @@ const listMenuHeader =  Array.from(document.querySelectorAll('.header__user-menu
 const elementsUserMenuOptionsList = Array.from($(".header__user-menu__item__options__item"));
 let isGitHub = window.location.href.includes('WebSite_BanGiay_T3H2');
 
+$('body').append('<div id="toast"></div>');
+
 // * Start Handler Show/Hidden Back to to btn
 
 (() => {
