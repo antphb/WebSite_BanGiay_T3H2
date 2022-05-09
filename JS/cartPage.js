@@ -50,7 +50,7 @@ sectionElement.innerHTML = `<div class="container">
         <a class="goto__shopping-btn" href="" id="myBtn" data-toggle="modal" data-target="#myModal">PayMent</a>
 
         <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="text-center modal-title  font-weight-bold ">Ordering Information</h1>
@@ -384,7 +384,7 @@ $(document).ready(function(){
 
     function kiemtrasdt()
     {
-        var re=/^(\+84|0[3|5|7|8|9])+([0-9]{8})$/
+        var re=/^((0[3|5|7|8|9])+([0-9]{8})|(\+84)+\d{9})$/
         var sdt=$("#txtsdt").val()
         if (sdt.trim()=="")
         {
@@ -393,7 +393,7 @@ $(document).ready(function(){
         }
         if (!re.test(sdt))
         {
-            $("#tbsdt").html("(*)Bắt đầu từ 84 hoặc 03, 05, 07, 08, 09 và phải đủ 10 số")
+            $("#tbsdt").html("(*)Bắt đầu từ +84 hoặc 03, 05, 07, 08, 09 và phải đủ 10 số")
             return false
         }
         $("#tbsdt").html("(*)")
