@@ -5,9 +5,26 @@ setTimeout(() => {
   $(".loading").addClass("hidden");
 }, 2000);
 
+function kiemTraEmail(input) {
+  let strEmail = $(input)[0].value;
+  let elemErr =  document.querySelector("#customer-email").parentElement.parentElement.querySelector(".msg-err");
+
+  if (strEmail === '') {
+    elemErr.innerHTML = "Vui lòng nhập email";
+    return false;
+  }
+
+  if (!(/^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/.test(strEmail))){
+    elemErr.innerHTML = "Không phải là email";
+    return false;
+  }
+  elemErr.innerHTML = "";
+  return true;
+}
+
 $(".btn__send__email").click(() => {
-  let valueEmail = $("#customer-email").val();
-  if (!$(this).hasClass('invalid')) {
+  let valueEmail = $("#customer-email")[0].value;
+  if (kiemTraEmail($("#customer-email")[0])) {
     Email.sendEmail(
       valueEmail.trim(),
       "THHHT Shop Xin Chào Bạn!",
@@ -17,14 +34,5 @@ $(".btn__send__email").click(() => {
 });
 
 $("#customer-email").blur(function(){
-    let strEmail = $(this).val();
-    let elemErr =  document.querySelector("#customer-email").parentElement.parentElement.querySelector(".msg-err");
-  
-    if (strEmail != "" && !(/^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/.test(strEmail))){
-        elemErr.innerHTML = "Không phải là email";
-        $(this).addClass('invalid');
-        return false;
-    }
-    elemErr.innerHTML = "";
-    return true;
+  kiemTraEmail(this);
 })
