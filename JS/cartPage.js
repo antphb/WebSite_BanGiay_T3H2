@@ -471,10 +471,10 @@ $(document).ready(function(){
     {
         if (arrDataStorage.length==0)
         {
-            alert("Giỏ hàng rỗng")
+            toast({title: 'Thiếu dữ liệu', message: "Giỏ hàng rỗng", type: 'warning', duration: 5000})
             return false;
         }
-        
+
         if (kiemtrahoten()==false || kiemtrasdt()==false || kiemtradiachi()==false || kiemtratp()==false || kiemtraquan()==false)
         {
             // $("#thongbao").html("(*)Mời bạn nhập đúng và đầy đủ thông tin")
