@@ -469,12 +469,19 @@ $(document).ready(function(){
 
     $("#btnSave").click(function()
     {
+        if (arrDataStorage.length==0)
+        {
+            alert("Giỏ hàng rỗng")
+            return false;
+        }
+        
         if (kiemtrahoten()==false || kiemtrasdt()==false || kiemtradiachi()==false || kiemtratp()==false || kiemtraquan()==false)
         {
             // $("#thongbao").html("(*)Mời bạn nhập đúng và đầy đủ thông tin")
             alert("Mời bạn nhập đúng và đầy đủ thông tin")
             return false;
         }
+
         $("#myModal").modal("hide");
         alert("Order Successfully")
         localStorage.removeItem("TTTHH-CART-KEY");
