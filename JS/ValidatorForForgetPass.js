@@ -9,7 +9,7 @@ function Validator(selector) {
             return value ? undefined : 'Vui lòng nhập trường này';
         },
         email(value) {
-            let isValid =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) ? undefined : 'Vui lòng nhập email';
+            let isValid =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) ? undefined : 'Địa chỉ email không hợp lệ!';
             return isValid;
         },
         uniqueEmail(value) {

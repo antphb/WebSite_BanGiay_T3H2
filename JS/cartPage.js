@@ -47,7 +47,7 @@ sectionElement.innerHTML = `<div class="container">
         </div>
 
         <a class="goto__shopping-btn" href="./index.html">CONTINUE SHOPPING</a>
-        <a class="goto__shopping-btn" href="" id="myBtn" data-toggle="modal" data-target="#myModal">PayMent</a>
+        <a class="goto__shopping-btn" href="" id="myBtn" data-toggle="modal" data-target="#myModal">Order</a>
 
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -117,7 +117,7 @@ sectionElement.innerHTML = `<div class="container">
                                     </div>
                                 </div>    
 
-                                ${arrDataStorage.map((value, index)=>`
+                                ${arrDataStorage.map((value)=>`
                                 <div class="row no-gutters shopping__cart__child__box">
                                     <div class="col col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12">
                                         <img class="shopping__cart__product-img" src="IMG/${value.image}" alt="${value.name}">
@@ -474,6 +474,7 @@ $(document).ready(function(){
         }
         $("#myModal").modal("hide");
         alert("Order Successfully ")
+        localStorage.removeItem();
         return true;
     })
 })
