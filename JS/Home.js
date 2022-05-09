@@ -7,12 +7,13 @@ setTimeout(() => {
 
 $(".btn__send__email").click(() => {
   let valueEmail = $("#customer-email").val();
-  console.log(valueEmail);
-  Email.sendEmail(
-    valueEmail.trim(),
-    "THHHT Shop Xin Chào Bạn!",
-    "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop"
-  ).then((message) => alert("Gửi thành công!"));
+  if (!$(this).hasClass('invalid')) {
+    Email.sendEmail(
+      valueEmail.trim(),
+      "THHHT Shop Xin Chào Bạn!",
+      "Bạn đã kích hoạt thành công nhận thông tin sản phẩm mới nhất từ shop"
+    ).then((message) => alert("Gửi thành công!"));
+  }
 });
 
 $("#customer-email").blur(function(){
@@ -21,6 +22,7 @@ $("#customer-email").blur(function(){
   
     if (strEmail != "" && !(/^[a-z][a-z0-9_\.]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/.test(strEmail))){
         elemErr.innerHTML = "Không phải là email";
+        $(this).addClass('invalid');
         return false;
     }
     elemErr.innerHTML = "";
