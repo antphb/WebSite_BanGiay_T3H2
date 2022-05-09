@@ -344,6 +344,10 @@ arrInputQty.forEach((elem, index)=>{
 
 $(document).ready(function(){
     
+    $('#myModal').on('hidden.bs.modal', function () {
+        location.reload();
+    })
+
     const thanhpho = ["Hồ Chí Minh", "Hà Nội"];
 
     const quanhcm=["Quận Bình Tân","Quận Bình Thạnh","Quận Gò Vấp", "Quận Phú Nhuận","Quận Tân Bình","Quận Tân Phú","Quận Thủ Đức","Huyện Bình Chánh","Huyện Cần Giờ","Huyện Củ Chi","Huyện Hóc Môn","Huyện Nhà Bè"]
@@ -405,7 +409,6 @@ $(document).ready(function(){
     {
         var re=/^\d+\s[A-z]+\s[A-z]+/
         var diachi=$("#txtDiaChi").val()
-        // alert(diachi)
         if (diachi.trim()=="")
         {
             $("#tbDiaChi").html("(*)Bắt buộc nhập")
@@ -473,8 +476,8 @@ $(document).ready(function(){
             return false;
         }
         $("#myModal").modal("hide");
-        alert("Order Successfully ")
-        localStorage.removeItem();
+        alert("Order Successfully")
+        localStorage.removeItem("TTTHH-CART-KEY");
         return true;
     })
 })
