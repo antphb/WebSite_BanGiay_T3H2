@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTTTH</title>
+        <link rel="stylesheet" href="./FONT/fontawesome-free-5.15.4-web/css/all.min.css">
+        <link rel="stylesheet" href="./FONT/fontawesome-free-6.1.1-web/css/all.min.css">
+        <link rel="stylesheet" href="./FONT/Icon-font-7-stroke-PIXEDEN-v-1.2.0/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+        <link rel="stylesheet" href="./UTIL/bootstrap-4.6.1-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./CSS/base.min.css">
+        <link rel="stylesheet" href="./CSS/header.min.css">
+        <link rel="stylesheet" href="./CSS/resp_header.min.css">
+        <link rel="stylesheet" href="./CSS/footer.min.css">
+        <link rel="stylesheet" href="./CSS/resp_footer.min.css">
+        <link rel="stylesheet" href="./CSS/login.min.css">
+        <link rel="stylesheet" href="./CSS/resp_login.min.css">
+        <link rel="stylesheet" href="./CSS/Register.min.css">
+        <link rel="stylesheet" href="./CSS/style.min.css">
+        <link rel="stylesheet" href="./CSS/resp_style.min.css">
+        <style>
+            .form {
+                padding-inline: 2rem;
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+            }
+        </style>
+    </head>
+    <body>
+
+        <main class="app">
+            <header></header>
+
+            <section>
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="form">
+                            <h3 class="mb-5">User Information</h3>
+                            <div class="form-group">
+                                <div class="row no-gutters">
+                                    <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <label for="">Social title</label>
+                                    </div>
+                                    <div class="form-group__item form-group__item--input form-group__item--radio col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                        <input readonly id="social-title-mr" value="mr" name="social-title" type="radio">
+                                        <label for="social-title-mr">Mr.</label>
+                                        <input readonly id="social-title-mrs" value="mrs" name="social-title" type="radio">
+                                        <label for="social-title-mrs">Mrs.</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row no-gutters">
+                                    <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <label for="">First name</label>
+                                    </div>
+                                    <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                        <input readonly name="first-name" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row no-gutters">
+                                    <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <label for="">Last name</label>
+                                    </div>
+                                    <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                        <input readonly name="last-name" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row no-gutters">
+                                    <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <label for="">Email</label>
+                                    </div>
+                                    <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                        <input readonly id="email-id" name="email" type="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row no-gutters">
+                                    <div class="form-group__item form-group__item--label col col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                                        <label for="">Birthdate</label>
+                                    </div>
+                                    <div class="form-group__item form-group__item--input col col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                        <input readonly type="text" name="birthdate" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer></footer>
+        </main>
+
+        <script src="./JS/Header.min.js"></script>
+        <script src="./JS/Footer.min.js"></script>
+        <script src="./UTIL/jQuery/jQuery.js"></script>
+        <script src="./UTIL/bootstrap-4.6.1-dist/js/bootstrap.min.js"></script>
+        <script src="./JS/main.min.js"></script>
+        <script>
+            const user = JSON.parse(localStorage.getItem('user-ttthh-info'));
+
+            console.log($('[name="first-name"]'));
+            $(`#social-title-mr[value="${user['social-title']}"]`)[0].checked = true;
+            $('[name="first-name"]').val(user['first-name']);
+            $('[name="last-name"]').val(user['last-name']);
+            $('[name="email"]').val(user['email']);
+            $('[name="birthdate"]').val(user['birthdate']);
+        </script>
+    </body>
+</html>
