@@ -29,7 +29,7 @@ function start(){
 
                 let bodyContent = `Sending file: ${file.name} .Message: ${stringBody}`;
                 Email.send({
-                    SecureToken : "a510e069-f161-49ca-91db-4b7eae3b692d",
+                    SecureToken : "1513ef06-d5e0-4952-81bf-2e2dec982a95",
                     To : emailAddress,
                     From : "hieurio12@gmail.com",
                     Subject : subjectMail,
