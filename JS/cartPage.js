@@ -92,7 +92,7 @@ sectionElement.innerHTML = `<div class="container">
                             </div>
 
                             <div class="form-froup">
-                                <input type="text" name="" id="txtDiaChi" class="form-control" required placeholder="Address">
+                                <input type="text" name="" id="txtDiaChi" class="form-control" required placeholder="14 Nguyen Van Bao Phuong 2">
                                 <span id="tbDiaChi" class="text-danger">(*)</span>
                             </div>
 
@@ -369,7 +369,7 @@ $(document).ready(function(){
 
     function kiemtrahoten()
     {
-        var re=/^[A-Z][a-zA-Z]{3,}(?: [A-Z][a-zA-Z]*){0,2}$/
+        var re=/^[A-Z][a-zA-Z]{1,}(?: [A-Z][a-zA-Z]*){0,2}$/
         var hoten=$("#txtht").val()
         if (hoten.trim()=="")
         {
@@ -378,7 +378,7 @@ $(document).ready(function(){
         }
         if (!re.test(hoten))
         {
-            $("#tbht").html("*Viết hoa chữ cái đầu tiên của từ chữ")
+            $("#tbht").html("*Viết hoa chữ cái đầu tiên của từ chữ và mỗi từ 2 kí tự trở lên")
             return false
         }
         $("#tbht").html("(*)")
