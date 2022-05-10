@@ -40,7 +40,12 @@ function start(){
                            data : dataUri
                        }]
                 }).then(
-                  message => alert("Gửi thành công!")
+                  message => toast({
+                    title: "Thành công!",
+                    message: "Gửi thành công.",
+                    type: "success",
+                    duration: 5000
+                  })
                 );
             }
         }
