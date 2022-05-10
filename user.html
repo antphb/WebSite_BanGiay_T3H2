@@ -105,8 +105,8 @@
         <script>
             const user = JSON.parse(localStorage.getItem('user-ttthh-info'));
 
-            console.log($('[name="first-name"]'));
-            $(`#social-title-mr[value="${user['social-title']}"]`)[0].checked = true;
+            if (user['social-title'])
+                $(`#social-title-mr[value="${user['social-title']}"]`)[0].checked = true;
             $('[name="first-name"]').val(user['first-name']);
             $('[name="last-name"]').val(user['last-name']);
             $('[name="email"]').val(user['email']);
