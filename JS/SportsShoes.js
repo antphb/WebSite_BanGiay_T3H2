@@ -72,7 +72,7 @@
         </ul>
     `;
 
-    Promise.all(urls.map(u=>fetch(`https://json-server-web-giay-btl.herokuapp.com/${u}`))).then(responses =>
+    Promise.all(urls.map(u=>fetch(`https://comfortable-fox-gear.cyclic.app/${u}`))).then(responses =>
         Promise.all(responses.map(res => res.text()))
     ).then(texts => {
         texts[1] = JSON.parse(texts[1]);

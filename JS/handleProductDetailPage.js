@@ -4,7 +4,7 @@ var productSlug = url.searchParams.get("product");
 
 const getPriceProduct = product => product.discount ? product.price * (100 - product.discount) / 100 : product.price;
 
-fetch(`https://json-server-web-giay-btl.herokuapp.com/list-products?slug=${productSlug}`)
+fetch(`https://comfortable-fox-gear.cyclic.app/list-products?slug=${productSlug}`)
     .then(data => data.json())
     .then(products => {
         const product = products[0];
